@@ -1,0 +1,30 @@
+---
+permalink: deploy/task-run-the-gos-timeout-scripts-for-solaris.html 
+sidebar: sidebar 
+keywords: setting, timeout, values, solaris, guest, operating, systems, 
+summary: 子操作系统（ OS ）超时脚本用于为 Solaris 10 设置 SCSI I/O 超时设置。您可以指定 60 秒超时或 190 秒超时。 
+---
+= 设置 Solaris 子操作系统的超时值
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+子操作系统（ OS ）超时脚本用于为 Solaris 10 设置 SCSI I/O 超时设置。您可以指定 60 秒超时或 190 秒超时。
+
+您必须已挂载包含 Solaris 脚本的 ISO 映像。
+
+.步骤
+. 访问 Solaris 虚拟机的控制台，并登录到具有 root 权限的帐户。
+. 运行 `solaris_gos_timeout-install.sh` 脚本。
++
+对于 Solaris 10 ，将显示类似于以下内容的消息：
+
++
+[listing]
+----
+Setting I/O Timeout for /dev/s–a - SUCCESS!
+----
+. 卸载 ISO 映像。
+

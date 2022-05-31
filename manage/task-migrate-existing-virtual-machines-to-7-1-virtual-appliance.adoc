@@ -1,0 +1,29 @@
+---
+permalink: manage/task-migrate-existing-virtual-machines-to-7-1-virtual-appliance.html 
+sidebar: sidebar 
+keywords: migrating, virtual, machines, with, older, storage, capability, profiles, 
+summary: '如果您使用的是最新版本的Virtual Storage Console (VSC)、VASA Provider和Storage Replication Adapter (SRA)虚拟设备、 然后、您应将配置了"MaxThroughput MBps"或"MaxThroughput IOPS" QoS指标的虚拟机迁移到使用最新版本的VSC、VASA Provider和SRA虚拟设备的"Max IOPS" QoS指标配置的新VVol数据存储库。' 
+---
+= 迁移具有较旧存储功能配置文件的虚拟机
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您使用的是最新版本的Virtual Storage Console (VSC)、VASA Provider和Storage Replication Adapter (SRA)虚拟设备、 然后、您应将使用`MaxThroughput MBps`或`MaxThroughput IOPS` QoS指标配置的虚拟机迁移到使用最新版本的VSC、VASA Provider和SRA虚拟设备的"`Max IOPS`"QoS指标配置的新VVol数据存储库。
+
+使用最新版本的VSC、VASA Provider和SRA虚拟设备、您可以为每个虚拟机或虚拟机磁盘(VMDK)配置QoS指标。QoS 指标先前应用于 ONTAP FlexVol 卷级别，并由该 FlexVol 卷上配置的所有虚拟机或 VMDK 共享。
+
+从VSC、VASA Provider和SRA虚拟设备7.2版开始、一个虚拟机的QoS指标不会与其他虚拟机共享。
+
+[NOTE]
+====
+您不能修改现有虚拟机存储策略，因为虚拟机可能会变得不合规。
+
+====
+.步骤
+. 使用具有所需`Max IOPS`值的新存储功能配置文件创建VVol数据存储库。
+. 创建 VM 存储策略，然后将新的 VM 存储策略映射到新的存储功能配置文件。
+. 使用新的虚拟机存储策略将现有虚拟机迁移到新创建的 VVol 数据存储库。
+

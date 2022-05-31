@@ -1,0 +1,18 @@
+---
+permalink: deploy/concept-configure-storage-replication-adapter-for-disaster-recovery.html 
+sidebar: sidebar 
+keywords: configuring, storage, replication, adapter, disaster, recovery, 
+summary: '如果要配置vCenter Server以进行灾难恢复、则必须在部署Virtual Storage Console (VSC)、VASA Provider和Storage Replication Adapter (SRA)虚拟设备后启用Storage Replication Adapter (SRA)。默认情况下、部署虚拟设备时会安装VSC。在部署虚拟设备后、您必须为vCenter Server启用SRA。' 
+---
+= 配置 Storage Replication Adapter 以进行灾难恢复
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果要配置vCenter Server以进行灾难恢复、则必须在部署Virtual Storage Console (VSC)、VASA Provider和Storage Replication Adapter (SRA)虚拟设备后启用Storage Replication Adapter (SRA)。默认情况下、部署虚拟设备时会安装VSC。在部署虚拟设备后、您必须为vCenter Server启用SRA。
+
+* 相关信息 *
+
+xref:task-enable-storage-replication-adapter.adoc[启用 Storage Replication Adapter]

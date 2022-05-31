@@ -1,0 +1,40 @@
+---
+permalink: deploy/reference-sra-adapter-installation-fails-with-script-error.html 
+sidebar: sidebar 
+keywords: storage, replication, adapter, installation, fails, with, script, error, 
+summary: SRA安装失败、并显示脚本错误 
+---
+= SRA安装失败、并显示脚本错误
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+
+
+== 问题描述
+
+在Windows 2008 R2上安装Storage Replication Adapter (SRA)失败、并显示凭据无效错误。
+
+
+
+== 发生原因
+
+出现此错误的原因可能是、在VSC、VASA Provider以及SRA和Windows 2008 R2的虚拟设备上启用了不同版本的传输层安全(TLS)。
+
+
+
+== 更正操作
+
+如果您尝试在Windows 2008 R2上安装SRA、则必须在维护控制台中执行以下步骤、为VSC、VASA Provider和SRA的虚拟设备启用TLSv1.0：
+
+. 使用"`m`"用户凭据登录到维护控制台。
+. 从主菜单中、为*应用程序配置*菜单选择* 1 *。
+. 在*应用程序配置*菜单中输入*。13*以从*应用程序配置*菜单中选择*启用TLS协议*。
+. 在TLS协议列表中选择* TLSv1*。
++
+VSC和VASA Provider服务将重新启动、并启用TLSv1.0。
+
+
+
+您还可以在Windows 2008 R2上启用TLSv1.2。

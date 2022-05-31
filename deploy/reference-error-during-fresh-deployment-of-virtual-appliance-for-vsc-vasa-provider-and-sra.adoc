@@ -1,0 +1,39 @@
+---
+permalink: deploy/reference-error-during-fresh-deployment-of-virtual-appliance-for-vsc-vasa-provider-and-sra.html 
+sidebar: sidebar 
+keywords: error, during, fresh, deployment, virtual, appliance, vsc, vasa, provider, sra, 
+summary: 全新部署 VSC ， VASA Provider 和 SRA 虚拟设备期间出错 
+---
+= 全新部署 VSC ， VASA Provider 和 SRA 虚拟设备期间出错
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+
+
+== 问题描述
+
+如果使用的vCenter ServerIPv4地址无效、则在全新部署VSC、VASA Provider和SRA虚拟设备期间会显示错误日志"`VMware tools OVF vCenter configuration not found`"。
+
+
+
+== 发生原因
+
+VSC、VASA Provider和SRA虚拟设备支持IPv4和IPv6地址。如果用户为vCenter Server提供的IPv4地址在网络中不可用、并且未提供IPv6地址、则这些日志程序消息将显示在维护控制台上。
+
+
+
+== 更正操作
+
+要删除此错误、应执行以下操作：
+
+. 登录到维护控制台。
+. 访问诊断Shell。
+. 使用``sudo su`命令将用户从"`dIAG`"更改为"`root``"。
+. 使用vi编辑器`vi /etc/network/interface`编辑接口文件。
+. 删除"`inet6`"条目。
+. 保存文件并重新启动VSC、VASA Provider和SRA虚拟设备。
+
+
+重新启动虚拟设备后、未发现任何错误消息。

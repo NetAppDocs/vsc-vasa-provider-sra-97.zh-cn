@@ -1,0 +1,34 @@
+---
+permalink: deploy/task-enable-vasa-provider-for-configuring-virtual-datastores.html 
+sidebar: sidebar 
+keywords: enabling, vasa, provider, for, configuring, virtual, datastores, 
+summary: '默认情况下、Virtual Storage Console (VSC)、VASA Provider和Storage Replication Adapter (SRA)虚拟设备已启用VASA Provider功能。您可以为每个 VVOL 数据存储库配置具有所需存储功能配置文件的 VMware 虚拟卷（ VVOL ）数据存储库。' 
+---
+= 启用 VASA Provider 以配置虚拟数据存储库
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+默认情况下、Virtual Storage Console (VSC)、VASA Provider和Storage Replication Adapter (SRA)虚拟设备已启用VASA Provider功能。您可以为每个 VVOL 数据存储库配置具有所需存储功能配置文件的 VMware 虚拟卷（ VVOL ）数据存储库。
+
+.开始之前
+* 您必须已设置 vCenter Server 实例并配置 ESXi 。
+* 您必须已部署VSC、VASA Provider和SRA虚拟设备。
+
+
+如果在升级到Virtual Storage Console (VSC)、VASA Provider和Storage Replication Adapter (SRA)虚拟设备9.7.1版之前禁用了VASA Provider功能、则在升级后、VASA Provider功能仍会处于禁用状态。此版本允许您为 VVol 数据存储库启用 VVol 复制功能。
+
+.步骤
+. 登录到 VMware vSphere 的 Web 用户界面。
+. 在vSphere Client中、单击菜单：菜单[虚拟存储控制台]。
+. 单击 * 设置 * 。
+. 单击 * 管理设置 * 选项卡中的 * 管理功能 * 。
+. 在*管理功能*对话框中、选择要启用的VASA Provider扩展。
+. 如果要对 VVOL 数据存储库使用复制功能，请使用 * 启用 VVOL 复制 * 切换按钮。
+. 输入VSC、VASA Provider和SRA虚拟设备的IP地址以及管理员密码、然后单击*应用*。
+
+
+如果您使用的是ONTAP 9.6或更早版本的集群、则必须向VASA Provider注册、以获取SAN VVOL虚拟机和SAN VVOL数据存储库报告中使用的VVOL数据存储库和虚拟机的详细信息。但是、如果您使用的是ONTAP 9.7或更高版本、则无需向VASA Provider注册。

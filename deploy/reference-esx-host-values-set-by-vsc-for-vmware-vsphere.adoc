@@ -1,0 +1,124 @@
+---
+permalink: deploy/reference-esx-host-values-set-by-vsc-for-vmware-vsphere.html 
+sidebar: sidebar 
+keywords: esxi, host, values, set, using, virtual, storage, console, vmware, vsphere, 
+summary: '您可以使用适用于VMware vSphere的Virtual Storage Console在ESXi主机上设置超时值和其他值、以确保性能最佳并成功进行故障转移。Virtual Storage Console (VSC)设置的值基于内部测试。' 
+---
+= 使用适用于VMware vSphere的Virtual Storage Console设置的ESXi主机值
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用适用于VMware vSphere的Virtual Storage Console在ESXi主机上设置超时值和其他值、以确保性能最佳并成功进行故障转移。Virtual Storage Console (VSC)设置的值基于内部测试。
+
+您可以在 ESXi 主机上设置以下值：
+
+
+
+== ESXi 高级配置
+
+* * VMFS3.HardwareAcceleratedLocking *
++
+应将此值设置为 1 。
+
+* * VMFS3.EnableBlockDelete*
++
+应将此值设置为 0 。
+
+
+
+
+
+== NFS 设置
+
+* * 网络 .TcpipHeapSize*
++
+如果您使用的是 vSphere 6.0 或更高版本，则应将此值设置为 32 。
+
+* * 网络 .TcpipHeapMax*
++
+如果您使用的是 vSphere 6.0 或更高版本，则应将此值设置为 1536 。
+
+* * 。 nfs.MaxVolumes*
++
+如果您使用的是 vSphere 6.0 或更高版本，则应将此值设置为 256 。
+
+* * NFS41.MaxVolumes*
++
+如果您使用的是 vSphere 6.0 或更高版本，则应将此值设置为 256 。
+
+* * 。 nfs.MaxQueueDepth*
++
+如果您使用的是 vSphere 6.0 或更高版本的 ESXi 主机，则应将此值设置为 128 或更高，以避免出现队列瓶颈。
+
++
+对于 6.0 之前的 vSphere 版本，应将此值设置为 64 。
+
+* * 。 nfs.HeartbeatMaxFailures *
++
+对于所有 NFS 配置，应将此值设置为 10 。
+
+* * 。 nfs.HeartbeatFrequency*
++
+对于所有 NFS 配置，应将此值设置为 12 。
+
+* * 。 nfs.HeartbeatTimeout*
++
+对于所有 NFS 配置，应将此值设置为 5 。
+
+
+
+
+
+== FC/FCoE 设置
+
+* * 路径选择策略 *
++
+使用具有 ALUA 的 FC 路径时，应将此值设置为 "`RR` " （轮循）。
+
++
+对于所有其他配置，应将此值设置为 "`FIXED` " 。
+
++
+将此值设置为 "`RR` " 有助于在所有主动 / 优化路径之间实现负载平衡。值 "`FIXED` " 用于较早的非 ALUA 配置，有助于防止代理 I/O
+
+* * 磁盘 .QFullSampleSize*
++
+对于所有配置，应将此值设置为 32 。设置此值有助于防止出现 I/O 错误。
+
+* * 磁盘 .QFullThreshold *
++
+对于所有配置，应将此值设置为 8 。设置此值有助于防止出现 I/O 错误。
+
+* * Emulex FC HBA 超时 *
++
+使用默认值。
+
+* * QLogic FC HBA 超时 *
++
+使用默认值。
+
+
+
+
+
+== iSCSI 设置
+
+* * 路径选择策略 *
++
+对于所有 iSCSI 路径，应将此值设置为 "`RR` " 。
+
++
+将此值设置为 "`RR` " 有助于在所有主动 / 优化路径之间实现负载平衡。
+
+* * 磁盘 .QFullSampleSize*
++
+对于所有配置，应将此值设置为 32 。设置此值有助于防止出现 I/O 错误。
+
+* * 磁盘 .QFullThreshold *
++
+对于所有配置，应将此值设置为 8 。设置此值有助于防止出现 I/O 错误。
+
+

@@ -1,0 +1,38 @@
+---
+permalink: deploy/task-configure-storage-replication-adapter-for-nas-environment.html 
+sidebar: sidebar 
+keywords: configuring, storage, replication, adapter, nas, environment, 
+summary: 在运行适用于 VMware vCenter Site Recovery Manager （ SRM ）的 Storage Replication Adapter （ SRA ）之前，必须配置存储系统。 
+---
+= 为 NAS 环境配置 Storage Replication Adapter
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在运行适用于 VMware vCenter Site Recovery Manager （ SRM ）的 Storage Replication Adapter （ SRA ）之前，必须配置存储系统。
+
+您必须已在受保护站点和恢复站点上安装以下程序：
+
+* SRM
++
+有关安装 SRM 的文档，请参见 VMware 站点。
+
++
+https://www.vmware.com/support/pubs/srm_pubs.html["VMware Site Recovery Manager 文档"^]
+
+* SRA
++
+适配器安装在 SRM 和 SRA 服务器上。
+
+
+
+.步骤
+. 验证受保护站点上的数据存储库是否包含已向 vCenter Server 注册的虚拟机。
+. 验证受保护站点上的ESXi主机是否已从挂载NFS导出卷。
+. 使用*阵列管理器*向导向SRM添加阵列时、验证是否在* NFS地址*字段中指定了有效地址、例如存在NFS导出的IP地址、主机名或FQDN。
+. 在恢复站点的每个ESXi主机上使用`ping`命令验证主机是否具有可从访问用于提供NFS导出的IP地址的VMkernel端口。
+
+
+https://mysupport.netapp.com/site/["NetApp 支持"^]

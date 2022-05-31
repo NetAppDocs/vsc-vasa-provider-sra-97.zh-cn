@@ -1,0 +1,27 @@
+---
+permalink: manage/task-mount-datastores-on-host.html 
+sidebar: sidebar 
+keywords: mounting, datastore, on, additional, hosts, 
+summary: 挂载数据存储库可为其他主机提供存储访问。将主机添加到 VMware 环境后，您可以将数据存储库挂载到其他主机上。 
+---
+= 在其他主机上挂载数据存储库
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+挂载数据存储库可为其他主机提供存储访问。将主机添加到 VMware 环境后，您可以将数据存储库挂载到其他主机上。
+
+您必须确保在 `Kaminoprefs.xml` 中输入 ESXi 托管的连接到的所有网络的子网详细信息。
+
+请参见 _VSC 9.6 部署和设置指南 _ 中的在不同子网之间启用数据存储库挂载一节。
+
+.步骤
+. 在vSphere Client *主页*页面中、单击*主机和集群*。
+. 在导航窗格中，选择包含主机的数据中心。
+. 对任何其他主机重复步骤 2 。
+. 右键单击主机并选择菜单：NetApp VSC[挂载数据存储库]。
+. 选择要挂载的数据存储库，然后单击 * 确定 * 。
+

@@ -1,0 +1,80 @@
+---
+permalink: deploy/concept-virtual-storage-console-overview.html 
+sidebar: sidebar 
+keywords: overview, virtual, appliance, vsc, vasa, provider, sra, 
+summary: 'Virtual Storage Console (VSC)、VASA Provider和Storage Replication Adapter (SRA)虚拟设备可为使用NetApp存储系统的VMware环境中的虚拟机提供端到端生命周期管理。它支持管理员直接管理 vCenter Server 中的存储，从而简化了 VMware 环境的存储和数据管理。' 
+---
+= VSC、VASA Provider和SRA虚拟设备概述
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Virtual Storage Console (VSC)、VASA Provider和Storage Replication Adapter (SRA)虚拟设备可为使用NetApp存储系统的VMware环境中的虚拟机提供端到端生命周期管理。它支持管理员直接管理 vCenter Server 中的存储，从而简化了 VMware 环境的存储和数据管理。
+
+在 vSphere 6.5 中， VMware 引入了一个基于 HTML5 的新客户端，称为 vSphere Client 。VSC、VASA Provider和SRA虚拟设备9.6版仅支持vSphere Client。VSC、VASA Provider和SRA虚拟设备可与vSphere Client集成、并允许您使用单点登录(Single Sign-On、SSO)服务。在具有多个 vCenter Server 实例的环境中，要管理的每个 vCenter Server 实例都必须有自己注册的 VSC 实例。
+
+VSC、VASA Provider和SRA虚拟设备中的每个组件均提供有助于更高效地管理存储的功能。
+
+
+
+== Virtual Storage Console （ VSC ）
+
+使用 VSC 可以执行以下任务：
+
+* 向VSC添加存储控制器、分配凭据以及设置存储控制器的权限、SRA和VASA Provider均可利用这些功能
+* 配置数据存储库
+* 监控 vCenter Server 环境中数据存储库和虚拟机的性能
+* 通过在两个级别使用基于角色的访问控制（ RBAC ）来控制管理员对 vCenter Server 对象的访问：
++
+** vSphere 对象，例如虚拟机和数据存储库
++
+这些对象通过 vCenter Server RBAC 进行管理。
+
+** ONTAP 存储
++
+存储系统可使用 ONTAP RBAC 进行管理。
+
+
+
+* 查看和更新连接到存储的ESXi主机的主机设置
+
+
+VSC配置操作可通过使用适用于VMware vStorage APIs for Array Integration (VAAI)的NFS插件受益。适用于 VAAI 的 NFS 插件是一个软件库，它集成了 ESXi 主机上安装的 VMware 虚拟磁盘库。通过 VMware VAAI 软件包，可以将某些任务从物理主机卸载到存储阵列。您可以在阵列级别执行精简配置和硬件加速等任务，以减少 ESXi 主机上的工作负载。副本卸载功能和空间预留功能可提高 VSC 操作的性能。
+
+VSC 未附带适用于 VAAI 的 NetApp NFS 插件。但是、您可以从下载此插件安装包并获取有关安装此插件的说明。
+
+
+
+== VASA 提供程序
+
+适用于 ONTAP 的 VASA Provider 使用 VMware vSphere APIs for Storage Awareness （ VASA ）将有关 VMware vSphere 使用的存储的信息发送到 vCenter Server 。VSC、VASA Provider和SRA、VASA Provider的虚拟设备与VSC集成在一起、您可以通过VASA Provider执行以下任务：
+
+* 配置 VMware 虚拟卷（ VVOL ）数据存储库
+* 创建和使用存储功能配置文件，为您的环境定义不同的存储服务级别目标（ SLO ）
+* 验证数据存储库和存储功能配置文件之间的合规性
+* 设置警报，以便在卷和聚合接近阈值限制时向您发出警告
+* 监控虚拟机磁盘（ Virtual Machine Disk ， VMDK ）和 VVol 数据存储库上创建的虚拟机的性能
+
+
+如果您使用的是ONTAP 9.6或更早版本、则VASA Provider将使用VASA API与vCenter Server进行通信、并使用称为ZAPI的API与ONTAP 进行通信。要查看ONTAP 9.6及更早版本的VVol信息板、您必须已安装vCenter Server并将其注册到vCenter Server中。如果您使用的是ONTAP 9.7、则无需向VASA Provider注册即可查看VVOL信息板。
+
+[NOTE]
+====
+对于 ONTAP 9.6 及更早版本， VASA Provider 需要一个专用的 OnCommand API 服务实例。一个 OnCommand API 服务实例不能与多个 VASA Provider 实例共享。
+
+====
+
+
+== Storage Replication Adapter （ SRA ）
+
+启用 SRA 并将其与 VMware Site Recovery Manager （ SRM ）结合使用后，您可以在发生故障时恢复 vCenter Server 数据存储库和虚拟机。通过SRA、您可以在环境中配置受保护站点和恢复站点、以便在发生故障时进行灾难恢复。
+
+* 相关信息 *
+
+https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62040["NetApp文档：OnCommand API服务"^]
+
+http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=61278["NetApp 文档：适用于 VMware VAAI 的 NetApp NFS 插件"^]
+
+https://mysupport.netapp.com/site/["NetApp 支持"^]

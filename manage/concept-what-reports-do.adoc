@@ -1,0 +1,24 @@
+---
+permalink: manage/concept-what-reports-do.html 
+sidebar: sidebar 
+keywords: what, reports, do, 
+summary: 报告可显示有关数据存储库和虚拟机的详细信息、使您可以查看和确定vCenter Server中数据存储库和虚拟机的潜在问题。 
+---
+= 报告的作用
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+报告可显示有关数据存储库和虚拟机的详细信息、使您可以查看和确定vCenter Server中数据存储库和虚拟机的潜在问题。
+
+您可以查看，排序和导出报告。
+
+Virtual Storage Console （ VSC ）提供了以下预定义报告：
+
+* 数据存储库报告
+* 虚拟机报告
+* VVol数据存储库报告
+* VVol虚拟机报告
+

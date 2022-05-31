@@ -1,0 +1,42 @@
+---
+permalink: manage/reference-thick-provision-fails-for-vvol-datastores-on-ontap-9-4.html 
+sidebar: sidebar 
+keywords: thick, provisioning, of, VVols, fails, for, ONTAP, 9.4, storage, systems, 
+summary: '如果ONTAP 9.4存储系统上的VVol数据存储库不包含厚配置FlexVol 卷、则对虚拟卷(VVol)进行厚配置将失败。' 
+---
+= ONTAP 9.4存储系统的VVOL厚配置失败
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果ONTAP 9.4存储系统上的VVol数据存储库不包含厚配置FlexVol 卷、则对虚拟卷(VVol)进行厚配置将失败。
+
+
+
+== 问题描述
+
+配置VVol时、您可能会收到如下错误消息：
+
+[listing]
+----
+com.netapp.vasa.vvol.exceptions.OutOfResourceException: Unable to find a location
+for a vvol of size 4,096 in storage container vvol_nfs_new - Checked 1 places.
+Specific reasons were vvol_nfs_new | Final Score: 0 | 100 -> 0 : FlexVol of
+vvol_nfs_new does not support required storage profile, details [FlexVolume with
+name vvol_nfs_new is not thick provisioned]
+----
+
+
+== 发生原因
+
+如果VVOL上没有任何厚配置的FlexVol 卷、则会发生此错误。
+
+
+
+== 解决方案
+
+. 添加一个新的FlexVol 卷、该卷具有为VVOL启用厚配置的存储功能。
+. 使用FlexVol 卷创建新虚拟机。
+

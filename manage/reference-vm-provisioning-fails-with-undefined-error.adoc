@@ -1,0 +1,42 @@
+---
+permalink: manage/reference-vm-provision-fails-with-undefined-error.html 
+sidebar: sidebar 
+keywords: virtual, machine, provisioning, fails, with, an, undefined, error, 
+summary: 虚拟机配置操作、例如创建、克隆、启动、关闭、暂停、 在VVOL数据存储库上迁移和更新VM存储配置文件可能会失败、并在任务管理器中显示一条通用错误消息、该消息不指示问题描述 是使用VASA Provider还是VMware。 
+---
+= 虚拟机配置失败、并出现未定义的错误
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+虚拟机配置操作、例如创建、克隆、启动、关闭、暂停、 在VVOL数据存储库上迁移和更新VM存储配置文件可能会失败、并在任务管理器中显示一条通用错误消息、该消息不指示问题描述 是使用VASA Provider还是VMware。
+
+
+
+== 问题描述
+
+您在任务管理器中收到错误消息、例如`未在候选卷中找到符合指定要求的合适卷。`
+
+
+
+== 发生原因
+
+此错误可能是由于VMware、VASA Provider或ONTAP 存储出现问题而导致的。此错误消息可能未指定失败的确切原因。问题描述 也可能是由于大型存储系统环境中包含大量Storage Virtual Machine (SVM)、卷和LUN所致。在后台对此类存储系统运行的定期发现操作需要一些时间发生原因 、如果同时触发这些操作、则可能会导致虚拟机配置操作超时。
+
+
+
+== 更正操作
+
+. 通过检查`/opt/netapp/vpserver/logs/error.log`、`vvolvp.log`和`zapi_error.log`日志文件、验证问题描述 是使用VASA Provider还是ONTAP 存储。
++
+** 如果出现`NaException com.netapp.offtap3.ontap.ApiFailedException:等错误、则在候选卷中未找到符合指定要求的合适卷。详细信息：VVol放置：类型：放置候选卷：vvol_nfs_pb2、vvol_nfs_pb1性能：最大IOPS大小：4 GB保障空间：未承诺IOPS不足的错误卷：vvol_nfs_pb1、vvol_nfs_pb2结果：成功(errno=13001)`已报告、则应采取更正操作、例如增加存储管理员的帮助。
+** 只有在后台未运行发现操作时、才必须运行配置操作。如果VASA Provider日志文件中报告的错误不具体、则应联系技术支持以解决此问题描述。
+
+
+. 如果VASA Provider日志文件中未报告任何特定错误、请检查`sps.log`日志文件以验证问题描述 是否与VMware有关、然后根据报告的错误采取适当的更正操作。
++
+如果在`sps.log`日志文件中报告的错误不具体、则应联系VMware管理员解决此问题描述。
+
+

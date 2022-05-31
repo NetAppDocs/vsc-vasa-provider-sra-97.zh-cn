@@ -1,0 +1,46 @@
+---
+permalink: deploy/reference-metrocluster-configurations-supported-by-virtual-appliance-for-vsc-vasa-provider-and-sra.html 
+sidebar: sidebar 
+keywords: metroCluster, configurations, supported, virtual, appliance, vsc, vasa, provider, sra, 
+summary: 'Virtual Storage Console (VSC)、VASA Provider和Storage Replication Adapter (SRA)虚拟设备支持对ONTAP 使用MetroCluster IP和FC配置的环境。大多数情况下，这种支持都是自动提供的。但是，在将 MetroCluster 环境与 VSC 和 VASA Provider 结合使用时，您可能会注意到一些不同之处。' 
+---
+= VSC、VASA Provider和SRA虚拟设备支持的MetroCluster 配置
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Virtual Storage Console (VSC)、VASA Provider和Storage Replication Adapter (SRA)虚拟设备支持对ONTAP 使用MetroCluster IP和FC配置的环境。大多数情况下，这种支持都是自动提供的。但是，在将 MetroCluster 环境与 VSC 和 VASA Provider 结合使用时，您可能会注意到一些不同之处。
+
+
+
+== MetroCluster 配置和 VSC
+
+您必须确保 VSC 发现主站点和二级站点上的存储系统控制器。通常， VSC 会自动发现存储控制器。如果您使用的是集群管理 LIF ，则最好验证 VSC 是否已发现两个站点上的集群。否则，您可以手动将存储控制器添加到 VSC 中。您还可以修改 VSC 用于连接到存储控制器的用户名和密码对。
+
+发生切换时、二级站点上的将接管。这些名称后面附加了"`-mc`"后缀。如果在执行配置数据存储库等操作时发生切换操作、则数据存储库所在的的名称将更改为包含"`-mc`"后缀。发生切回时、此后缀将被丢弃、而主站点上的将恢复控制。
+
+[NOTE]
+====
+如果已将直接使用MetroCluster 配置添加到VSC、则在切换后、SVM名称的更改(添加"`-mc`"后缀)不会反映出来。所有其他切换操作将继续正常执行。
+
+====
+发生切换或切回时， VSC 可能需要几分钟的时间来自动检测和发现集群。如果在执行 VSC 操作（例如配置数据存储库）时发生这种情况，则可能会出现延迟。
+
+
+
+== MetroCluster 配置和 VASA Provider
+
+VASA Provider 会自动支持使用 MetroCluster 配置的环境。切换在 VASA Provider 环境中是透明的。您不能直接添加到VASA Provider。
+
+[NOTE]
+====
+在切换后、VASA Provider不会在二级站点上的名称后面附加"`-mc`"后缀。
+
+====
+
+
+== MetroCluster 配置和SRA
+
+SRA 不支持 MetroCluster 配置。

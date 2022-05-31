@@ -1,0 +1,32 @@
+---
+permalink: manage/concept-considerations-for-creating-and-editing-storage-capability-profiles.html 
+sidebar: sidebar 
+keywords: considerations, for, creating, and, editing, storage, capability, profiles, 
+summary: 您应了解创建和编辑存储功能配置文件的注意事项。 
+---
+= 创建和编辑存储功能配置文件的注意事项
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您应了解创建和编辑存储功能配置文件的注意事项。
+
+* 您只能在 AFF 系统上配置最小 IOPS 。
+* 您可以在虚拟卷（ VVol ）数据存储库级别配置 QoS 指标。
++
+通过此功能，可以更灵活地为虚拟数据存储库上配置的同一虚拟机的不同 VMDK 分配不同的 QoS 指标。
+
+* 您可以为 FAS 和 AFF 数据存储库配置存储功能配置文件。
++
+对于 FAS 系统，可以将空间预留配置为厚或精简，但对于 AFF 系统，空间预留只能配置为精简。
+
+* 您可以使用存储功能配置文件为数据存储库提供加密。
+* 从Virtual Storage Console (VSC)、VASA Provider和Storage Replication Adapter (SRA)虚拟设备的早期版本升级到VSC、VASA Provider和SRA虚拟设备的最新版本后、您无法修改现有存储功能配置文件。
++
+保留原有存储功能配置文件以实现向后兼容性。如果未使用默认模板、则在升级到VSC、VASA Provider和SRA虚拟设备的最新版本期间、现有模板将被覆盖、以反映与存储功能配置文件的性能相关的新QoS指标。
+
+* 您不能修改或使用原有存储功能配置文件来配置新的虚拟数据存储库或 VM 存储策略。
+* 您必须对所有新数据存储库使用新的存储功能配置文件。
+

@@ -1,0 +1,62 @@
+---
+permalink: deploy/concept-standard-roles-packaged-with-virtual-appliance-for-vsc-vp-and-sra.html 
+sidebar: sidebar 
+keywords: standard, roles, packaged, virtual, appliance, vsc, vasa, provider, sra, 
+summary: '为了简化vCenter Server特权和基于角色的访问控制(Role-Based Access Control、RBAC)的使用、(VSC)提供了标准VSC角色、可用于执行关键VSC任务。此外，您还可以使用只读角色查看 VSC 信息，但不能执行任何任务。' 
+---
+= VSC、VASA Provider和SRA虚拟设备随附的标准角色
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+为了简化vCenter Server特权和基于角色的访问控制(Role-Based Access Control、RBAC)的使用、(VSC)提供了标准VSC角色、可用于执行关键VSC任务。此外，您还可以使用只读角色查看 VSC 信息，但不能执行任何任务。
+
+标准 VSC 角色具有用户执行 VSC 任务所需的 VSC 专用特权和原生 vCenter Server 特权。此外，这些角色会进行设置，以便在所有受支持的 vCenter Server 版本中具有所需的特权。
+
+作为管理员，您可以根据需要将这些角色分配给用户。
+
+[NOTE]
+====
+将 VSC 升级到最新版本时，标准角色会自动升级以使用新版本的 VSC 。
+
+====
+您可以单击vSphere Client *主页*页面上的*角色*来查看VSC标准角色。
+
+通过 VSC 提供的角色，您可以执行以下任务：
+
+[cols="1a,1a"]
+|===
+| Role | Description 
+
+
+ a| 
+VSC 管理员
+ a| 
+提供执行所有 VSC 任务所需的所有原生 vCenter Server 特权和 VSC 专用特权。
+
+
+
+ a| 
+VSC 只读
+ a| 
+提供对 VSC 的只读访问权限。
+
+这些用户无法执行任何受访问控制的 VSC 操作。
+
+
+
+ a| 
+VSC 配置
+ a| 
+提供配置存储所需的所有原生 vCenter Server 特权和 VSC 专用特权。
+
+您可以执行以下任务：
+
+* 创建新数据存储库
+* 销毁数据存储库
+* 查看有关存储功能配置文件的信息
+
+
+|===

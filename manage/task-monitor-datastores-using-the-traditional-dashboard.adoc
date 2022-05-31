@@ -1,0 +1,44 @@
+---
+permalink: manage/task-monitor-datastores-using-the-traditional-dashboard.html 
+sidebar: sidebar 
+keywords: monitoring, datastores, virtual, machines, using, the, traditional, dashboard, 
+summary: 您可以使用Virtual Storage Console、VASA Provider和Storage Replication Adapter虚拟设备的传统信息板监控传统数据存储库和虚拟机。通过信息板数据，您可以分析数据存储库使用情况并采取更正操作，以防止虚拟机受到与空间相关的限制。 
+---
+= 使用传统信息板监控数据存储库和虚拟机
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用Virtual Storage Console、VASA Provider和Storage Replication Adapter虚拟设备的传统信息板监控传统数据存储库和虚拟机。通过信息板数据，您可以分析数据存储库使用情况并采取更正操作，以防止虚拟机受到与空间相关的限制。
+
+您应在配置存储 I/O 控制对话框中选择 * 启用存储 I/O 控制和统计信息收集 * 或 * 禁用存储 I/O 控制但启用统计信息收集 * 选项。只有在从 VMware 获得 Enterprise Plus 许可证后，才能启用存储 I/O 控制。
+
+https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.resmgmt.doc/GUID-BB5D9BAB-9E0E-4204-A76A-54634CD8AD51.html["VMware vSphere 文档：启用存储 I/O 控制"^]
+
+VSC信息板可显示从vCenter Server获取的IOPS、已利用空间、延迟和已提交容量指标。ONTAP 为VSC信息板提供了卷空间节省指标。通过这些性能参数，您可以确定虚拟环境中的性能瓶颈，并采取更正措施来解决这些问题。
+
+通过VSC、VASA Provider和SRA虚拟设备的传统信息板、您可以查看NFS数据存储库或VMFS数据存储库。您可以单击某个数据存储库以导航到 vCenter Server 实例提供的数据存储库详细信息视图，以查看和修复 vCenter Server 中数据存储库的任何问题。
+
+.步骤
+. 在vSphere Client主页页面中、单击*虚拟存储控制台*。
+. 使用* vCenter Server*下拉菜单选择所需的vCenter Server以查看数据存储库。
+. 单击 * 传统信息板 * 。
++
+*数据存储库* portlet可提供以下详细信息：
+
++
+** vCenter Server 实例中由 VSC 管理的传统数据存储库的数量及其性能指标
+** 根据可修改的资源使用情况和性能参数排名前五位的数据存储库，如果需要，您可以根据已用空间， IOPS 或延迟以及所需顺序更改数据存储库列表。
+
+
++
+*虚拟机* portlet可提供以下详细信息：
+
++
+** 在 vCenter Server 中使用 NetApp 数据存储库的虚拟机数量
+** 根据已提交容量、延迟和正常运行时间排名前五位的虚拟机
+
+
+

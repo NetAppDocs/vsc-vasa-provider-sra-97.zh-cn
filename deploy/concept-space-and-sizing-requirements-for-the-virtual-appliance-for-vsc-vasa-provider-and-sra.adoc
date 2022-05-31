@@ -1,0 +1,29 @@
+---
+permalink: deploy/concept-space-and-size-requirements-for-the-virtual-appliance-for-vsc-vasa-provider-and-sra.html 
+sidebar: sidebar 
+keywords: virtual, storage, console, storage, replication, adapter, space, sizing, requirements, virtual, appliance, vsc, vasa, provider, sra, 
+summary: '在部署Virtual Storage Console (VSC)、VASA Provider和Storage Replication Adapter (SRA)虚拟设备之前、您应熟悉部署包的空间要求以及一些基本主机系统要求。' 
+---
+= VSC、VASA Provider和SRA虚拟设备的空间和大小要求
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在部署Virtual Storage Console (VSC)、VASA Provider和Storage Replication Adapter (SRA)虚拟设备之前、您应熟悉部署包的空间要求以及一些基本主机系统要求。
+
+* * 安装软件包空间要求 *
++
+** 2.1 GB 用于精简配置安装
+** 54.0 GB 用于厚配置安装
+
+
+* * 主机系统规模估算要求 *
++
+** ESXi 6.5U2或更高版本
+** 建议内存： 12 GB RAM
+** 建议的 CPU ： 2
+
+
+

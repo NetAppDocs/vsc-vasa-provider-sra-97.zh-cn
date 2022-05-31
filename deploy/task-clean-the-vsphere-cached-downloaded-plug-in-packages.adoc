@@ -1,0 +1,66 @@
+---
+permalink: deploy/task-clean-the-vsphere-cached-downloaded-plug-in-packages.html 
+sidebar: sidebar 
+keywords: clean, up, browser, cache, cleaning, the, vsphere, cached, downloaded, plug-in, packages, 
+summary: 如果在部署或升级VSC、VASA Provider和SRA虚拟设备后未自动更新插件、则应清理浏览器和vCenter Server上缓存的下载插件包以解决vCenter Server插件问题。 
+---
+= 清理vSphere缓存的已下载插件软件包
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果在部署或升级VSC、VASA Provider和SRA虚拟设备后未自动更新插件、则应清理浏览器和vCenter Server上缓存的下载插件包以解决vCenter Server插件问题。
+
+.步骤
+. 从现有 vSphere Web Client 或 vSphere Client 注销。
+. 删除浏览器缓存。
+. 删除 vSphere Client 缓存的插件软件包。
++
+[cols="1a,1a"]
+|===
+| 如果您使用的是 ... | 执行以下操作... 
+
+
+ a| 
+Windows vCenter 服务器
+ a| 
+删除位于以下位置的文件夹com.netapp.vasa.vvol.webclient-x.x.x.xxxx、com.netapp.nvpf.webclient-x.x.x.xxxx和com.netapp.vsch5-x.x.x.xxxx：
+
+** vSphere Web Client路径：C：\ProgramData\VMware\vCenterServer\cfg\vsphere-client\vc-packages\vsphere-client-serenity
+** vSphere Client (HTML5)路径：C：\ProgramData\VMware\vCenterServer\cfg\vsphere-ui\vc-packages\vsphere-client-serenity
+
+
+
+
+ a| 
+VCSA
+ a| 
+.. 通过 SSH 连接到 VCSA 设备。
+.. 使用 `cd /etc/vmware/vsphere-client/vc-packages/vsphere-client-serenity` 将目录更改为 vCenter Web 客户端 UI 扩展目录
+.. 使用以下命令删除缓存的插件软件包：
++
+*** `rm -rf com.netapp.vasa.vvol.webclient-x.x.x.xxxx`
+*** `rm -rf com.netapp.nvpf.webclient-x.x.x.xxxx`
+*** `rm -rf com.netapp.vsch5-x.x.x.xxxx`
+
+
+.. 使用 `cd /etc/vmware/vsphere-ui/vc-packages/vsphere-client-serenity` 将目录更改为 vCenter Client （ HTML5 ） UI 扩展目录
+.. 使用以下命令删除缓存的插件软件包：
++
+*** `rm -rf com.netapp.vasa.vvol.webclient-x.x.x.xxxx`
+*** `rm -rf com.netapp.nvpf.webclient-x.x.x.xxxx`
+*** `rm -rf com.netapp.vsch5-x.x.x.xxxx`
+
+
+
+
+|===
+. 使用以下命令登录到 vSphere 并重新启动 vSphere Web Client 和 vSphere Client 服务：
++
+** `sservice-control—停止vsphere-client vsphere-ui`
+** `sservice-control—启动vsphere-client vsphere-ui`
+
+
+

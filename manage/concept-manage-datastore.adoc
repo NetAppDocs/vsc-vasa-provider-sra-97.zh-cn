@@ -1,0 +1,14 @@
+---
+permalink: manage/concept-manage-datastore.html 
+sidebar: sidebar 
+keywords: managing, traditional, and, vvols, datastores, 
+summary: '您可以使用VSC界面管理传统数据存储库和VMware虚拟卷(VVOL)数据存储库、并执行数据存储库挂载、调整大小、编辑和删除操作。' 
+---
+= 管理传统数据存储库和VVOL数据存储库
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用VSC界面管理传统数据存储库和VMware虚拟卷(VVOL)数据存储库、并执行数据存储库挂载、调整大小、编辑和删除操作。

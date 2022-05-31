@@ -1,0 +1,71 @@
+---
+permalink: manage/concept-configure-vvols-datastores.html 
+sidebar: sidebar 
+keywords: configuring, vvols, datastores, virtual, volumes 
+summary: 您可以使用适用于 ONTAP 的 VASA Provider 创建和管理 VMware 虚拟卷（ VVOL ）。您可以配置，编辑，挂载和删除 VVOL 数据存储库。您也可以向 VVOL 数据存储库添加存储或从 VVOL 数据存储库中删除存储。以提高灵活性。您可以配置和管理每个虚拟机以及相关 VMDK 。 
+---
+= 配置VVOL数据存储库
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用适用于 ONTAP 的 VASA Provider 创建和管理 VMware 虚拟卷（ VVOL ）。您可以配置，编辑，挂载和删除 VVOL 数据存储库。您也可以向 VVOL 数据存储库添加存储或从 VVOL 数据存储库中删除存储。以提高灵活性。您可以配置和管理每个虚拟机以及相关 VMDK 。
+
+一个 VVOL 数据存储库由一个存储容器（也称为 "`后备存储` " ）中的一个或多个 FlexVol 卷组成。一个虚拟机可以分布在一个 VVOL 数据存储库或多个 VVOL 数据存储库中。
+
+虽然您可以创建包含多个 FlexVol 卷的 VVOL 数据存储库，但存储容器中的所有 FlexVol 卷都必须使用相同的协议（ NFS ， iSCSI 或 FCP ）和相同的 Storage Virtual Machine （ SVM ）。
+
+您不需要了解底层存储的详细信息。例如，您不必确定要包含此存储的特定 FlexVol 卷。将FlexVol 卷添加到VVOL数据存储库后、存储容器将管理存储要求、并防止在VM配置期间将VM配置 到无容量后备卷的任何情况。
+
+[NOTE]
+====
+最好在一个 VVOL 数据存储库中包含多个 FlexVol 卷，以提高性能和灵活性。由于 FlexVol 卷具有 LUN 计数限制，限制了虚拟机的数量，因此，包括多个 FlexVol 卷可以使您在 VVOL 数据存储库中存储更多虚拟机。
+
+====
+在设置过程中，您必须为要创建的 VVol 数据存储库指定存储功能配置文件。您可以为 VVOL 数据存储库选择一个或多个 VASA Provider 存储功能配置文件。您还可以为在该存储容器中自动创建的任何 VVOL 数据存储库指定默认存储功能配置文件。
+
+在虚拟机配置或 VMDK 创建期间， VASA Provider 会根据需要创建不同类型的 VVOL 。
+
+* * 配置 *
++
+VMware vSphere 使用此 VVOL 数据存储库来存储配置信息。
+
++
+在 SAN （块）实施中，存储是一个 4 GB 的 LUN 。
+
++
+在 NFS 实施中，此目录包含 VM 配置文件，例如 vmx 文件以及指向其他 VVOL 数据存储库的指针。
+
+* * 数据 *
++
+此 VVOL 包含操作系统信息和用户文件。
+
++
+在 SAN 实施中，此 LUN 与虚拟磁盘大小相同。
+
++
+在 NFS 实施中，此文件的大小与虚拟磁盘的大小相同。
+
+* * 交换 *
++
+此 VVOL 是在启动虚拟机时创建的，并在关闭虚拟机时删除。
+
++
+在 SAN 实施中，此 LUN 与虚拟内存大小相同。
+
++
+在 NFS 实施中，此文件大小与虚拟内存大小相同。
+
+* * 内存 *
++
+如果在创建 VM 快照时选择了内存快照选项，则会创建此 VVOL 。
+
++
+在 SAN 实施中，此 LUN 与虚拟内存大小相同。
+
++
+在 NFS 实施中，此文件大小与虚拟内存大小相同。
+
+

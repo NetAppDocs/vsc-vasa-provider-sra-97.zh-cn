@@ -1,0 +1,24 @@
+---
+permalink: deploy/task-configure-vasa-provider-to-work-with-ssh.html 
+sidebar: sidebar 
+keywords: configuring, vasa, provider, work, with, ssh, 
+summary: '您可以通过为Virtual Storage Console (VSC)、VASA Provider和Storage Replication Adapter (SRA)配置虚拟设备来将VASA Provider设置为使用SSH进行安全访问。' 
+---
+= 将 VASA Provider 配置为使用 SSH
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以通过为Virtual Storage Console (VSC)、VASA Provider和Storage Replication Adapter (SRA)配置虚拟设备来将VASA Provider设置为使用SSH进行安全访问。
+
+配置 SSH 时，您必须以维护用户身份登录。这是因为已禁用对 VASA Provider 的 root 访问。如果您使用其他登录凭据，则无法使用 SSH 访问 VASA Provider 。
+
+.步骤
+. 从vCenter Server中、打开VSC、VASA Provider和SRA虚拟设备的控制台。
+. 以维护用户身份登录。
+. 输入 `3` 以选择 * 系统配置 * 。
+. 输入 `6` 以选择 * 启用 SSH 访问 * 。
+. 在确认对话框中输入 `y` 。
+

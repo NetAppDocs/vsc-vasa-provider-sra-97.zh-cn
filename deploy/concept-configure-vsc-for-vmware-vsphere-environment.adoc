@@ -1,0 +1,23 @@
+---
+permalink: deploy/concept-configure-vsc-for-vmware-vsphere-environment.html 
+sidebar: sidebar 
+keywords: configuring, your, virtual, storage, console, vmware, vsphere, environment, 
+summary: '(VSC)支持多种环境。这些环境中的某些功能可能需要额外配置。' 
+---
+= 配置适用于VMware vSphere的Virtual Storage Console环境
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+(VSC)支持多种环境。这些环境中的某些功能可能需要额外配置。
+
+要配置 ESXi 主机，子操作系统和 VSC ，您可能需要执行以下某些任务：
+
+* 验证 ESXi 主机设置，包括 UNMAP 设置
+* 为子操作系统添加超时值
+* 重新生成 VSC SSL 证书
+* 创建存储功能配置文件和阈值警报
+* 修改首选项文件，以便在不同子网之间挂载数据存储库
+

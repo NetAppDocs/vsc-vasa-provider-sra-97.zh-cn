@@ -1,0 +1,20 @@
+---
+permalink: deploy/concept-how-to-download-the-virtual-appliance-for-vsc-vp-and-sra.html 
+sidebar: sidebar 
+keywords: download, the, virtual, appliance, vsc, vasa, provider, sra, 
+summary: 您可以从下载Virtual Storage Console、VASA Provider和Storage Replication Adapter虚拟设备的.ova文件。 
+---
+= 如何下载VSC、VASA Provider和SRA虚拟设备
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以从下载Virtual Storage Console、VASA Provider和Storage Replication Adapter虚拟设备的`……ova`文件。
+
+`.ova`文件包括VSC、VASA Provider和SRA。部署完成后，所有这三种产品都会安装在您的环境中。默认情况下，一旦您确定后续部署模式并根据您的要求选择是否启用 VASA Provider 和 SRA ， VSC 就会开始工作。
+
+您可以从下载VSC、VASA Provider和SRA虚拟设备 https://mysupport.netapp.com/site/products/all/details/vsc/downloads-tab["NetApp 支持站点"^] 使用软件下载页面。
+
+如果要在部署VSC、VASA Provider和SRA虚拟设备时启用SRA、则必须已在Site Recovery Manager (SRM)服务器上安装SRA插件。您可以从*软件下载*部分的*适用于ONTAP 的存储复制适配器*菜单下载SRA插件的安装文件。

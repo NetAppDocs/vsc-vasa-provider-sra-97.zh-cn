@@ -1,0 +1,16 @@
+---
+permalink: manage/concept-manage-disaster-recovery-setup-using-srm.html 
+sidebar: sidebar 
+keywords: managing, disaster, recovery, setup, by, using, site, recovery, manager, 
+summary: '您可以使用Site Recovery Manager (SRM)以及VMware的Site Recovery Manager (SRM)在vCenter Server中创建和管理灾难恢复设置。' 
+---
+= 使用Site Recovery Manager管理灾难恢复设置
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用Site Recovery Manager (SRM)以及VMware的Site Recovery Manager (SRM)在vCenter Server中创建和管理灾难恢复设置。
+
+此版本的VASA Provider现在内置了Storage Replicaction Adapter (SRA)的功能。如果您已在数据中心中配置 VVOL 数据存储库，则要恢复 VVOL 数据存储库，您无需单独安装 SRA 即可进行灾难恢复。在Site Recovery Manager (SRM)中、您必须对受保护站点和恢复站点进行配对。发生站点配对后， SRM 配置的下一部分涉及设置一个阵列对，使 SRM 能够与存储系统进行通信，以发现设备和设备复制。在配置阵列对之前，您必须先在 SRM 中创建一个站点对。

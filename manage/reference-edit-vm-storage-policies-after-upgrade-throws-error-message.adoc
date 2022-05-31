@@ -1,0 +1,31 @@
+---
+permalink: manage/reference-edit-vm-storage-policies-after-upgrade-throws-error-message.html 
+sidebar: sidebar 
+keywords: vasa, provider, issue, while, editing, VM, Storage, policies, after, upgrade, 
+summary: '从Virtual Storage Console (VSC)、VASA Provider和Storage Replication Adapter (SRA)虚拟设备7.0版升级到VSC、VASA Provider虚拟设备的最新版本后、 和SRA、如果在配置任何新存储功能配置文件之前尝试编辑现有虚拟机存储策略、则可能会显示以下错误消息：There are incorrect or missing values below.' 
+---
+= 升级后编辑VM存储策略时出现问题描述
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+从Virtual Storage Console (VSC)、VASA Provider和Storage Replication Adapter (SRA)虚拟设备7.0版升级到VSC、VASA Provider虚拟设备的最新版本后、 和SRA、如果您在配置任何新存储功能配置文件之前尝试编辑现有虚拟机存储策略、则可能会显示以下错误消息：`There are incorrect or missing values below`。
+
+
+
+== 发生原因
+
+如果您尚未创建任何新的存储功能配置文件、则可能会收到此错误。
+
+
+
+== 更正操作
+
+您必须执行以下操作：
+
+. 停止编辑VM存储策略。
+. 创建新的存储功能配置文件。
+. 修改所需的虚拟机存储策略。
+

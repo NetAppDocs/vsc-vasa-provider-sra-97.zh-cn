@@ -1,0 +1,86 @@
+---
+permalink: deploy/task-run-the-gos-timeout-scripts-for-rhel4-or-sles9.html 
+sidebar: sidebar 
+keywords: setting, timeout, values, linux, guest, operating, systems, 
+summary: 子操作系统（ OS ）超时脚本可为 Red Hat Enterprise Linux 版本 4 ， 5 ， 6 和 7 以及 SUSE Linux Enterprise Server 版本 9 ， 10 和 11 设置 SCSI I/O 超时设置。您可以指定 60 秒超时或 190 秒超时。每次升级到新版本的 Linux 时，都必须运行此脚本。 
+---
+= 为 Linux 子操作系统设置超时值
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+子操作系统（ OS ）超时脚本可为 Red Hat Enterprise Linux 版本 4 ， 5 ， 6 和 7 以及 SUSE Linux Enterprise Server 版本 9 ， 10 和 11 设置 SCSI I/O 超时设置。您可以指定 60 秒超时或 190 秒超时。每次升级到新版本的 Linux 时，都必须运行此脚本。
+
+您必须已挂载包含 Linux 脚本的 ISO 映像。
+
+.步骤
+. 访问 Linux 虚拟机的控制台，并登录到具有 root 权限的帐户。
+. 运行 `Linux_GoS_timeout-install.sh` 脚本。
++
+对于 Red Hat Enterprise Linux 4 或 SUSE Linux Enterprise Server 9 ，将显示类似以下内容的消息：
+
++
+[listing]
+----
+Restarting udev... this may take a few seconds.
+----
++
+[listing]
+----
+Setting I/O Timeout (60s) for /dev/sda - SUCCESS!
+----
++
+对于 Red Hat Enterprise Linux 5 ， Red Hat Enterprise Linux 6 和 Red Hat Enterprise Linux 7 ，将显示类似以下内容的消息：
+
++
+[listing]
+----
+patching file /etc/udev/rules.d/50-udev.rules
+----
++
+[listing]
+----
+Hunk #1 succeeded at 333 (offset 13 lines).
+----
++
+[listing]
+----
+Restarting udev... this may take a few seconds.
+----
++
+[listing]
+----
+Starting udev: [ OK ]
+----
++
+[listing]
+----
+Setting I/O Timeout (60s) for /dev/sda - SUCCESS!
+----
++
+对于 SUSE Linux Enterprise Server 10 或 SUSE Linux Enterprise Server 11 ，将显示类似以下内容的消息：
+
++
+[listing]
+----
+patching file /etc/udev/rules.d/50-udev-default.rules
+----
++
+[listing]
+----
+Hunk #1 succeeded at 114 (offset 1 line).
+----
++
+[listing]
+----
+Restarting udev ...this may take a few seconds.
+----
++
+[listing]
+----
+Updating all available device nodes in /dev:   done
+----
+. 卸载 ISO 映像。
+

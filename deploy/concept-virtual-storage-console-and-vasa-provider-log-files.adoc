@@ -1,0 +1,37 @@
+---
+permalink: deploy/concept-virtual-storage-console-and-vasa-provider-log-files.html 
+sidebar: sidebar 
+keywords: virtual, storage, console, vasa, provider, log, files, 
+summary: 遇到错误时，您可以检查 /opt/netapp/vscserver/log 目录和 /opt/netapp/vpserver/log 目录中的日志文件。 
+---
+= Virtual Storage Console 和 VASA Provider 日志文件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+遇到错误时，您可以检查 ` /opt/netapp/vscserver/log` 目录和 ` /opt/netapp/vpserver/log` 目录中的日志文件。
+
+以下三个日志文件有助于确定问题：
+
+* `cxf.log`、包含有关传入和传出VASA Provider的API流量的信息
+* `kaminoPrefs.xml`、包含有关VSC设置的信息
+* `vvolvp.log` ，包含有关 VASA Provider 的所有日志信息
+
+
+通过Virtual Storage Console (VSC)、VASA Provider和Storage Replication Adapter (SRA)虚拟设备的维护菜单、您可以根据需要设置不同的日志级别。可以使用以下日志级别：
+
+* 信息
+* 调试
+* error
+* 跟踪
+
+
+设置日志级别后，以下文件将更新：
+
+* VSC 服务器： `kamino.log` 和 `vvolvp.log`
+* VASA Provider 服务器： `vvolvp.log` ， `error.log` 和 `netapp.log`
+
+
+此外， VASA Provider Web 命令行界面（ CLI ）页面还包含已发出的 API 调用，返回的错误以及几个与性能相关的计数器。Web命令行界面页面位于` https：//<IP_address_or_hostname\>：9083/stats`。

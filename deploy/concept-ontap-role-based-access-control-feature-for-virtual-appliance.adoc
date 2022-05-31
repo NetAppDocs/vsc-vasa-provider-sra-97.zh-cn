@@ -1,0 +1,46 @@
+---
+permalink: deploy/concept-ontap-role-based-access-control-feature-for-virtual-appliance.html 
+sidebar: sidebar 
+keywords: ontap, role-based, access, control, virtual, appliance, vsc, vasa, provider, sra, 
+summary: '通过 ONTAP 基于角色的访问控制（ Role-Based Access Control ， RBAC ），您可以控制对特定存储系统的访问，并控制用户可以对这些存储系统执行的操作。在适用于VMware vSphere的虚拟存储控制台中、ONTAP RBAC与vCenter Server RBAC结合使用来确定特定用户可以对特定存储系统上的对象执行的虚拟存储控制台(VSC)任务。' 
+---
+= VSC、VASA Provider和SRA虚拟设备的ONTAP 基于角色的访问控制
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+通过 ONTAP 基于角色的访问控制（ Role-Based Access Control ， RBAC ），您可以控制对特定存储系统的访问，并控制用户可以对这些存储系统执行的操作。在适用于VMware vSphere的虚拟存储控制台中、ONTAP RBAC与vCenter Server RBAC结合使用来确定特定用户可以对特定存储系统上的对象执行的虚拟存储控制台(VSC)任务。
+
+VSC 使用您在 VSC 中设置的凭据（用户名和密码）对每个存储系统进行身份验证，并确定可以对该存储系统执行哪些存储操作。VSC 会为每个存储系统使用一组凭据。这些凭据决定了可以对该存储系统执行哪些 VSC 任务；换言之，这些凭据适用于 VSC ，而不是适用于单个 VSC 用户。
+
+ONTAP RBAC 仅适用于访问存储系统以及执行与存储相关的 VSC 任务，例如配置虚拟机。如果您对特定存储系统没有适当的 ONTAP RBAC 特权，则无法对该存储系统上托管的 vSphere 对象执行任何任务。您可以将 ONTAP RBAC 与 VSC 专用特权结合使用来控制用户可以执行的 VSC 任务：
+
+* 监控和配置存储系统上的存储或 vCenter Server 对象
+* 配置存储系统上的 vSphere 对象
+
+
+使用具有 VSC 专用权限的 ONTAP RBAC 可提供一个面向存储的安全层，存储管理员可以对其进行管理。因此，与单独的 ONTAP RBAC 或单独的 vCenter Server RBAC 相比，您可以更精细地控制访问。例如、使用vCenter Server RBAC时、您可以允许vCenterUserB在存储上配置数据存储库、同时防止vCenterUserA配置数据存储库。如果特定存储系统的存储系统凭据不支持创建存储，则 vCenterUserB 和 vCenterUserA 都无法在该存储系统上配置数据存储库。
+
+启动 VSC 任务时， VSC 会首先验证您是否具有执行此任务的正确 vCenter Server 权限。如果 vCenter Server 权限不足以执行此任务，则 VSC 不必检查该存储系统的 ONTAP 权限，因为您未通过初始 vCenter Server 安全检查。因此，您无法访问存储系统。
+
+如果 vCenter Server 权限足够，则 VSC 会检查与存储系统凭据（用户名和密码）关联的 ONTAP RBAC 特权（您的 ONTAP 角色） 确定您是否具有足够的权限来对该存储系统执行该 VSC 任务所需的存储操作。如果您具有正确的 ONTAP 权限，则可以访问存储系统并执行 VSC 任务。ONTAP 角色决定了您可以对存储系统执行的 VSC 任务。
+
+每个存储系统都有一组关联的 ONTAP 特权。
+
+同时使用 ONTAP RBAC 和 vCenter Server RBAC 具有以下优势：
+
+* 安全性
++
+管理员可以控制哪些用户可以在细化的 vCenter Server 对象级别和存储系统级别执行哪些任务。
+
+* 审核信息
++
+在许多情况下， VSC 会在存储系统上提供审核跟踪，使您能够将事件追溯到执行存储修改的 vCenter Server 用户。
+
+* 可用性
++
+您可以在一个位置维护所有控制器凭据。
+
+

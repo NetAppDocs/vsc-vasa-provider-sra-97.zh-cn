@@ -1,0 +1,45 @@
+---
+permalink: deploy/reference-key-points-about-assigning-and-modifying-permissions.html 
+sidebar: sidebar 
+keywords: key, points, about, assigning, modifying, permissions, vcenter, server, 
+summary: 在使用 vCenter Server 权限时，需要牢记几个要点。适用于VMware vSphere的Virtual Storage Console任务是否成功取决于您分配权限的位置或修改权限后用户执行的操作。 
+---
+= 有关为 vCenter Server 分配和修改权限的要点
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在使用 vCenter Server 权限时，需要牢记几个要点。适用于VMware vSphere的Virtual Storage Console任务是否成功取决于您分配权限的位置或修改权限后用户执行的操作。
+
+
+
+== 分配权限
+
+只有在希望限制对 vSphere 对象和任务的访问时，才需要设置 vCenter Server 权限。否则，您可以以管理员身份登录。通过此登录，您可以自动访问所有 vSphere 对象。
+
+您分配权限的位置决定了用户可以执行的 VSC 任务。
+
+有时，为了确保任务完成，您必须在更高的级别分配权限，例如根对象。如果任务需要的权限不适用于特定 vSphere 对象（例如跟踪任务），或者所需权限适用场景非 vSphere 对象（例如存储系统），则会出现这种情况。
+
+在这种情况下，您可以设置权限，使其由子实体继承。您还可以为子实体分配其他权限。分配给子实体的权限始终会覆盖从父实体继承的权限。这意味着，您可以通过对子实体的权限来限制分配给根对象并由子实体继承的权限的范围。
+
+
+TIP: 除非贵公司的安全策略要求限制性更强的权限，否则最好为根对象（也称为根文件夹）分配权限。
+
+
+
+== 权限和非 vSphere 对象
+
+您创建的权限将应用于非 vSphere 对象。例如，存储系统不是 vSphere 对象。如果某个权限适用场景存储系统，则必须将包含该权限的权限分配给 VSC 根对象，因为没有可分配给它的 vSphere 对象。
+
+例如，任何包含 VSC 权限 " 添加 / 修改 / 跳过存储系统 " 等权限的权限都必须在根对象级别分配。
+
+
+
+== 修改权限
+
+您可以随时修改一个权限。
+
+如果更改了某个权限中的权限，则与该权限关联的用户应先注销，然后重新登录，以启用更新后的权限。

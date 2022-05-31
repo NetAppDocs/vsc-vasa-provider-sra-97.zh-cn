@@ -1,0 +1,14 @@
+---
+permalink: manage/concept-configure-storage-capability-profiles.html 
+sidebar: sidebar 
+keywords: creating, storage, capability, profiles, provider 
+summary: 您可以通过适用于 ONTAP 的 VASA Provider 创建存储功能配置文件并将其映射到存储。这有助于您在整个存储中保持一致性。您还可以使用 VASA Provider 检查存储与存储功能配置文件之间的合规性。 
+---
+= 创建存储功能配置文件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以通过适用于 ONTAP 的 VASA Provider 创建存储功能配置文件并将其映射到存储。这有助于您在整个存储中保持一致性。您还可以使用 VASA Provider 检查存储与存储功能配置文件之间的合规性。

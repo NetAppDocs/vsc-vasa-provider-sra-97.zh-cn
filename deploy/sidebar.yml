@@ -1,0 +1,163 @@
+---
+section: deploy
+title: 部署和升级
+entries:
+- title: VSC、VASA Provider和SRA虚拟设备概述
+  url: "/deploy/concept-virtual-storage-console-overview.html"
+- title: 适用于VSC、VASA Provider和SRA虚拟设备新用户的部署工作流
+  url: "/deploy/concept-installation-workflow-for-new-users.html"
+  entries:
+  - title: 适用于VSC、VASA Provider和SRA的现有用户的部署工作流
+    url: "/deploy/concept-installation-workflow-for-existing-users-of-vsc.html"
+- title: 部署VSC、VASA Provider和SRA虚拟设备的要求
+  url: "/deploy/concept-requirements-for-deploying-the-virtual-appliance-for-vsc-vasa-provider-and-sra.html"
+  entries:
+  - title: VSC 的端口要求
+    url: "/deploy/reference-port-requirements-for-vsc.html"
+  - title: VSC、VASA Provider和SRA虚拟设备的空间和大小要求
+    url: "/deploy/concept-space-and-size-requirements-for-the-virtual-appliance-for-vsc-vasa-provider-and-sra.html"
+  - title: VSC、VASA Provider和SRA虚拟设备支持的存储系统、许可和应用程序
+    url: "/deploy/concept-supported-storage-system-and-applications.html"
+  - title: 部署VSC、VASA Provider和SRA虚拟设备的注意事项和要求
+    url: "/deploy/reference-considerations-for-deploying-virtual-appliance-for-vsc-vasa-provider-and-sra.html"
+- title: 部署或升级VSC、VASA Provider和SRA
+  url: "/deploy/concept-deploy-or-upgrade-ontap-tools.html"
+  entries:
+  - title: 如何下载VSC、VASA Provider和SRA虚拟设备
+    url: "/deploy/concept-how-to-download-the-virtual-appliance-for-vsc-vp-and-sra.html"
+  - title: 部署VSC、VASA Provider和SRA虚拟设备
+    url: "/deploy/task-deploy-ontap-tools.html"
+    entries:
+    - title: 部署自定义注意事项
+      url: "/deploy/reference-deploment-customization-requirements.html"
+  - title: 启用 VASA Provider 以配置虚拟数据存储库
+    url: "/deploy/task-enable-vasa-provider-for-configuring-virtual-datastores.html"
+    entries:
+    - title: 向VSC、VASA Provider和SRA虚拟设备注册
+      url: "/deploy/task-register-oncommand-api-services-with-the-virtual-appliance-for-vsc-vasa-provider-and-sra.html"
+  - title: 安装 NFS VAAI 插件
+    url: "/deploy/task-install-the-nfs-vaai-plug-in.html"
+  - title: 启用 Storage Replication Adapter
+    url: "/deploy/task-enable-storage-replication-adapter.html"
+    entries:
+    - title: 在 SRM 设备上配置 SRA
+      url: "/deploy/task-configure-sra-on-srm-appliance.html"
+    - title: 更新Storage Replication Adapter (SRA)凭据
+      url: "/deploy/task-update-sra-credentials.html"
+  - title: 将 Windows SRM 迁移到 SRM 设备
+    url: "/deploy/concept-migration-of-disaster-recovery-setup-from-windows-to-appliance.html"
+  - title: 升级到VSC、VASA Provider和SRA虚拟设备9.7.1
+    url: "/deploy/task-upgrade-to-the-9-7-1-virtual-appliance-for-vsc-vasa-provider-and-sra.html"
+  - title: 升级 Storage Replication Adapter
+    url: "/deploy/task-upgrade-storage-replication-adapter.html"
+- title: 配置适用于VMware vSphere的Virtual Storage Console环境
+  url: "/deploy/concept-configure-vsc-for-vmware-vsphere-environment.html"
+  entries:
+  - title: 配置 ESXi 服务器多路径和超时设置
+    url: "/deploy/task-configure-esx-server-multipathing-and-timeout-settings.html"
+    entries:
+    - title: 使用适用于VMware vSphere的Virtual Storage Console设置的ESXi主机值
+      url: "/deploy/reference-esx-host-values-set-by-vsc-for-vmware-vsphere.html"
+    - title: 配置子操作系统脚本
+      url: "/deploy/reference-configure-guest-operating-system-scripts.html"
+      entries:
+      - title: 设置 Windows 子操作系统的超时值
+        url: "/deploy/task-run-the-gos-timeout-scripts-for-windows.html"
+      - title: 设置 Solaris 子操作系统的超时值
+        url: "/deploy/task-run-the-gos-timeout-scripts-for-solaris.html"
+      - title: 为 Linux 子操作系统设置超时值
+        url: "/deploy/task-run-the-gos-timeout-scripts-for-rhel4-or-sles9.html"
+  - title: 为重新生成SSL证书
+    url: "/deploy/task-regenerate-an-ssl-certificate-for-vsc.html"
+  - title: 在多个vCenter Server环境中注册VSC的要求
+    url: "/deploy/concept-requirements-for-registering-vsc-in-multiple-vcenter-servers-environment.html"
+  - title: 配置 VSC 首选项文件
+    url: "/deploy/reference-configure-the-vsc-preferences-files.html"
+    entries:
+    - title: 设置IPv4或IPv6
+      url: "/deploy/reference-set-ipv4-or-ipv6.html"
+  - title: 在不同子网之间启用数据存储库挂载
+    url: "/deploy/task-enable-datastore-mounting-across-different-subnets.html"
+  - title: 访问VSC、VASA Provider和SRA虚拟设备的维护控制台选项
+    url: "/deploy/task-access-virtual-appliance-maiintenance-console-options.html"
+  - title: 更改管理员密码
+    url: "/deploy/task-change-the-administrative-password.html"
+  - title: 为VSC、VASA Provider和SRA虚拟设备配置高可用性
+    url: "/deploy/concept-configure-high-availability-for-virtual-appliance-for-vsc-vasa-provider-and-sra.html"
+    entries:
+    - title: VMware vSphere HA
+      url: "/deploy/concept-vmware-high-availability-for-vcenter-server.html"
+    - title: VMware vSphere 容错
+      url: "/deploy/concept-vmware-fault-tolerance-for-vcenter-server.html"
+  - title: VSC、VASA Provider和SRA虚拟设备支持的MetroCluster 配置
+    url: "/deploy/reference-metrocluster-configurations-supported-by-virtual-appliance-for-vsc-vasa-provider-and-sra.html"
+- title: 为VMware vSphere存储系统环境配置Virtual Storage Console
+  url: "/deploy/concept-configure-your-storage-system-environment.html"
+  entries:
+  - title: 设置存储系统的默认凭据
+    url: "/deploy/task-set-default-credentials-for-storage-systems.html"
+  - title: 将存储系统添加到 VSC
+    url: "/deploy/task-add-storage-systems.html"
+  - title: 发现存储系统和主机
+    url: "/deploy/task-discover-storage-systems-and-hosts.html"
+  - title: 刷新存储系统显示内容
+    url: "/deploy/task-refresh-the-storage-system-display.html"
+- title: 适用于VMware vSphere的VSC中的vCenter Server基于角色的访问控制功能
+  url: "/deploy/concept-vcenter-server-role-based-access-control-features-in-vsc-for-vmware-vsphere.html"
+  entries:
+  - title: vCenter Server 权限的组成部分
+    url: "/deploy/reference-components-that-make-up-vcenter-server-permissions.html"
+  - title: 有关为 vCenter Server 分配和修改权限的要点
+    url: "/deploy/reference-key-points-about-assigning-and-modifying-permissions.html"
+  - title: VSC、VASA Provider和SRA虚拟设备随附的标准角色
+    url: "/deploy/concept-standard-roles-packaged-with-virtual-appliance-for-vsc-vp-and-sra.html"
+    entries:
+    - title: 使用 VSC 标准角色的准则
+      url: "/deploy/concept-guidelines-for-using-vsc-standard-roles.html"
+  - title: VSC 任务所需的特权
+    url: "/deploy/concept-privileges-required-for-vsc-tasks.html"
+    entries:
+    - title: 适用于VMware vSphere的VSC所需的产品级特权
+      url: "/deploy/reference-product-level-privilege-required-by-vsc-for-vmware-vsphere.html"
+    - title: VSC、VASA Provider和SRA虚拟设备的ONTAP 基于角色的访问控制
+      url: "/deploy/concept-ontap-role-based-access-control-feature-for-virtual-appliance.html"
+    - title: 使用适用于VMware vSphere的VSC时的建议ONTAP 角色
+      url: "/deploy/concept-recommended-ontap-roles-when-using-vsc-for-vmware-vsphere.html"
+    - title: 如何为适用于VMware vSphere的VSC配置基于ONTAP 角色的访问控制
+      url: "/deploy/concept-how-to-configure-data-ontap-role-based-access-control-for-vsc-for-vmware-vsphere.html"
+    - title: 配置用户角色和权限
+      url: "/deploy/task-configure-user-role-and-privileges.html"
+- title: 配置 Storage Replication Adapter 以进行灾难恢复
+  url: "/deploy/concept-configure-storage-replication-adapter-for-disaster-recovery.html"
+  entries:
+  - title: 为 SAN 环境配置 Storage Replication Adapter
+    url: "/deploy/task-configure-storage-replication-adapter-for-san-environment.html"
+  - title: 为 NAS 环境配置 Storage Replication Adapter
+    url: "/deploy/reference-configure-storage-replication-adapter-for-nas-environment.html"
+  - title: 为高度扩展的环境配置Storage Replication Adapter
+    url: "/deploy/reference-configure-storage-replication-adapter-for-highly-scaled-environment.html"
+- title: 对VSC、VASA Provider和SRA虚拟设备的问题进行故障排除
+  url: "/deploy/concept-troubleshoot-issues-with-the-virtual-appliance-for-vsc-vasa-provider-and-sra.html"
+  entries:
+  - title: 清理vSphere缓存的已下载插件软件包
+    url: "/deploy/task-clean-the-vsphere-cached-downloaded-plug-in-packages.html"
+  - title: 卸载不会删除标准VSC角色
+    url: "/deploy/reference-uninstall-does-not-remove-standard-vsc-roles.html"
+  - title: VSC 和 VASA Provider 日志文件
+    url: "/deploy/concept-virtual-storage-console-and-vasa-provider-log-files.html"
+  - title: VSC和VASA Provider服务会在高度扩展的环境中重新启动
+    url: "/deploy/reference-vsc-and-vasa-provider-services-restart-in-scaled-environments.html"
+  - title: 将 VASA Provider 配置为使用 SSH
+    url: "/deploy/task-configure-vasa-provider-to-work-with-ssh.html"
+  - title: 配置VSC、VASA Provider和SRA虚拟设备、以使用SSH进行远程诊断访问
+    url: "/deploy/task-configure-vasa-provider-to-use-ssh-for-remote-diag-access.html"
+  - title: SRA安装失败、并显示脚本错误
+    url: "/deploy/reference-sra-adapter-installation-fails-with-script-error.html"
+  - title: SRA无法在高度扩展的环境中以最佳性能运行
+    url: "/deploy/reference-sra-fails-to-perform-optimally-in-a-highly-scaled-environment.html"
+  - title: 无法安装SRA插件
+    url: "/deploy/reference-unable-to-install-sra-plug-in-due-to-winhttp-proxy-settings.html"
+  - title: 适用于ONTAP 的NetApp存储复制适配器未显示在Site Recovery Manager设备上
+    url: "/deploy/reference-srm-does-not-work-after-sra-installation.html"
+  - title: 全新部署 VSC ， VASA Provider 和 SRA 虚拟设备期间出错
+    url: "/deploy/reference-error-during-fresh-deployment-of-virtual-appliance-for-vsc-vasa-provider-and-sra.html"

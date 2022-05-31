@@ -1,0 +1,47 @@
+---
+permalink: manage/reference-error-deleting-a-datastore-after-network-settings-are-changed.html 
+sidebar: sidebar 
+keywords: delete, datastore,troubleshooting errors 
+summary: 更改网络设置后删除数据存储库时出错 
+---
+= 更改网络设置后删除数据存储库时出错
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+
+
+== 问题描述
+
+更改VSC、VASA Provider和SRA虚拟设备的IP地址后、使用VSC界面执行某些操作时会显示错误。例如、删除数据存储库或尝试访问ESXi主机上的VASA Provider服务器。
+
+
+
+== 发生原因
+
+vCenter Server不会使用更新后的IP地址、而是会继续使用旧IP地址向VASA Provider发出调用。
+
+
+
+== 更正操作
+
+如果VSC、VASA Provider和SRA虚拟设备的IP地址发生更改、则应执行以下操作：
+
+. 从vCenter Server取消注册VSC。
+. 访问`https://<vcenter_ip>/mob`。
+. 单击菜单：Content[扩展管理器>取消注册扩展>取消注册所有com.netapp.extensions]。
+. 使用putty以root用户身份登录到vCenter Server。
+. 使用以下命令更改为vsphere-client-serenity目录：`cd /etc/vmware/vsphere-client/vc-packages/vsphere-client-serenity`。
+. 使用`vsphere-client stop`停止vSphere Client：服务。
+. 删除包含UI扩展的目录：`rm -rf com.netapp*`
+. 使用`vsphere-client start`启动vSphere Client：服务。
++
+此操作可能需要几分钟时间、vSphere Client才能正确重新启动和初始化。
+
+. 使用以下命令更改为vsphere-ui serenity目录：`/etc/vmware/vsphere-ui/vc-packages/vsphere-client-sereni/`。
+. 使用`vsphere-ui stop`停止vSphere UI：服务。
+. 删除包含UI扩展的目录：`rm -rf com.netapp*`
+. 使用`sservice-control -start vsphere-ui`启动vSphere UI。
+

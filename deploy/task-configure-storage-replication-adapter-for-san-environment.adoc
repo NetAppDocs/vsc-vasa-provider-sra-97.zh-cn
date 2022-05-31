@@ -1,0 +1,38 @@
+---
+permalink: deploy/task-configure-storage-replication-adapter-for-san-environment.html 
+sidebar: sidebar 
+keywords: configuring, storage, replication, adapter, san, environment, 
+summary: 在运行适用于 Site Recovery Manager （ SRM ）的 Storage Replication Adapter （ SRA ）之前，必须先设置存储系统。 
+---
+= 为 SAN 环境配置 Storage Replication Adapter
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在运行适用于 Site Recovery Manager （ SRM ）的 Storage Replication Adapter （ SRA ）之前，必须先设置存储系统。
+
+您必须已在受保护站点和恢复站点上安装以下程序：
+
+* SRM
++
+有关安装 SRM 的文档位于 VMware 站点上。
+
++
+https://www.vmware.com/support/pubs/srm_pubs.html["VMware Site Recovery Manager 文档"^]
+
+* SRA
++
+此适配器安装在 SRM 上。
+
+
+
+.步骤
+. 验证主 ESXi 主机是否已连接到受保护站点上主存储系统中的 LUN 。
+. 验证LUN是否位于主存储系统上已将`* osttype*`选项设置为_vmware_的igroup中。
+. 验证恢复站点上的ESXi主机是否与具有适当的FC或iSCSI连接。
++
+为此、您可以验证ESXi主机是否已在上连接本地LUN、也可以在上使用`fcp show initiators`命令或`iscsi show initiators`命令。
+
+

@@ -1,0 +1,73 @@
+---
+permalink: deploy/task-upgrade-to-the-9-7-1-virtual-appliance-for-vsc-vasa-provider-and-sra.html 
+sidebar: sidebar 
+keywords: virtual, storage, console, storage, replication, adapter, upgrading, to, the, 9.7.1, virtual, appliance, for, vsc, vasa, provider, sra, 
+summary: 您可以按照此处提供的说明、从现有9.7设置直接升级到VSC、VASA Provider和SRA虚拟设备9.7.1版。 
+---
+= 升级到VSC、VASA Provider和SRA虚拟设备9.7.1
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以按照此处提供的说明、从现有9.7设置直接升级到VSC、VASA Provider和SRA虚拟设备9.7.1版。
+
+.开始之前
+* 您必须已下载VSC、VASA Provider和SRA虚拟设备9.7.1版的`.ISO`文件。
+* 您必须至少预留12 GB RAM、以便VSC、VASA Provider和SRA在升级后以最佳状态运行。
+* 您必须清理 vSphere Client 浏览器缓存。
++
+xref:task-clean-the-vsphere-cached-downloaded-plug-in-packages.adoc[清理vSphere缓存的已下载插件软件包]
+
+
+
+升级后，现有部署中 VASA Provider 的状态将保留下来。升级后，您应根据需要手动启用或禁用 VASA Provider 。但是，即使未使用 VMware 虚拟卷（ VVOL ），最好启用 VASA Provider ，因为它可以为传统数据存储库配置启用存储功能配置文件并发出存储警报。
+
+[NOTE]
+====
+VSC、VASA Provider和SRA虚拟设备不支持从9.7之前的任何版本直接升级到9.7P2或更高版本。在升级到任何更高版本之前、您应先将现有设置升级到VSC、VASA Provider和SRA虚拟设备9.7版。如果要升级到VSC、VASA Provider和SRA虚拟设备9.7.1版、并且要使用VVOL复制、则需要再设置一个vCenter Server、其中包含安装了Site Recovery Manager (SRM)的虚拟设备。
+
+====
+.步骤
+. 将下载的`.iso`文件挂载到虚拟设备：
++
+.. 单击菜单：编辑设置[DVD/CD-ROM驱动器]。
+.. 从下拉列表中选择 * 数据存储 ISO 文件。
+.. 浏览并选择已下载的`.iso`文件、然后选中*启动时连接*复选框。
+
+
+. 访问已部署虚拟设备的*摘要*选项卡。
+. 单击 *image:../media/launch-maintenance-console.gif[""]* 以启动维护控制台。
+. 在 `M菜单` 提示符处，为 * 系统配置 * 输入选项 `2` ，然后为 * 升级 * 输入选项 `8` 。
++
+升级完成后、虚拟设备将重新启动。VSC、VASA Provider和SRA虚拟设备将使用与升级前相同的IP地址注册到vCenter Server。
+
+. 如果您希望VSC、VASA Provider和SRA虚拟设备使用IPv6地址注册到vCenter Server、则必须执行以下操作：
++
+.. 取消注册VSC、VASA Provider和SRA虚拟设备。
+.. 使用*注册*页面将VSC、VASA Provider和SRA虚拟设备的IPv6地址注册到vCenter Server。
+.. 注册后重新生成 VSC 和 VASA Provider 证书。
+
+
++
+[NOTE]
+====
+只有 vCenter Server 6.7 及更高版本才支持 IPv6 。
+
+====
+. 注销并重新登录到vSphere Client以查看为VSC、VASA Provider和SRA部署的虚拟设备。
++
+.. 从现有 vSphere Web Client 或 vSphere Client 注销并关闭窗口。
+.. 登录到 vSphere Client 。
++
+在 vSphere Client 中更新此插件可能需要几分钟的时间。
+
+
+
+
+
+* 相关信息 *
+
+xref:task-enable-vasa-provider-for-configuring-virtual-datastores.adoc[启用 VASA Provider 以配置虚拟数据存储库]

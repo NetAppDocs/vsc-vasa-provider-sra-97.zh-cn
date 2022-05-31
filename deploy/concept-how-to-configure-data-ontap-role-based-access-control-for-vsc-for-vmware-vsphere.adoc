@@ -1,0 +1,91 @@
+---
+permalink: deploy/concept-how-to-configure-data-ontap-role-based-access-control-for-vsc-for-vmware-vsphere.html 
+sidebar: sidebar 
+keywords: configure, ontap, role-based, access, control, vsc, vmware, vsphere, 
+summary: '如果要对适用于VMware vSphere的虚拟存储控制台(VSC)使用基于角色的访问控制、则必须在存储系统上配置ONTAP 基于角色的访问控制(Role-Based Access Control、RBAC)。您可以使用 ONTAP RBAC 功能创建一个或多个具有有限访问权限的自定义用户帐户。' 
+---
+= 如何为适用于VMware vSphere的VSC配置基于ONTAP 角色的访问控制
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果要对适用于VMware vSphere的虚拟存储控制台(VSC)使用基于角色的访问控制、则必须在存储系统上配置ONTAP 基于角色的访问控制(Role-Based Access Control、RBAC)。您可以使用 ONTAP RBAC 功能创建一个或多个具有有限访问权限的自定义用户帐户。
+
+VSC和SRA可以在集群级别或级别访问存储系统。如果要在集群级别添加存储系统，则必须提供管理员用户的凭据，以提供所有必需的功能。如果您要通过直接添加详细信息来添加存储系统、则必须注意"`vsadmin`"用户没有执行某些任务所需的所有角色和功能。
+
+VASA Provider 只能在集群级别访问存储系统。如果特定存储控制器需要 VASA Provider ，则必须在集群级别将存储系统添加到 VSC 中，即使您使用的是 VSC 或 SRA 也是如此。
+
+要创建新用户并将集群或连接到VSC、VASA Provider和SRA、您应执行以下操作：
+
+* 创建集群管理员或管理员角色
++
+[NOTE]
+====
+您可以使用以下方法之一创建这些角色：
+
+** ONTAP System Manager 9.7 或更高版本
+
+
+link:task-configure-user-role-and-privileges.html["配置用户角色和权限"^]
+
+** 适用于 ONTAP 的 RBAC User Creator 工具（如果使用的是 ONTAP 9.6 或更早版本）
+
+
+link:https://community.netapp.com/t5/Virtualization-Articles-and-Resources/RBAC-User-Creator-tool-for-VSC-VASA-Provider-and-Storage-Replication-Adapter-7-0/ta-p/133203/t5/Virtualization-Articles-and-Resources/How-to-use-the-RBAC-User-Creator-for-Data-ONTAP/ta-p/86601["适用于适用于 VMware vSphere 的 VSC ， VASA Provider 和 Storage Replication Adapter 7.0 的 RBAC User Creator 工具"^]
+
+====
+* 使用 ONTAP 创建已分配角色并设置了相应应用程序的用户
++
+要为 VSC 配置存储系统，您需要这些存储系统凭据。您可以通过在 VSC 中输入凭据来为 VSC 配置存储系统。每次使用这些凭据登录到存储系统时，您都将有权访问在创建凭据时在 ONTAP 中设置的 VSC 功能。
+
+* 将存储系统添加到 VSC 中，并提供您刚刚创建的用户的凭据
+
+
+
+
+== VSC 角色
+
+VSC 会将 ONTAP 特权分为以下几组 VSC 角色：
+
+* 发现
++
+用于发现所有已连接的存储控制器
+
+* 创建存储
++
+用于创建卷和逻辑单元号（ LUN ）
+
+* 修改存储
++
+启用存储系统的大小调整和重复数据删除
+
+* 销毁存储
++
+用于销毁卷和 LUN
+
+
+
+
+
+== VASA Provider 角色
+
+您只能在集群级别创建基于策略的管理。此角色支持使用存储功能配置文件对存储进行基于策略的管理。
+
+
+
+== SRA 角色
+
+SRA会在集群级别或级别将ONTAP 权限分为SAN或NAS角色。这样，用户就可以运行 SRM 操作。
+
+[NOTE]
+====
+如果要使用ONTAP 命令手动配置角色和权限、必须参考知识库文章。
+
+====
+* https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Virtual_Storage_Console_for_VMware_vSphere/VSC%2C_VASA%2C_and_SRA_7.0_ONTAP_RBAC_Configuration_Version_1["VSC ， VASA 和 SRA 7.0 ONTAP RBAC 配置"^]
+* https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Virtual_Storage_Console_for_VMware_vSphere/Roll_up_of_all_commands_for_VSC_and_SRA_for_SVM_level["在 SVM 级别汇总 VSC 和 SRA 的所有命令"^]
+
+
+将集群添加到 VSC 时， VSC 会对 ONTAP RBAC 角色执行初始权限验证。如果添加了直接存储IP、则VSC不会执行初始验证。VSC 会稍后在任务工作流中检查并强制实施这些特权。

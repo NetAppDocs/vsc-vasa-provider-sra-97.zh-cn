@@ -1,0 +1,136 @@
+---
+section: manage
+title: 管理
+entries:
+- title: 用于配置VSC、VASA Provider和SRA虚拟设备的工作流
+  url: "/manage/concept-workflow-for-configuring-the-unified-appliance.html"
+- title: 为VSC、VASA Provider和SRA配置存储系统
+  url: "/manage/concept-configure-storage-systems-for-vsc-vasa-provider-and-sra.html"
+  entries:
+  - title: 将存储系统添加到 VSC
+    url: "/manage/task-add-storage-systems.html"
+  - title: 设置存储系统的默认凭据
+    url: "/manage/task-set-default-credentials-for-storage-systems.html"
+  - title: 配置警报阈值
+    url: "/manage/task-configure-alarm-thresholds.html"
+- title: 创建存储功能配置文件
+  url: "/manage/concept-configure-storage-capability-profiles.html"
+  entries:
+  - title: 什么是存储功能
+    url: "/manage/concept-what-storage-capabilities-are.html"
+  - title: 创建和编辑存储功能配置文件的注意事项
+    url: "/manage/concept-considerations-for-creating-and-editing-storage-capability-profiles.html"
+  - title: 配置存储功能配置文件
+    url: "/manage/task-create-storage-capability-profiles.html"
+- title: 配置传统数据存储库和虚拟机
+  url: "/manage/concept-configure-traditional-datastores.html"
+  entries:
+  - title: 配置数据存储库
+    url: "/manage/task-provision-datastores.html"
+  - title: 将数据存储库映射到存储功能配置文件
+    url: "/manage/task-map-storage-to-storage-capability-profiles.html"
+  - title: 自动生成存储功能配置文件
+    url: "/manage/task-automatically-generate-scps.html"
+  - title: 验证数据存储库是否符合映射的存储功能配置文件
+    url: "/manage/task-check-for-datastore-compliance-with-the-mapped-storage-capability-profile.html"
+  - title: 使用传统信息板监控数据存储库和虚拟机
+    url: "/manage/task-monitor-datastores-using-the-traditional-dashboard.html"
+  - title: 编辑VSC、VASA Provider和SRA的ESXi主机设置
+    url: "/manage/task-edit-esxi-host-settings.html"
+- title: 配置VVOL数据存储库
+  url: "/manage/concept-configure-vvols-datastores.html"
+  entries:
+  - title: 为VVOL数据存储库配置复制
+    url: "/manage/concept-configure-replication-for-vvols-datastore.html"
+  - title: 配置 VVOL 数据存储库
+    url: "/manage/task-provision-vvol-datastores.html"
+  - title: 使用VVol信息板监控VVol数据存储库和虚拟机
+    url: "/manage/task-monitor-vvols-datastores-and-virtual-machines-using-vvols-dashboard.html"
+    entries:
+    - title: VVol信息板数据要求
+      url: "/manage/reference-verify-vvol-dashboard-data-requirements.html"
+- title: 使用Site Recovery Manager管理灾难恢复设置
+  url: "/manage/concept-manage-disaster-recovery-setup-using-srm.html"
+  entries:
+  - title: 配置 VM 存储策略
+    url: "/manage/task-configure-vm-storage-policies.html"
+  - title: 配置保护组
+    url: "/manage/task-configure-protection-groups.html"
+  - title: 将受保护站点和恢复站点配对
+    url: "/manage/task-pair-protected-and-recovery-sites.html"
+  - title: 配置受保护站点和恢复站点资源
+    url: "/manage/concept-configure-protected-and-recovery-site-resources.html"
+    entries:
+    - title: 配置网络映射
+      url: "/manage/task-configure-network-mappings.html"
+    - title: 配置文件夹映射
+      url: "/manage/task-configure-folder-mappings.html"
+    - title: 配置资源映射
+      url: "/manage/task-configure-resource-mappings.html"
+    - title: 映射存储策略
+      url: "/manage/task-map-storage-policies.html"
+    - title: 配置占位数据存储库
+      url: "/manage/task-configure-placeholder-datastores.html"
+    - title: 使用阵列管理器配置SRA
+      url: "/manage/task-configure-array-manager.html"
+  - title: 验证复制的存储系统
+    url: "/manage/task-verify-the-replicated-storage-environment.html"
+  - title: 保护未受保护的虚拟机
+    url: "/manage/task-protect-non-protected-virtual-machines.html"
+- title: 管理传统数据存储库和VVOL数据存储库
+  url: "/manage/concept-manage-datastore.html"
+  entries:
+  - title: 在其他主机上挂载数据存储库
+    url: "/manage/task-mount-datastores-on-host.html"
+  - title: 调整数据存储库大小
+    url: "/manage/task-resize-datastores.html"
+  - title: 编辑 VVOL 数据存储库
+    url: "/manage/task-edit-a-vvol-datastore.html"
+  - title: 将AD存储添加到VVol数据存储库
+    url: "/manage/task-add-storage-to-a-vvol-datastore.html"
+  - title: 从VVol数据存储库中删除存储
+    url: "/manage/task-remove-storage-from-a-vvols-datastore.html"
+  - title: 挂载 VVOL 数据存储库
+    url: "/manage/task-mount-a-vvol-datastore.html"
+  - title: 迁移或克隆虚拟机的注意事项
+    url: "/manage/reference-considerations-for-migrating-virtual-machines.html"
+  - title: 将传统虚拟机迁移到 VVOL 数据存储库
+    url: "/manage/task-migrate-standard-virtual-machines-to-vvol-datastores.html"
+  - title: 迁移具有较旧存储功能配置文件的虚拟机
+    url: "/manage/task-migrate-existing-virtual-machines-to-7-1-virtual-appliance.html"
+- title: 了解Virtual Storage Console报告
+  url: "/manage/concept-virtual-storage-console-reports.html"
+  entries:
+  - title: 报告的作用
+    url: "/manage/concept-what-reports-do.html"
+  - title: 数据存储库报告
+    url: "/manage/concept-datastore-reports.html"
+  - title: VVOL 报告
+    url: "/manage/concept-what-vasa-provider-reports-do.html"
+- title: 对VSC、VASA Provider和SRA虚拟设备的问题进行故障排除
+  url: "/manage/concept-troubleshoot-issues-with-the-virtual-appliance-for-vsc-vasa-provider-and-sra-test.html"
+  entries:
+  - title: 收集日志文件
+    url: "/manage/task-collect-the-log-files.html"
+  - title: 对于大量卷、VVol数据存储库配置失败
+    url: "/manage/reference-vvol-datastore-provision-fails-with-large-number-of-volumes.html"
+  - title: 升级后编辑VM存储策略时出现问题描述
+    url: "/manage/reference-edit-vm-storage-policies-after-upgrade-throws-error-message.html"
+  - title: 在vCenter Server图形用户界面中、VASA Provider状态显示为"脱机"
+    url: "/manage/reference-vasa-provider-storage-provider-status-show-offline-in-vcenter-gui.html"
+  - title: 访问虚拟设备的VSC摘要页面时出错
+    url: "/manage/reference-error-while-accessing-the-vsc-summary-page-of-virtual-appliance.html"
+  - title: 更改网络设置后删除数据存储库时出错
+    url: "/manage/reference-error-deleting-a-datastore-after-network-settings-are-changed.html"
+  - title: 虚拟机配置失败、并出现未定义的错误
+    url: "/manage/reference-vm-provision-fails-with-undefined-error.html"
+  - title: ONTAP 9.4存储系统的VVOL厚配置失败
+    url: "/manage/reference-thick-provision-fails-for-vvol-datastores-on-ontap-9-4.html"
+  - title: 当卷状态更改为脱机时，无法访问数据存储库
+    url: "/manage/reference-datastore-inaccessible-when-volume-status-is-changed-to-offline.html"
+  - title: 添加使用IPv4的存储系统会导致存储系统网格中的IPv6状态出现身份验证错误
+    url: "/manage/reference-authentication-failure-status-is-displayed-with-ipv6-as-the-cluster-ip-even-if-cluster-is-added-with-ipv4.html"
+  - title: 在VVol数据存储库上配置虚拟机时出现文件创建错误
+    url: "/manage/reference-file-creation-error-while-virtual-machine-provisioning-on-vvol-datastore-issue-we-are-unable-to-create-virtual-machine-using-the-default-vs0-svm-caus.html"
+  - title: 在SRM中、为SRA报告的"故障转移正在进行"状态不正确
+    url: "/manage/reference-failover-in-progress-status-is-reported-inappropriately-for-sra.html"

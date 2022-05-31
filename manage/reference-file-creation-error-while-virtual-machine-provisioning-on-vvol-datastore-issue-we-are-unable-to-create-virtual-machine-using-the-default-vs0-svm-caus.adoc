@@ -1,0 +1,37 @@
+---
+permalink: manage/reference-file-creation-error-while-virtual-machine-provisioning-on-vvol-datastore-issue-we-are-unable-to-create-virtual-machine-using-the-default-vs0-svm-caus.html 
+sidebar: sidebar 
+keywords: error, provisioning, virtual, machine, troubleshooting, error, 
+summary: 在VVol数据存储库上配置虚拟机时出现文件创建错误 
+---
+= 在VVol数据存储库上配置虚拟机时出现文件创建错误
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+
+
+== 问题描述
+
+无法使用默认Storage Virtual Machine (SVM)或同时配置了IPv6和IPv4数据LIF的任何混合Storage Virtual Machine (SVM)创建虚拟机。
+
+
+
+== 发生原因
+
+之所以出现问题描述 、是因为默认vs0同时具有IPv6和IPv4数据LIF、而不是纯IPv4数据存储库。
+
+
+
+== 更正操作
+
+您可以使用以下步骤配置具有vs0的虚拟机：
+
+. 使用System Manager应用程序禁用所有IPv6 LIF。
+. 重新发现集群。
+. 在配置失败的VVol数据存储库上配置虚拟机。
++
+已成功配置虚拟机。
+
+

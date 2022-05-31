@@ -1,0 +1,111 @@
+---
+permalink: deploy/task-access-virtual-appliance-maiintenance-console-options.html 
+sidebar: sidebar 
+keywords: accessing, maintenance, console, options, virtual, appliance, vsc, vasa, provider, sra, 
+summary: '您可以使用Virtual Storage Console (VSC)、VASA Provider和Storage Replication Adapter (SRA)虚拟设备的维护控制台来管理应用程序、系统和网络配置。您可以更改管理员密码和维护密码。您还可以生成支持包，设置不同的日志级别，查看和管理 TLS 配置以及启动远程诊断。' 
+---
+= 访问VSC、VASA Provider和SRA虚拟设备的维护控制台选项
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用Virtual Storage Console (VSC)、VASA Provider和Storage Replication Adapter (SRA)虚拟设备的维护控制台来管理应用程序、系统和网络配置。您可以更改管理员密码和维护密码。您还可以生成支持包，设置不同的日志级别，查看和管理 TLS 配置以及启动远程诊断。
+
+在部署VSC、VASA Provider和SRA虚拟设备后、您必须已安装VMware工具。
+
+.关于此任务
+* 您必须使用`m`部分作为用户名和您在部署期间配置的密码、才能登录到VSC、VASA Provider和SRA虚拟设备的维护控制台。
+* 在启用远程诊断时，您必须为 `dIAG` 用户设置密码。
+
+
+.步骤
+. 访问已部署虚拟设备的*摘要*选项卡。
+. 单击 image:../media/launch-maintenance-console.gif[""] 以启动维护控制台。
++
+您可以访问以下维护控制台选项：
+
++
+** *应用程序配置*
++
+可以使用以下选项：
+
++
+*** 显示服务器状态摘要
+*** 启动 Virtual Storage Console 服务
+*** 停止 Virtual Storage Console 服务
+*** 启动 VASA Provider 和 SRA 服务
+*** 停止 VASA Provider 和 SRA 服务
+*** 更改 "administrator" 用户密码
+*** 重新生成证书
+*** 硬重置密钥库和证书
+*** 硬重置数据库
+*** 更改 Virtual Storage Console 服务的日志级别
+*** 更改 VASA Provider 和 SRA 服务的日志级别
+*** 显示 TLS 配置
+*** 启用 TLS 协议
+*** 禁用 TLS 协议
+
+
+** *系统配置*
++
+可以使用以下选项：
+
++
+*** 重新启动虚拟机
+*** 关闭虚拟机
+*** 更改 "maint" 用户密码
+*** 更改时区
+*** 更改NTP服务器
++
+您可以为 NTP 服务器提供 IPv6 地址。
+
+*** 启用/禁用SSH访问
+*** 增加 jail 磁盘大小（ /jail ）
+*** 升级
+*** 安装 VMware Tools
+
+
+** *网络配置*
++
+可以使用以下选项：
+
++
+*** 显示 IP 地址设置
+*** 更改 IP 地址设置
++
+您可以使用此选项将部署后的 IP 地址更改为 IPv6 。
+
+*** 显示域名搜索设置
+*** 更改域名搜索设置
+*** 显示静态路由
+*** 更改静态路由
++
+您可以使用此选项添加 IPv6 路由。
+
+*** 提交更改
+*** 对主机执行 Ping 操作
++
+您可以使用此选项对 IPv6 主机执行 ping 操作。
+
+*** 还原默认设置
+
+
+** *支持和诊断*
++
+可以使用以下选项：
+
++
+*** 生成支持包
+*** 访问诊断 Shell
+*** 启用远程诊断访问
+
+
+
+
+
+
+* 相关信息 *
+
+xref:concept-virtual-storage-console-and-vasa-provider-log-files.adoc[VSC 和 VASA Provider 日志文件]

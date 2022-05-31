@@ -1,0 +1,59 @@
+---
+permalink: deploy/reference-deploment-customization-requirements.html 
+sidebar: sidebar 
+keywords: deployment, customization, considerations, 
+summary: 在自定义VSC、VASA Provider和SRA虚拟设备的部署时、您必须考虑一些限制。 
+---
+= 部署自定义注意事项
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在自定义VSC、VASA Provider和SRA虚拟设备的部署时、您必须考虑一些限制。
+
+
+
+== 设备管理员用户密码
+
+管理员密码不得使用任何空格。
+
+
+
+== 设备维护控制台凭据
+
+您必须使用 `m部分` 的用户名访问维护控制台。您可以在部署期间为 " `m熟悉` " 用户设置密码。您可以使用VSC、VASA Provider和SRA虚拟设备维护控制台的*应用程序配置*菜单更改密码。
+
+
+
+== vCenter Server 管理员凭据
+
+您可以在部署VSC、VASA Provider和SRA虚拟设备时设置vCenter Server的管理员凭据。
+
+如果vCenter Server的密码发生变化、则可以使用以下URL更新管理员的密码：` https：//<IP>：8143/Register.html`、其中IP地址是您在部署期间提供的VSC、VASA Provider和SRA虚拟设备的IP地址。
+
+
+
+== vCenter Server IP 地址
+
+* 您应提供要将VSC、VASA Provider和SRA的虚拟设备注册到的vCenter Server实例的IP地址(IPv4或IPv6)。
++
+生成的 VSC 和 VASA 证书类型取决于您在部署期间提供的 IP 地址（ IPv4 或 IPv6 ）。在为VSC、VASA Provider和SRA部署虚拟设备时、如果尚未输入任何静态IP详细信息和DHCP、则网络将同时提供IPv4和IPv6地址。
+
+* 用于向vCenter Server注册的VSC、VASA Provider和SRA IP地址虚拟设备取决于在部署向导中输入的vCenter Server IP地址类型(IPv4或IPv6)。
++
+VSC 和 VASA 证书都将使用在 vCenter Server 注册期间使用的相同类型的 IP 地址生成。
+
+
+
+[NOTE]
+====
+只有 vCenter Server 6.7 及更高版本才支持 IPv6 。
+
+====
+
+
+== 设备网络属性
+
+如果不使用DHCP、请为VSC、VASA Provider和SRA虚拟设备以及其他网络参数指定有效的DNS主机名(非限定)以及静态IP地址。要正确安装和操作，所有这些参数都是必需的。

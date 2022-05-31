@@ -1,0 +1,117 @@
+---
+permalink: manage/task-provision-vvol-datastores.html 
+sidebar: sidebar 
+keywords: provisioning, vvols, datastores, 
+summary: 只有在虚拟设备中为VSC、VASA Provider和SRA启用了VASA Provider的情况下、才能使用配置数据存储库向导配置VVOL数据存储库。 
+---
+= 配置 VVOL 数据存储库
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+只有在虚拟设备中为VSC、VASA Provider和SRA启用了VASA Provider的情况下、才能使用*配置数据存储库*向导配置VVOL数据存储库。
+
+.开始之前
+* 您应确保在`Kaminoprefs.xml`中输入ESXi托管的连接到的所有网络的子网详细信息。
++
+请参见_VSC 9.7部署和设置指南_中的*在不同子网之间启用数据存储库挂载*一节。
+
+* 您应在源站点和目标站点的数据存储库上配置类似的复制策略和计划，以便成功执行反向复制。
+
+
+通过*配置数据存储库*菜单、您可以为数据存储库指定存储功能配置文件、这有助于指定一致的服务级别目标(Service Level Objective、SLO)并简化配置过程。只有在启用了 VASA Provider 的情况下，才能指定存储功能配置文件。
+
+只有在运行ONTAP 9.5或更高版本时、用作后备存储的FlexVol 卷才会显示在VVol信息板上。不应使用vCenter Server *新建数据存储库*向导配置VVOL数据存储库。
+
+* 您必须使用集群凭据创建 VVOL 数据存储库。
++
+您不能使用 SVM 凭据创建 VVOL 数据存储库。
+
+* VASA Provider 不支持将一个协议的 VVOL 数据存储库上托管的虚拟机克隆到另一个使用不同协议的数据存储库。
+* 您应已在源站点和目标站点上完成集群配对和 SVM 配对。
+
+
+.步骤
+. 在 vSphere Client 主页页面中，单击 * 主机和集群 * 。
+. 在导航窗格中，选择要配置数据存储库的数据中心。
+. 指定要挂载数据存储库的主机。
++
+[cols="1a,1a"]
+|===
+| 使数据存储库可用于... | 执行此操作 ... 
+
+
+ a| 
+数据中心中的所有主机
+ a| 
+右键单击某个数据中心、然后选择菜单：NetApp VSC[配置数据存储库]。
+
+
+
+ a| 
+集群中的所有主机
+ a| 
+右键单击集群、然后选择菜单：NetApp VSC[配置数据存储库]。
+
+
+
+ a| 
+一台主机
+ a| 
+右键单击某个主机、然后选择菜单：NetApp VSC[配置数据存储库]。
+
+|===
+. 完成*新建数据存储库*对话框中的字段以创建数据存储库。
++
+对话框中的大多数字段都是不言自明的。下表介绍了一些可能需要指导的字段。
+
++
+[cols="1a,1a"]
+|===
+| 部分 | Description 
+
+
+ a| 
+常规
+ a| 
+"新建数据存储库"对话框的*常规*部分提供了用于输入新数据存储库的位置、名称、问题描述 、类型和协议的选项。VVOL 数据存储库类型用于配置 VVOL 数据存储库。
+
+[NOTE]
+====
+如果要为 VVOL 复制配置 iSCSI VVOL 数据存储库，则在目标站点上创建 VVOL 数据存储库之前，需要执行 SnapMirror 更新和集群重新发现。
+
+====
+
+
+ a| 
+存储系统
+ a| 
+通过此部分，您可以选择是要使 VVol 数据存储库启用还是禁用复制。此版本仅允许使用异步类型复制配置文件。然后，您可以选择列出的一个或多个存储功能配置文件。系统会自动填充已配对 * 存储系统 * 和 * 存储虚拟机 * 的系统建议值。只有在 ONTAP 中配对后，才会填充建议值。您可以根据需要修改这些值。
+
+[NOTE]
+====
+在ONTAP 中创建FlexVol 卷时、您应确保使用要在存储功能配置文件中选择的属性创建这些卷。读写和数据保护 FlexVol 卷都应具有类似的属性。
+
+====
+创建 FlexVol 卷并在 ONTAP 中初始化 SnapMirror 后，您应在 VSC 中运行存储重新发现，以便能够查看新卷。
+
+
+
+ a| 
+存储属性
+ a| 
+您应从现有列表中选择 SnapMirror 计划以及所需的 FlexVol 卷。此计划应与在 VM 存储策略页面中选择的计划类似。用户应已使用列出的 SnapMirror 在 ONTAP 上创建 FlexVol 卷。您可以使用 * 默认存储功能配置文件 * 选项选择用于创建 VVOL 的默认存储功能配置文件。
+
+|===
+. 在*摘要*部分中、单击*完成*。
++
+配置 VVOL 数据存储库后，会在后端创建复制组。
+
+
+
+* 相关信息 *
+
+xref:reference-verify-vvol-dashboard-data-requirements.adoc[VVol信息板数据要求]

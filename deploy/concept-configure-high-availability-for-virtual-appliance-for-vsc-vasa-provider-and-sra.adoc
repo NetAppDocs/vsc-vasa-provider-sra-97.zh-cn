@@ -1,0 +1,32 @@
+---
+permalink: deploy/concept-configure-high-availability-for-virtual-appliance-for-vsc-vasa-provider-and-sra.html 
+sidebar: sidebar 
+keywords: configuring, high, availability, virtual, appliance, vsc, vasa, provider, sra, 
+summary: 'Virtual Storage Console (VSC)、VASA Provider和Storage Replication Adapter (SRA)虚拟设备支持(HA)配置、以帮助在发生故障时使VSC、VASA Provider和SRA能够无中断运行。' 
+---
+= 为VSC、VASA Provider和SRA虚拟设备配置高可用性
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Virtual Storage Console (VSC)、VASA Provider和Storage Replication Adapter (SRA)虚拟设备支持(HA)配置、以帮助在发生故障时使VSC、VASA Provider和SRA能够无中断运行。
+
+VSC、VASA Provider和SRA虚拟设备依靠VMware vSphere (HA)功能和vSphere容错(FT)功能提供。(HA)解决方案 可从以下原因导致的中断中快速恢复：
+
+* 主机故障
+* 网络故障
+* 虚拟机故障（子操作系统故障）
+* 应用程序(VSC、VASA Provider和SRA)崩溃
+
+
+不需要对虚拟设备进行其他配置即可提供。只能根据 vCenter Server 和 ESXi 主机的要求为其配置 VMware vSphere HA 功能或 vSphere FT 功能。HA 和 FT 都需要集群主机以及共享存储。FT 具有其他要求和限制。
+
+除了VMware vSphere HA解决方案 和vSphere FT解决方案 之外、此虚拟设备还有助于保持VSC、VASA Provider和SRA服务始终运行。虚拟设备watchdog进程会定期监控所有这三项服务、并在检测到任何类型的故障时自动重新启动这些服务。这有助于防止应用程序出现故障。
+
+[NOTE]
+====
+VSC、VASA Provider和SRA虚拟设备不支持vCenter HA。
+
+====

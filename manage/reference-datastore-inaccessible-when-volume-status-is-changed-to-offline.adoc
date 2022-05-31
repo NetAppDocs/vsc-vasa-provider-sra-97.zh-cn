@@ -1,0 +1,29 @@
+---
+permalink: manage/reference-datastore-inaccessible-when-volume-status-is-changed-to-offline.html 
+sidebar: sidebar 
+keywords: datastore, inaccessible, when, volume, status, is, changed, to, offline, 
+summary: 当卷状态更改为脱机时，无法访问数据存储库 
+---
+= 当卷状态更改为脱机时，无法访问数据存储库
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+
+
+== 问题描述
+
+将数据存储库的卷置于脱机状态后、此数据存储库将无法访问。即使将卷联机、VSC也无法发现数据存储库。在vSphere Client上、如果右键单击数据存储库、则没有可用的VSC操作。
+
+
+
+== 发生原因
+
+当卷从集群脱机时、将先卸载该卷、然后再使其脱机或受限。当卷脱机且数据存储库变得不可访问时、接合路径将被删除。如果卷已联机、则默认情况下、接合路径不可用且未挂载到上。这是ONTAP 行为。
+
+
+
+== 更正操作
+
+您应使卷联机、然后使用与先前相同的接合路径手动挂载卷。您可以运行存储发现来查看是否已发现数据存储库、以及是否可对数据存储库执行操作。

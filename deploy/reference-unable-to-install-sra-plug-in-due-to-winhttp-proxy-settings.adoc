@@ -1,0 +1,38 @@
+---
+permalink: deploy/reference-unable-to-install-sra-plug-in-due-to-winhttp-proxy-settings.html 
+sidebar: sidebar 
+keywords: unable, to, install, the, sra, plug-in, 
+summary: 无法安装SRA插件 
+---
+= 无法安装SRA插件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+
+
+== 问题描述
+
+在安装Storage Replication Adapter (SRA)插件期间、系统将停留在服务器IP地址和密码屏幕、并显示以下错误消息："`您输入的凭据无效。请输入有效的主机名和密码。`
+
+
+
+== 发生原因
+
+出现此错误的原因可能如下：
+
+* 您输入的管理员凭据不正确。
+* WinHTTP代理设置不正确。
+
+
+
+
+== 更正操作
+
+* 验证您的管理员凭据。
+* 知识库文章提供了有关解决WinHTTP代理设置问题的详细信息。
++
+https://kb.netapp.com/app/answers/answer_view/a_id/1005074["NetApp知识库问题解答 1005074：SRA 4.0P1客户端插件(NetApp_SRA _4.0P1_ontap_64bit.msi)的安装将在服务器IP和密码屏幕处挂起"^]
+
+

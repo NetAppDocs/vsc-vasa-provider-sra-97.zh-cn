@@ -1,0 +1,20 @@
+---
+permalink: deploy/concept-vmware-high-availability-for-vcenter-server.html 
+sidebar: sidebar 
+keywords: vsc, vmware, vsphere, ha, 
+summary: '您可以在vSphere环境中为(HA)部署Virtual Storage Console (VSC)、VASA Provider和Storage Replication Adapter (SRA)虚拟设备。VMware HA 功能可在虚拟环境中提供故障转移保护，防止出现硬件故障和操作系统故障。' 
+---
+= VMware vSphere HA
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在vSphere环境中为(HA)部署Virtual Storage Console (VSC)、VASA Provider和Storage Replication Adapter (SRA)虚拟设备。VMware HA 功能可在虚拟环境中提供故障转移保护，防止出现硬件故障和操作系统故障。
+
+VMware HA 功能可监控虚拟机以检测操作系统故障和硬件故障。检测到故障后， VMware HA 功能会在资源池中的其他物理服务器上重新启动虚拟机。检测到服务器故障时，不需要手动干预。
+
+用于配置 VMware HA 的操作步骤取决于 vCenter Server 的版本。例如，您可以使用以下参考链接并选择所需的 vCenter Server 版本，以查看配置 VMware HA 的步骤。
+
+https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.avail.doc/GUID-5432CA24-14F1-44E3-87FB-61D937831CF6.html["VMware vSphere 文档：创建和使用 vSphere HA 集群"^]

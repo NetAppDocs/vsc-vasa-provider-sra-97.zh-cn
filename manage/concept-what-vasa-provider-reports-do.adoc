@@ -1,0 +1,64 @@
+---
+permalink: manage/concept-what-vasa-provider-reports-do.html 
+sidebar: sidebar 
+keywords: VSC, VASA Provider, and SRA 
+summary: VVOL 报告可显示有关 VMware 虚拟卷（ VVOL ）数据存储库以及在这些数据存储库上创建的虚拟机的详细信息。通过VVol信息板、您可以查看和确定vCenter Server中VVol数据存储库和虚拟机的潜在问题。 
+---
+= VVOL 报告
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+VVOL 报告可显示有关 VMware 虚拟卷（ VVOL ）数据存储库以及在这些数据存储库上创建的虚拟机的详细信息。通过VVol信息板、您可以查看和确定vCenter Server中VVol数据存储库和虚拟机的潜在问题。
+
+您可以查看，组织和导出报告。VVOL 数据存储库和虚拟机报告的数据由 ONTAP 以及 OnCommand API 服务提供。
+
+VVOL 提供了以下预制报告：
+
+* VVol数据存储库报告
+* VVol虚拟机报告
+
+
+
+
+== VVol数据存储库报告
+
+"* VVol数据存储库报告"菜单提供了有关数据存储库的以下参数的信息：
+
+* VVOL 数据存储库名称
+* 可用空间
+* 已用空间
+* 总空间
+* 已利用空间的百分比
+* 可用空间百分比
+* IOPS
+* 延迟
+
+
+您还可以验证生成报告的时间。通过* VVol数据存储库报告*菜单、您可以根据需要对报告进行组织、然后使用*导出到CSV*按钮导出已组织的报告。报告中的每个SAN VVOL数据存储库名称都是一个链接、可导航到选定SAN VVOL数据存储库的*监控*选项卡、您可以使用该选项卡查看性能指标。
+
+
+
+== VVOL 虚拟机报告
+
+"* VVOL虚拟机摘要报告"菜单提供了使用适用于选定vCenter Server的VASA Provider为ONTAP 配置的SAN VVOL数据存储库的所有虚拟机的以下性能指标：
+
+* 虚拟机的名称
+* 已提交容量
+* 正常运行时间
+* 吞吐量
++
+此报告将显示虚拟机是已启动还是已关闭。
+
+* 逻辑空间
+* 主机
+* 电源状态
+* 延迟
++
+此报告将显示与虚拟机关联的所有 VVol 数据存储库中虚拟机的延迟。
+
+
+
+报告中的每个虚拟机名称都是指向选定虚拟机的*监控*选项卡的链接。您可以根据需要组织虚拟机报告，以 ` .CSV` 格式导出报告，然后将报告保存在本地系统上。报告的时间戳将附加到已保存的报告中。

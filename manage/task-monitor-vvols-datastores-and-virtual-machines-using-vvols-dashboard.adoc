@@ -1,0 +1,67 @@
+---
+permalink: manage/task-monitor-vvols-datastores-and-virtual-machines-using-vvols-dashboard.html 
+sidebar: sidebar 
+keywords: monitoring, vvols, datastores, virtual, machines, using, the, vVol, dashboard, 
+summary: '您可以使用Virtual Storage Console (VSC)、VASA Provider和Storage Replication Adapter (SRA)虚拟设备的VVol信息板根据所选参数监控性能并查看vCenter Server中排名前五位的SAN VMware虚拟卷(VVol)数据存储库。' 
+---
+= 使用VVol信息板监控VVol数据存储库和虚拟机
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用Virtual Storage Console (VSC)、VASA Provider和Storage Replication Adapter (SRA)虚拟设备的VVol信息板根据所选参数监控性能并查看vCenter Server中排名前五位的SAN VMware虚拟卷(VVol)数据存储库。
+
+.开始之前
+* 如果您使用的是 ONTAP 9.6 或更早版本，则应已启用 OnCommand API 服务 2.1 或更高版本。
++
+您无需向VASA Provider注册OnCommand API服务即可获取ONTAP 9.7的SAN VVOL数据存储库或SAN VVOL VM数据存储库报告的详细信息。
+
++
+https://mysupport.netapp.com/site/["NetApp 支持"^]
+
+* 您的存储系统应使用 ONTAP 9.3 或更高版本。
+
+
+link:reference-verify-vvol-dashboard-data-requirements.html["VVol信息板数据要求"]
+
+ONTAP 提供的IOPS数据将进行四舍五入并显示在VVOL信息板上。ONTAP 提供的实际IOPS值与VVOL信息板上显示的IOPS值之间可能存在差异。
+
+[NOTE]
+====
+* 如果您是首次注册OnCommand API服务、则只能在15到30分钟后在VVOL信息板上查看SAN VVOL数据存储库的所有性能指标数据。
+* VVOL信息板数据每10分钟定期刷新一次。
+* 如果您已在 vCenter Server 实例中添加，修改或删除存储系统，则可能在一段时间内不会注意到 VVol 信息板上的数据发生任何更改。
++
+这是因为 OnCommand API 服务需要一些时间才能从 ONTAP 获取更新的指标。
+
+* VVol信息板的*概述* portlet中显示的总IOPS值不是读取IOPS值和写入IOPS值的累积值。
++
+" 读取 IOPS" ， " 写入 IOPS" 和 " 总 IOPS" 是由 OnCommand API 服务提供的单独指标。如果OnCommand API服务提供的总IOPS值与累积IOPS值(读取IOPS值+写入IOPS值)之间存在差异、则VVOL信息板上的IOPS值也会出现相同的差异。
+
+
+
+====
+.步骤
+. 在vSphere Client主页页面中、单击*虚拟存储控制台*。
+. 使用 * vCenter server* 下拉菜单选择所需的 vCenter Server 以查看数据存储库。
+. 单击* VVol信息板*。
++
+*数据存储库* portlet可提供以下详细信息：
+
++
+** vCenter Server 实例中由 VASA Provider 管理的 VVOL 数据存储库的数量
+** 根据资源使用情况和性能参数，您可以根据已用空间， IOPS 或延迟以及所需顺序更改数据存储库列表的前五个 VVol 数据存储库。
+
+
+. 使用*虚拟机* portlet查看虚拟机的详细信息。
++
+*虚拟机* portlet可提供以下详细信息：
+
++
+** 在 vCenter Server 中使用 ONTAP 数据存储库的虚拟机数量
+** 根据IOPS、延迟、吞吐量、已提交容量、正常运行时间、 和逻辑空间您可以自定义前五个虚拟机在VVol信息板中的列出方式。
+
+
+

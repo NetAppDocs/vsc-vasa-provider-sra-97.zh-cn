@@ -1,0 +1,29 @@
+---
+permalink: deploy/task-configure-sra-on-srm-appliance.html 
+sidebar: sidebar 
+keywords: configuring, sra, srm, appliance, 
+summary: '部署 SRM 设备后，您应在 SRM 设备上配置 SRA 。成功配置 SRA 后， SRM 设备便可与 SRA 进行通信以进行灾难恢复管理。您应将VSC、VASA Provider和SRA凭据(IP地址和管理员密码)的虚拟设备存储在SRM设备中、以启用SRM设备与SRA之间的通信。' 
+---
+= 在 SRM 设备上配置 SRA
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+部署 SRM 设备后，您应在 SRM 设备上配置 SRA 。成功配置 SRA 后， SRM 设备便可与 SRA 进行通信以进行灾难恢复管理。您应将VSC、VASA Provider和SRA凭据(IP地址和管理员密码)的虚拟设备存储在SRM设备中、以启用SRM设备与SRA之间的通信。
+
+您应将`tar.gz`文件上传到SRM设备。
+
+在 SRM 设备上配置 SRA 会将 SRA 凭据存储在 SRM 设备中。
+
+.步骤
+. 使用管理员帐户使用 putty 登录到 SRM 设备。
+. 使用命令 `su root` 切换到 root 用户
+. 在日志位置输入命令以获取SRA `docker ps -l`使用的Docker ID
+. 要登录到此容器ID、请输入命令`docker exec -it -u SRM <container id> sh`
+. 使用以下命令为SRM配置VSC、VASA Provider和SRA IP地址和密码虚拟设备：`perl command.pl -i <va-ip> administrator <va-password>`
++
+此时将显示一条成功消息，确认存储凭据已存储。SRA 可以使用提供的 IP 地址，端口和凭据与 SRA 服务器进行通信。
+
+

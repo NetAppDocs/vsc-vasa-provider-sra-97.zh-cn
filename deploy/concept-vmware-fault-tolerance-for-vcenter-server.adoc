@@ -1,0 +1,26 @@
+---
+permalink: deploy/concept-vmware-fault-tolerance-for-vcenter-server.html 
+sidebar: sidebar 
+keywords: vsc, vmware, vsphere, fault, tolerance, 
+summary: 'VMware vSphere Fault Tolerance (FT)功能可在更高级别提供(HA)、并可在不丢失任何数据或连接的情况下保护虚拟机。您必须从vCenter Server为VSC、VASA Provider和SRA虚拟设备启用或禁用vSphere FT。' 
+---
+= VMware vSphere 容错
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+VMware vSphere Fault Tolerance (FT)功能可在更高级别提供(HA)、并可在不丢失任何数据或连接的情况下保护虚拟机。您必须从vCenter Server为VSC、VASA Provider和SRA虚拟设备启用或禁用vSphere FT。
+
+确保您的vSphere许可证支持FT以及环境中虚拟设备所需的vCPU数量(至少2个vCPU；对于大型环境、至少4个vCPU)。
+
+通过 vSphere FT ，即使服务器出现故障，虚拟机也可以持续运行。在虚拟机上启用 vSphere FT 后，系统会在分布式资源计划程序（ DRS ）选择的另一主机（二级虚拟机）上自动创建主虚拟机的副本。如果未启用 DRS ，则会从可用主机中选择目标主机。vSphere FT 会在同步模式下运行主虚拟机和二级虚拟机，每个虚拟机都会将主虚拟机的执行状态镜像到二级虚拟机。
+
+如果出现硬件故障，导致主虚拟机发生故障，则二级虚拟机会立即从主虚拟机停止的位置进行接管。二级虚拟机将继续运行，而不会丢失任何网络连接，事务或数据。
+
+在为 vCenter Server 实例配置 vSphere FT 时，您的系统必须满足 CPU 要求，虚拟机限制要求和许可要求。
+
+用于配置 HA 的操作步骤取决于 vCenter Server 的版本。例如，您可以使用以下参考链接并选择所需的 vCenter Server 版本，以查看配置 HA 的步骤。
+
+https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.avail.doc/GUID-57929CF0-DA9B-407A-BF2E-E7B72708D825.html["VMware vSphere 文档：容错要求，限制和许可"^]

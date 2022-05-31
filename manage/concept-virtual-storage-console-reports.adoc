@@ -1,0 +1,14 @@
+---
+permalink: manage/concept-virtual-storage-console-reports.html 
+sidebar: sidebar 
+keywords: understanding, virtual, storage, console, reports, 
+summary: '您可以使用Virtual Storage Console (VSC)报告菜单查看特定vCenter Server中选定VSC实例管理的所有数据存储库的预定义报告。您可以执行排序和导出报告等操作。' 
+---
+= 了解Virtual Storage Console报告
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用Virtual Storage Console (VSC)*报告*菜单查看特定vCenter Server中选定VSC实例管理的所有数据存储库的预定义报告。您可以执行排序和导出报告等操作。

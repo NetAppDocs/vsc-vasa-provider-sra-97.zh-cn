@@ -1,0 +1,109 @@
+---
+permalink: deploy/reference-components-that-make-up-vcenter-server-permissions.html 
+sidebar: sidebar 
+keywords: components, vcenter, server, permissions, 
+summary: vCenter Server 可识别权限，而不是权限。每个 vCenter Server 权限都包含三个组件。 
+---
+= vCenter Server 权限的组成部分
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+vCenter Server 可识别权限，而不是权限。每个 vCenter Server 权限都包含三个组件。
+
+vCenter Server 包含以下组件：
+
+* 一个或多个权限（角色）
++
+这些权限定义了用户可以执行的任务。
+
+* vSphere 对象
++
+对象是任务的目标。
+
+* 用户或组
++
+用户或组定义了谁可以执行此任务。
+
+
+
+如下图所示，要获得权限，您必须具备所有三个要素。
+
+[NOTE]
+====
+在此图中，灰色方框表示 vCenter Server 中的组件，白色方框表示运行 vCenter Server 的操作系统中的组件。
+
+====
+image::../media/permission-updated-graphic.png[权限已更新图形]
+
+
+
+== 特权
+
+适用于VMware vSphere的Virtual Storage Console具有两种特权：
+
+* 原生 vCenter Server 特权
++
+这些特权随 vCenter Server 一起提供。
+
+* VSC 专用特权
++
+这些特权是为特定 VSC 任务定义的。它们是 VSC 特有的。
+
+
+
+VSC 任务既需要 VSC 专用特权，也需要 vCenter Server 原生特权。这些权限构成用户的 "`role` " 。一个权限可以具有多个权限。这些特权适用于已登录到 vCenter Server 的用户。
+
+[NOTE]
+====
+为了简化 vCenter Server RBAC 的使用， VSC 提供了几个标准角色，其中包含执行 VSC 任务所需的所有 VSC 专用特权和原生特权。
+
+====
+如果更改了某个权限中的权限，则与该权限关联的用户应先注销，然后再登录以启用更新后的权限。
+
+[cols="1a,1a,1a"]
+|===
+| 权限 | 角色 | 任务 
+
+
+ a| 
+菜单：NetApp Virtual Storage Console[查看]
+ a| 
+* VSC 管理员
+* VSC 配置
+* VSC 只读
+
+ a| 
+所有 VSC 和 VASA Provider 专用任务都需要查看权限。
+
+
+
+ a| 
+菜单：NetApp Virtual Storage Console[基于策略的管理>管理]或菜单：privilege.nvpfVSC.VASAGroup.com.netapp.nvpf.label[Management]
+ a| 
+VSC 管理员
+ a| 
+与存储功能配置文件和阈值设置相关的 VSC 和 VASA Provider 任务。
+
+|===
+
+
+== vSphere 对象
+
+权限与 vSphere 对象关联，例如 vCenter Server ， ESXi 主机，虚拟机，数据存储库，数据中心， 和文件夹。您可以为任何 vSphere 对象分配权限。根据分配给 vSphere 对象的权限， vCenter Server 可确定谁可以对该对象执行哪些任务。对于 VSC 专用任务，只会在根文件夹级别（ vCenter Server ）分配和验证权限，而不会在任何其他实体上分配和验证权限。VAAI 插件操作除外，其中会针对相关 ESXi 验证权限。
+
+
+
+== 用户和组
+
+您可以使用 Active Directory （或本地 vCenter Server 计算机）设置用户和用户组。然后，您可以使用 vCenter Server 权限为这些用户或组授予访问权限，使其能够执行特定的 VSC 任务。
+
+[NOTE]
+====
+这些 vCenter Server 权限适用于 VSC vCenter 用户，而不适用于 VSC 管理员。默认情况下， VSC 管理员对产品具有完全访问权限，不需要为其分配权限。
+
+====
+没有为用户和组分配角色。他们通过加入 vCenter Server 权限来获得某个角色的访问权限。

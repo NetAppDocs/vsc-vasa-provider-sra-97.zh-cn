@@ -1,0 +1,69 @@
+---
+permalink: deploy/task-enable-storage-replication-adapter.html 
+sidebar: sidebar 
+keywords: enabling, storage, replication, adapter, 
+summary: 'Virtual Storage Console (VSC)、VASA Provider和Storage Replication Adapter (SRA)虚拟设备提供了一个选项、可用于在VSC中使用SRA功能来配置灾难恢复。' 
+---
+= 启用 Storage Replication Adapter
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Virtual Storage Console (VSC)、VASA Provider和Storage Replication Adapter (SRA)虚拟设备提供了一个选项、可用于在VSC中使用SRA功能来配置灾难恢复。
+
+.开始之前
+* 您必须已设置 vCenter Server 实例并配置 ESXi 。
+* 您必须已部署VSC、VASA Provider和SRA虚拟设备。
+* 只有在要配置 Site Recovery Manager （ SRM ）灾难恢复解决方案时，您才能下载适用于 SRA 插件的 ` .msi` 文件或适用于 SRM 设备的 ` .tar.gz` 文件。
++
+https://docs.vmware.com/en/Site-Recovery-Manager/8.2/com.vmware.srm.install_config.doc/GUID-B3A49FFF-E3B9-45E3-AD35-093D896596A0.html["Site Recovery Manager 安装和配置 Site Recovery Manager 8.2"^] 了解更多信息。
+
+
+
+您可以灵活地启用 VASA Provider 和 SRA 功能，从而仅执行企业所需的工作流。
+
+.步骤
+. 登录到 VMware vSphere 的 Web 用户界面。
+. 在vSphere Client中、单击菜单：菜单[虚拟存储控制台]。
+. 单击 * 设置 * 。
+. 单击 * 管理设置 * 选项卡中的 * 管理功能 * 。
+. 在 * 管理功能 * 对话框中，选择要启用的 SRA 扩展。
+. 输入VSC、VASA Provider和SRA虚拟设备的IP地址以及管理员密码、然后单击*应用*。
+. 您可以使用以下方法之一部署 SRA ：
++
+[cols="1a,1a"]
+|===
+| 选项 | Description 
+
+
+ a| 
+对于Windows SRM
+ a| 
+.. 双击已下载的 SRA 插件的 ` .msi` 安装程序。
+.. 按照屏幕上的说明进行操作。
+.. 输入已部署虚拟设备的IP地址和密码。
+
+
+
+
+ a| 
+适用于SRM设备
+ a| 
+.. 访问SRM设备页面、然后转到SRM设备的*存储复制适配器*页面。
+.. 单击 * 新建适配器 * 。
+.. 将SRA插件的.tar.gz安装程序上传到SRM。
+.. 重新扫描适配器以验证SRM *存储复制适配器*页面中的详细信息是否已更新。
+
+
+|===
++
+您必须从 vSphere Client 中注销，然后重新登录以验证选定扩展是否可配置。
+
+
+
+* 相关信息 *
+
+xref:concept-configure-storage-replication-adapter-for-disaster-recovery.adoc[配置 Storage Replication Adapter 以进行灾难恢复]

@@ -1,0 +1,49 @@
+---
+permalink: manage/reference-verify-vvol-dashboard-data-requirements.html 
+sidebar: sidebar 
+keywords: vVol, dashboard, data, requirements, 
+summary: '要显示VMware虚拟卷(VVOL)数据存储库和虚拟机的动态详细信息、您必须验证VVOL信息板的一些重要要求。' 
+---
+= VVol信息板数据要求
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+要显示VMware虚拟卷(VVOL)数据存储库和虚拟机的动态详细信息、您必须验证VVOL信息板的一些重要要求。
+
+下表概述了在VVol信息板未显示已配置SAN VVol数据存储库和虚拟机的性能指标时应验证的内容。
+
+[cols="1a,1a"]
+|===
+| 注意事项 | Description 
+
+
+ a| 
+首次部署 OnCommand API 服务
+ a| 
+* 如果使用的是 ONTAP 集群 9.6 或更早版本，则使用的是 OnCommand API 服务 2.1 或更高版本。
++
+如果您使用的是 ONTAP 9.7 及更高版本，则无需向 VASA Provider 注册 OnCommand API 服务。
+
+* 从 OnCommand 支持站点下载并安装 OnCommand API 服务后，您必须按照 _NetApp API 服务安装和设置指南 _ 中提供的安装说明进行操作。
+* 每个 VASA Provider 实例都必须有一个专用的 OnCommand API 服务实例。
++
+OnCommand API 服务不得在多个 VASA Provider 实例或 vCenter Server 之间共享。
+
+* OnCommand API 服务正在运行且可访问。
+
+
+
+
+ a| 
+存储系统
+ a| 
+* 您正在使用 ONTAP 9.3 或更高版本。
+* 您正在为存储系统使用适当的凭据。
+* 您的存储系统处于活动状态且可访问。
+* 选定虚拟机必须至少使用一个 VVOL 数据存储库，并且 I/O 操作正在该虚拟机的磁盘上执行。
+
+
+|===

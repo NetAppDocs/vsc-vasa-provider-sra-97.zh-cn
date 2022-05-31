@@ -1,0 +1,18 @@
+---
+permalink: deploy/concept-vcenter-server-role-based-access-control-features-in-vsc-for-vmware-vsphere.html 
+sidebar: sidebar 
+keywords: vcenter, server, role-based, access, control, features, vsc, vmware, vsphere, 
+summary: vCenter Server 提供了基于角色的访问控制（ Role-Based Access Control ， RBAC ），可用于控制对 vSphere 对象的访问。在适用于VMware vSphere的Virtual Storage Console中、vCenter Server RBAC与ONTAP RBAC结合使用、以确定特定用户可以对特定存储系统上的对象执行哪些VSC任务。 
+---
+= 适用于VMware vSphere的VSC中的vCenter Server基于角色的访问控制功能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+vCenter Server 提供了基于角色的访问控制（ Role-Based Access Control ， RBAC ），可用于控制对 vSphere 对象的访问。在适用于VMware vSphere的Virtual Storage Console中、vCenter Server RBAC与ONTAP RBAC结合使用、以确定特定用户可以对特定存储系统上的对象执行哪些VSC任务。
+
+要成功完成任务，您必须具有适当的 vCenter Server RBAC 权限。在执行任务期间， VSC 会先检查用户的 vCenter Server 权限，然后再检查用户的 ONTAP 权限。
+
+您可以对根对象（也称为根文件夹）设置 vCenter Server 权限。然后，您可以通过限制不需要这些权限的子实体来细化安全性。

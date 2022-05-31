@@ -1,0 +1,37 @@
+---
+permalink: manage/task-check-for-datastore-compliance-with-the-mapped-storage-capability-profile.html 
+sidebar: sidebar 
+keywords: verifying, datastore, compliance, with, the, mapped, storage, capability, profile, 
+summary: 您可以快速验证数据存储库是否符合映射到数据存储库的存储功能配置文件。 
+---
+= 验证数据存储库是否符合映射的存储功能配置文件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以快速验证数据存储库是否符合映射到数据存储库的存储功能配置文件。
+
+.开始之前
+* 您必须已向适用于VMware vSphere的Virtual Storage Console (VSC)注册VASA Provider实例。
+* VSC 必须已发现您的存储。
+
+
+.步骤
+. 在VSC *主页*页面中、单击*存储映射*。
+. 查看*合规状态*列中的信息以确定不合规的数据存储库、并查看警报中是否存在不合规原因。
++
+[NOTE]
+====
+单击 * 合规性检查 * 按钮时， VSC 会对所有存储执行重新发现操作，此操作可能需要几分钟的时间。
+
+====
++
+如果数据存储库不再符合其配置文件、则*合规状态*列将显示一条警报、指出不合规的原因。例如，配置文件可能需要数据压缩。如果已在存储上更改此设置，则不再使用数据压缩，并且数据存储库不合规。
+
+
+
+当您发现某个数据存储库不符合其配置文件时，您可以修改支持该数据存储库的卷上的设置以使该数据存储库合规，也可以为该数据存储库分配一个新的配置文件。
+
+您可以从*存储功能配置文件*页面修改这些设置。

@@ -1,0 +1,42 @@
+---
+permalink: manage/task-pair-protected-and-recovery-sites.html 
+sidebar: sidebar 
+keywords: pairing, protected, recovery, sites, 
+summary: 您必须对使用 vSphere Client 创建的受保护站点和恢复站点进行配对，以使 Storage Replication Adapter （ SRA ）能够发现存储系统。 
+---
+= 将受保护站点和恢复站点配对
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必须对使用 vSphere Client 创建的受保护站点和恢复站点进行配对，以使 Storage Replication Adapter （ SRA ）能够发现存储系统。
+
+.开始之前
+* 您必须已在受保护站点和恢复站点上安装 Site Recovery Manager （ SRM ）。
+* 您必须已在受保护站点和恢复站点上安装 SRA 。
+
+
+SnapMirror 扇出配置是指将源卷复制到两个不同目标的配置。当 SRM 需要从目标恢复虚拟机时，这些问题会在恢复期间造成问题。
+
+[NOTE]
+====
+Storage Replication Adapter （ SRA ）不支持扇出 SnapMirror 配置。
+
+====
+.步骤
+. 双击 vSphere Client 主页上的 * 站点恢复 * ，然后单击 * 站点 * 。
+. 单击菜单：对象[操作>配对站点]。
+. 在*配对站点恢复管理器服务器*对话框中、输入受保护站点的平台服务控制器的地址、然后单击*下一步*。
+. 在*选择vCenter Server*部分中、执行以下操作：
++
+.. 验证受保护站点的 vCenter Server 是否显示为要配对的匹配候选服务器。
+.. 输入 SSO 管理凭据，然后单击 * 完成 * 。
+
+
+. 如果出现提示，请单击 * 是 * 接受安全证书。
+
+
+受保护站点和恢复站点都将显示在对象对话框中。

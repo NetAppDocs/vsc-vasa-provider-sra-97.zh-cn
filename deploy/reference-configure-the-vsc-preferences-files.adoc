@@ -1,0 +1,22 @@
+---
+permalink: deploy/reference-configure-the-vsc-preferences-files.html 
+sidebar: sidebar 
+keywords: preferences, files, configuring, vsc, preferences, files, 
+summary: '这些首选项文件包含控制适用于VMware vSphere的Virtual Storage Console操作的设置。在大多数情况下，您无需修改这些文件中的设置。了解哪些首选项文件(VSC)使用非常有用。' 
+---
+= 配置 VSC 首选项文件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+这些首选项文件包含控制适用于VMware vSphere的Virtual Storage Console操作的设置。在大多数情况下，您无需修改这些文件中的设置。了解哪些首选项文件(VSC)使用非常有用。
+
+VSC 具有多个首选项文件。这些文件包含输入关键字和值，用于确定 VSC 如何执行各种操作。以下是 VSC 使用的一些首选项文件：
+
+` /opt/netapp/vscserver/etc/kamino/kaminoprefs.xml`
+
+` /opt/netapp/vscserver/etc/vsc/vscPreferences.xml`
+
+在某些情况下，您可能需要修改首选项文件。例如，如果您使用 iSCSI 或 NFS ，并且 ESXi 主机和存储系统的子网不同，则必须修改首选项文件。如果不修改首选项文件中的设置，则数据存储库配置将失败，因为 VSC 无法挂载数据存储库。

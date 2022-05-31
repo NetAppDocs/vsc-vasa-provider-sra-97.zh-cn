@@ -1,0 +1,20 @@
+---
+permalink: deploy/reference-uninstall-does-not-remove-standard-vsc-roles.html 
+sidebar: sidebar 
+keywords: uninstall, does, not, remove, standard, vsc, roles, 
+summary: '卸载适用于VMware vSphere的Virtual Storage Console (VSC)时、标准VSC角色将保持不变。这是预期行为、不会影响VSC的性能或您升级到新版本VSC的能力。如果需要、您可以手动删除这些角色。' 
+---
+= 卸载不会删除标准VSC角色
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+卸载适用于VMware vSphere的Virtual Storage Console (VSC)时、标准VSC角色将保持不变。这是预期行为、不会影响VSC的性能或您升级到新版本VSC的能力。如果需要、您可以手动删除这些角色。
+
+虽然卸载操作不会删除VSC角色、但卸载操作会删除VSC专用特权的本地化名称、并为其附加以下前缀："`XXX missing privilege`"。例如、如果您在安装VSC后打开vSphere *编辑角色*对话框、则会看到VSC专用特权列为`XXX missing privilege.``<privilege name>``.label not found XXX`。
+
+之所以出现此行为，是因为 vCenter Server 不提供删除权限的选项。
+
+重新安装 VSC 或升级到较新版本的 VSC 时，所有标准 VSC 角色和 VSC 专用特权都会还原。

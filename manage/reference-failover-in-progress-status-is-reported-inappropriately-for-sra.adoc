@@ -1,0 +1,29 @@
+---
+permalink: manage/reference-failover-in-progress-status-is-reported-inappropriately-for-sra.html 
+sidebar: sidebar 
+keywords: incorrect, status, failover, in, Progress, is, reported, for, SRA, in, SRM, 
+summary: '在SRM中、为SRA报告的"故障转移正在进行"状态不正确' 
+---
+= 在SRM中、为SRA报告的"故障转移正在进行"状态不正确
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+
+
+== 问题描述
+
+对于新SnapMirrored设备、VMware Site Recovery Manager (SRM)会将设备状态显示为"`In progress`"。
+
+
+
+== 发生原因
+
+之所以出现此问题描述 、是因为在`/opt/netapp/vpserver/conf/devices.txt`文件中存在与新创建的设备名称相同的条目。
+
+
+
+== 更正操作
+
+您应从位于`/opt/netapp/vpserver/conf/devices.txt`的两个站点(站点A和站点B)中手动删除与新创建的设备匹配的条目、然后重新运行发现设备。发现完成后、设备将显示正确的状态。

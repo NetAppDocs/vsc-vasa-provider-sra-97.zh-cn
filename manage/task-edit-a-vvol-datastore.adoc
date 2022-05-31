@@ -1,0 +1,41 @@
+---
+permalink: manage/task-edit-a-vvol-datastore.html 
+sidebar: sidebar 
+keywords: editing, a, vvols, datastore, 
+summary: 您可以编辑现有 VMware 虚拟卷（ VVOL ）数据存储库以更改默认存储功能配置文件。默认存储功能配置文件主要用于交换 VVol 。 
+---
+= 编辑 VVOL 数据存储库
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以编辑现有 VMware 虚拟卷（ VVOL ）数据存储库以更改默认存储功能配置文件。默认存储功能配置文件主要用于交换 VVol 。
+
+.步骤
+. 在 vSphere Client 页面中，单击 * 主机和集群 * 。
+. 右键单击数据存储库、然后选择菜单：NetApp VSC[编辑VVol数据存储库的属性]。
++
+此时将显示编辑VVol数据存储库的属性对话框。
+
+. 进行所需的更改。
++
+您可以通过从编辑VVol数据存储库对话框的下拉列表中选择一个新配置文件来更改VVol数据存储库的默认存储功能配置文件。您还可以更改 VVOL 数据存储库名称和问题描述。
+
++
+[NOTE]
+====
+您不能更改 VVOL 数据存储库所在的 vCenter Server 。
+
+====
+. 进行更改后，单击 * 确定 * 。
++
+此时将显示一个消息框，询问您是否要更新 VVol 数据存储库。
+
+. 单击 * 确定 * 以应用所做的更改。
++
+此时将显示一条成功消息，告知 VVol 数据存储库已更新。
+
+

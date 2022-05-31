@@ -1,0 +1,25 @@
+---
+permalink: deploy/task-regenerate-an-ssl-certificate-for-vsc.html 
+sidebar: sidebar 
+keywords: regenerating, ssl, certificate, virtual, storage, console, 
+summary: '安装(VSC)时会生成SSL证书。为 SSL 证书生成的可分辨名称（ Distinguished Name ， DN ）可能不是客户端计算机可以识别的公用名（ Common Name ， CN ）。通过更改密钥库和私钥密码，您可以重新生成证书并创建站点专用的证书。' 
+---
+= 为 Virtual Storage Console 重新生成 SSL 证书
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+安装(VSC)时会生成SSL证书。为 SSL 证书生成的可分辨名称（ Distinguished Name ， DN ）可能不是客户端计算机可以识别的公用名（ Common Name ， CN ）。通过更改密钥库和私钥密码，您可以重新生成证书并创建站点专用的证书。
+
+您可以使用维护控制台启用远程诊断并生成站点专用证书。
+
+https://kb.netapp.com/app/answers/answer_view/a_id/1075654["NetApp知识库问题解答 1075654：Virtual Storage Console 7.x：实施CA签名的证书"^]
+
+.步骤
+. 登录到维护控制台。
+. 输入`1`以访问`Application Configuration`菜单。
+. 在`Application Configuration`菜单中、输入`3`以停止VSC服务。
+. 输入 `7` 以重新生成 SSL 证书。
+

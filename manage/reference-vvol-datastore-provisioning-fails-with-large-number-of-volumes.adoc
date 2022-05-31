@@ -1,0 +1,29 @@
+---
+permalink: manage/reference-vvol-datastore-provision-fails-with-large-number-of-volumes.html 
+sidebar: sidebar 
+keywords: VVol, datastore, provisioning, fails, with, large, number, of, volumes, 
+summary: 对于大量卷、VVol数据存储库配置失败 
+---
+= 对于大量卷、VVol数据存储库配置失败
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+
+
+== 问题描述
+
+如果尝试使用六个以上的卷配置VVol数据存储库、则VVol数据存储库配置将失败。
+
+
+
+== 发生原因
+
+由于VSC和VASA Provider之间的套接字超时、VVol数据存储库配置失败。
+
+
+
+== 更正操作
+
+您应使用少于六个卷创建VVol数据存储库、或者在配置后使用*扩展VVol数据存储库*选项增加VVol数据存储库大小。

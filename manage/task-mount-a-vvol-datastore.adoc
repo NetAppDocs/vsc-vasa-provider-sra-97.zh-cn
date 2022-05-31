@@ -1,0 +1,30 @@
+---
+permalink: manage/task-mount-a-vvol-datastore.html 
+sidebar: sidebar 
+keywords: Mount, vVol, datastore, 
+summary: '您可以使用挂载VVol数据存储库对话框将VMware虚拟卷(VVols)数据存储库挂载到一个或多个其他主机。挂载数据存储库可为其他主机提供存储访问权限。' 
+---
+= 挂载 VVOL 数据存储库
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用挂载VVol数据存储库对话框将VMware虚拟卷(VVol)数据存储库挂载到一个或多个其他主机。挂载数据存储库可为其他主机提供存储访问权限。
+
+.步骤
+. 在vSphere Client *主页*页面中、单击*主机和集群*。
+. 右键单击要挂载的数据存储库、然后选择菜单：NetApp VSC[挂载VVol数据存储库]。
++
+此时将显示*挂载VVol数据存储库*对话框、其中列出了数据中心中可挂载此数据存储库的主机。此列表不包括已挂载数据存储库的主机，运行 ESX 5.x 或更早版本的主机或不支持数据存储库协议的主机。例如，如果主机不支持 FC 协议，则无法将 FC 数据存储库挂载到主机。
+
++
+[NOTE]
+====
+即使 vSphere Client 为 vCenter Server 提供了挂载对话框，您也必须始终使用 VASA Provider 对话框执行此操作。VASA Provider 可设置对运行 ONTAP 软件的存储系统的访问权限。
+
+====
+. 选择要挂载数据存储库的主机，然后单击 * 确定 * 。
+

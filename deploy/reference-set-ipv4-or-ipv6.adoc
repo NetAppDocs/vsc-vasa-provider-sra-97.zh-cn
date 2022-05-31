@@ -1,0 +1,54 @@
+---
+permalink: deploy/reference-set-ipv4-or-ipv6.html 
+sidebar: sidebar 
+keywords: setting, ipv4, ipv6, 
+summary: 首选项文件kaminoprefs.xml中添加了一个新选项、您可以将该选项设置为对添加到VSC的所有存储系统启用IPv4或IPv6支持。 
+---
+= 设置IPv4或IPv6
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在首选项文件``kaminoprefs.xml``中添加了一个新选项、您可以将该选项设置为对添加到VSC的所有存储系统启用IPv4或IPv6支持。
+
+* `default.override.option.provision.mount.datastore.address.family` 参数已添加到 `kaminoprefs.xml` 首选项文件中，用于为数据存储库配置设置首选数据 LIF 协议。
++
+此首选项适用于添加到 VSC 中的所有存储系统。
+
+* 新选项的值为 `IPv4` ， `IPv6` 和 `none` 。
+* 默认情况下，此值设置为 `none` 。
+
+
+[cols="1a,1a"]
+|===
+| 价值 | Description 
+
+
+ a| 
+无
+ a| 
+* 配置使用与添加存储所使用的集群或管理LIF类型相同的IPv6或IPv4地址类型的数据LIF进行。
+* 如果中不存在相同的IPv6或IPv4地址类型的数据LIF、则会通过其他类型的数据LIF进行配置(如果可用)。
+
+
+
+
+ a| 
+IPv4
+ a| 
+* 使用选定中的IPv4数据LIF进行配置。
+* 如果没有IPv4数据LIF、则会通过IPv6数据LIF进行配置(如果在中提供)。
+
+
+
+
+ a| 
+IPv6
+ a| 
+* 使用选定中的IPv6数据LIF进行配置。
+* 如果没有IPv6数据LIF、则会通过IPv4数据LIF进行配置(如果在中提供了此功能)。
+
+
+|===

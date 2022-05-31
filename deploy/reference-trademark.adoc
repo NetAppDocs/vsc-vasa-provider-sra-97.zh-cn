@@ -1,0 +1,15 @@
+---
+permalink: deploy/reference-trademark.html 
+sidebar: sidebar 
+keywords: trademark 
+summary: 商标 
+---
+= 商标
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+NetApp、NetApp标识和* NetApp商标*页面上列出的标记是NetApp、Inc.的商标。其他公司和产品名称可能是其各自所有者的商标。
+
+http://www.netapp.com/us/legal/netapptmlist.aspx["单击此处"^]

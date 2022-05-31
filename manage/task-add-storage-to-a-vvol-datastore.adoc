@@ -1,0 +1,81 @@
+---
+permalink: manage/task-add-storage-to-a-vvol-datastore.html 
+sidebar: sidebar 
+keywords: virtual, volume, datastores, adding, storage, to, a, vVols, datastore, 
+summary: 您可以通过使用添加存储向导向现有 VMware 虚拟卷（ VVOL ）数据存储库添加 FlexVol 卷来增加可用存储。 
+---
+= 向 VVOL 数据存储库添加存储
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用*添加存储*向导将FlexVol 卷添加到现有VMware虚拟卷(VVOL)数据存储库来增加可用存储。
+
+添加 FlexVol 卷时，您还可以选择更改与该卷关联的存储功能配置文件。您可以使用 VASA Provider 自动生成功能为卷创建新配置文件，也可以将现有配置文件之一分配给卷。
+
+[NOTE]
+====
+* 在扩展具有复制功能的VVOL数据存储库时、您无法创建新的FlexVol 卷、但只能从现有列表中选择预配置的FlexVol 卷。
+* 如果克隆部署在具有 VVol 复制功能的数据存储库上的受保护虚拟机因空间不足而失败，则应增加 FlexVol 卷大小。
+* 在 AFF 集群上创建 VVOL 数据存储库时，您无法使用具有自动生成存储功能配置文件的另一个 FlexVol 卷扩展此数据存储库。
++
+您可以使用具有预创建的存储功能配置文件的 FlexVol 卷扩展 VVol 数据存储库。
+
+
+
+====
+.步骤
+. 在vSphere Client *主页*页面上、单击*主机和集群*。
+. 右键单击VVol数据存储库、然后选择菜单：NetApp VSC[扩展VVol数据存储库的存储]。
+. 在*扩展VVol数据存储库的存储*页面上、您可以将现有FlexVol 卷添加到VVol数据存储库、也可以创建新的FlexVol 卷以添加到数据库。
++
+[cols="1a,1a"]
+|===
+| 如果选择 | 执行以下操作... 
+
+
+ a| 
+选择卷
+ a| 
+.. 选择要添加到 VVOL 数据存储库的 FlexVol 卷。
+.. 在*存储功能配置文件*列中、使用下拉列表根据FlexVol 卷创建新配置文件、或者选择一个现有配置文件。
++
+自动生成功能会根据与该 FlexVol 卷关联的存储功能创建配置文件。例如：磁盘类型，高可用性，灾难恢复，性能功能和重复数据删除。
+
+
+
+
+
+ a| 
+创建新卷
+ a| 
+.. 输入 FlexVol 的名称，大小和存储功能配置文件。
++
+系统会根据选定的存储功能配置文件选择聚合。
+
+.. 选择 * 自动增长 * 选项并提供最大大小。
+.. 单击 * 添加 * 将 FlexVol 添加到卷列表中。
+
+
+|===
++
+* 提醒 * ： VVOL 数据存储库中的所有 FlexVol 卷必须来自同一个 Storage Virtual Machine （ SVM ，以前称为 Vserver ）。
+
++
+创建 FlexVol 卷后，您可以单击 * 修改 * 按钮对其进行编辑。您也可以将其删除。
+
+. 选择要在虚拟机创建期间使用的默认存储功能配置文件，然后单击 * 下一步 * 以查看添加到 VVol 数据存储库的存储的摘要。
+. 单击 * 完成 * 。
++
+此向导会将您指定的存储添加到 VVol 数据存储库中。完成后，它将显示一条成功消息。
+
++
+[NOTE]
+====
+*扩展VVol数据存储库的存储*向导可自动处理任何ESXi存储重新扫描或所需的任何其他重要操作。由于 VVOL 数据存储库是由 VASA Provider 控制的一个逻辑实体，因此要扩大存储容器的容量，只需添加 FlexVol 卷即可。
+
+====
+

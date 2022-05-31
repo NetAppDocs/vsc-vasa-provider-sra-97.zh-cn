@@ -1,0 +1,30 @@
+---
+permalink: deploy/task-run-the-gos-timeout-scripts-for-windows.html 
+sidebar: sidebar 
+keywords: setting, timeout, values, windows, guest, operating, systems, 
+summary: 子操作系统（ OS ）超时脚本用于为 Windows 子操作系统设置 SCSI I/O 超时设置。您可以指定 60 秒超时或 190 秒超时。要使设置生效，必须重新启动 Windows 子操作系统。 
+---
+= 设置 Windows 子操作系统的超时值
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+子操作系统（ OS ）超时脚本用于为 Windows 子操作系统设置 SCSI I/O 超时设置。您可以指定 60 秒超时或 190 秒超时。要使设置生效，必须重新启动 Windows 子操作系统。
+
+您必须已挂载包含 Windows 脚本的 ISO 映像。
+
+.步骤
+. 访问 Windows 虚拟机的控制台，并登录到具有管理员权限的帐户。
+. 如果此脚本未自动启动，请打开 CD 驱动器，然后运行 `windows_gos_timeout.reg` 脚本。
++
+此时将显示注册表编辑器对话框。
+
+. 单击 * 是 * 继续。
++
+此时将显示以下消息：`D：\windows_gos_timeout.reg中包含的密钥和值已成功添加到注册表中。`
+
+. 重新启动 Windows 子操作系统。
+. 卸载 ISO 映像。
+

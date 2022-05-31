@@ -1,0 +1,42 @@
+---
+permalink: deploy/task-discover-storage-systems-and-hosts.html 
+sidebar: sidebar 
+keywords: discovering, storage, systems, hosts, 
+summary: '首次在vSphere Client中运行(VSC)时、VSC会发现ESXi主机、其LUN和NFS导出以及拥有这些LUN和导出的NetApp存储系统。' 
+---
+= 发现存储系统和主机
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+首次在vSphere Client中运行(VSC)时、VSC会发现ESXi主机、其LUN和NFS导出以及拥有这些LUN和导出的NetApp存储系统。
+
+.开始之前
+* 所有 ESXi 主机都必须已启动并连接。
+* 要发现的所有都必须正在运行、并且每个集群节点必须至少为正在使用的存储协议(NFS、iSCSI或FC)配置一个数据LIF。
+
+
+您可以随时发现新的存储系统或更新有关现有存储系统的信息，以获取最新的容量和配置信息。您还可以修改 VSC 用于登录到存储系统的凭据。
+
+发现存储系统时， VSC 会从 vCenter Server 实例管理的 ESXi 主机收集信息。
+
+.步骤
+. 从vSphere Client *主页*页面中、选择*主机和集群*。
+. 右键单击所需的数据中心、然后选择菜单：NetApp VSC[更新主机和存储数据]。
++
+VSC 将显示一个确认对话框，告知您此操作可能需要很长时间。
+
+. 单击 * 确定 * 。
+. 选择状态为"`Authentication Failure`"的已发现存储控制器、然后单击菜单：Actions[修改]。
+. 在*修改存储系统*对话框中填写所需信息。
+. 对状态为 "`Authentication Failure` " 的所有存储控制器重复步骤 4 和 5 。
+
+
+发现过程完成后，请执行以下操作：
+
+* 使用VSC为在*适配器设置*列、* MPIO设置*列或* NFS设置*列中显示警报图标的主机配置ESXi主机设置。
+* 提供存储系统凭据。
+

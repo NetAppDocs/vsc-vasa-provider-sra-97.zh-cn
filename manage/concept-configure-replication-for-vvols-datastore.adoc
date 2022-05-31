@@ -1,0 +1,30 @@
+---
+permalink: manage/concept-configure-replication-for-vvols-datastore.html 
+sidebar: sidebar 
+keywords: configuring, replication, for, vvols, datastore, 
+summary: 您可以使用VSC、VASA Provider和SRA虚拟设备为VVOL数据存储库配置复制。VVOL 复制的主要目的是，在灾难恢复期间使用 VMware Site Recovery Manager （ SRM ）保护关键虚拟机。 
+---
+= 为VVOL数据存储库配置复制
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用VSC、VASA Provider和SRA虚拟设备为VVOL数据存储库配置复制。VVOL 复制的主要目的是，在灾难恢复期间使用 VMware Site Recovery Manager （ SRM ）保护关键虚拟机。
+
+但是、要为VSC、VASA Provider和SRA虚拟设备配置VVOL复制、必须启用VASA Provider功能和VVOL复制。默认情况下、VASA Provider会在虚拟设备中为VSC、VASA Provider和SRA启用。基于阵列的复制在 FlexVol 级别执行。每个 VVOL 数据存储库都会映射到一个包含一个或多个 FlexVol 卷的存储容器。FlexVol 卷应使用 ONTAP 中的 SnapMirror 进行预配置。
+
+[NOTE]
+====
+您不应在一个 VVOL 数据存储库中混合配置受保护和未受保护的虚拟机。故障转移后的重新保护操作将发生原因删除不受保护的虚拟机。使用复制功能时，请确保 VVOL 数据存储库中的所有虚拟机都受到保护。
+
+====
+复制组是在 VVOL 数据存储库创建工作流期间为每个 FlexVol 卷创建的。要使用 VVol 复制，您需要创建包含复制状态和计划以及存储功能配置文件的 VM 存储策略。复制组包含在灾难恢复过程中复制到目标站点的虚拟机。您可以使用 SRM 控制台为灾难恢复工作流配置具有保护组和恢复计划的复制组。
+
+[NOTE]
+====
+如果您要对 VVOL 数据存储库使用灾难恢复，则无需单独配置 Storage Replication Adapter （ SRA ），因为 VASA Provider 功能已增强，可以进行 VVOL 复制。
+
+====
+image::../media/vvols-replication.png[VVOL 复制]

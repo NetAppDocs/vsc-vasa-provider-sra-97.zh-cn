@@ -1,0 +1,12 @@
+---
+permalink: deploy/reference-copyright-and-trademark.html 
+sidebar: sidebar 
+keywords: copyright, trademark, 
+summary: 版权和商标 
+---
+= 版权和商标
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+

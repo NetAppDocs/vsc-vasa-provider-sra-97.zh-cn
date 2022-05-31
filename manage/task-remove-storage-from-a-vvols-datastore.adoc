@@ -1,0 +1,33 @@
+---
+permalink: manage/task-remove-storage-from-a-vvols-datastore.html 
+sidebar: sidebar 
+keywords: removing, storage, from, a, vvols, datastore, 
+summary: 如果 VMware 虚拟卷（ VVOL ）数据存储库包含多个 FlexVol 卷，则可以从 VVOL 数据存储库中删除一个或多个 FlexVol 卷，而无需删除此数据存储库。 
+---
+= 从 VVol 数据存储库中删除存储
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果 VMware 虚拟卷（ VVOL ）数据存储库包含多个 FlexVol 卷，则可以从 VVOL 数据存储库中删除一个或多个 FlexVol 卷，而无需删除此数据存储库。
+
+VVOL数据存储库一直存在、直到该数据存储库上至少有一个FlexVol 卷为止。
+
+.步骤
+. 在vSphere Client *主页*页面中、单击*主机和集群*。
+. 右键单击要修改的VVol数据存储库、然后选择菜单：NetApp VSC[从VVol数据存储库中删除存储]。
++
+此时将显示*从VVol数据存储库中删除存储*对话框。
+
+. 选择要从 VVOL 数据存储库中删除的 FlexVol 卷，然后单击 * 删除 * 。
+. 单击确认对话框中的 * 确定 * 。
++
+[NOTE]
+====
+如果选择所有 FlexVol 卷，则会显示一条错误消息，指示此操作将失败。
+
+====
+

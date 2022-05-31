@@ -1,0 +1,26 @@
+---
+permalink: manage/reference-error-while-accessing-the-vsc-summary-page-of-virtual-appliance.html 
+sidebar: sidebar 
+keywords: error, while, accessing, the, vsc, summary, page, of, virtual, appliance, 
+summary: '在部署Virtual Storage Console (VSC)、VASA Provider和Storage Replication Adapter (SRA)虚拟设备后、如果您尝试访问VSC摘要页面、则可能会显示错误消息/opt/netapp/vscserver/etc/vsc/performance.json (No such file or directory)。' 
+---
+= 访问虚拟设备的VSC摘要页面时出错
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在为Virtual Storage Console (VSC)、VASA Provider和Storage Replication Adapter (SRA)部署虚拟设备后、在尝试访问VSC摘要页面时、可能会显示错误消息`/opt/netapp/vscserver/etc/vsc/performance.json (No such file or directory)`。
+
+
+
+== Description
+
+在部署VSC、VASA Provider和SRA虚拟设备后、如果尝试访问VSC信息板、可能会遇到错误、因为计划程序初始化过程未完成。
+
+
+
+== 临时解决策
+
+在部署虚拟设备后、您必须等待几秒钟、以完成性能计划程序初始化过程、然后单击 image:../media/dashboard-refresh-icon.gif[""] 按钮以获取最新数据。

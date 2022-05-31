@@ -1,0 +1,60 @@
+---
+permalink: deploy/reference-port-requirements-for-vsc.html 
+sidebar: sidebar 
+keywords: port, requirements, vsc 
+summary: '默认情况下、(VSC)使用指定的端口在其组件(包括存储系统和VMware vCenter Server)之间进行通信。如果启用了防火墙，则必须确保将防火墙设置为允许例外。' 
+---
+= VSC 的端口要求
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+默认情况下、(VSC)使用指定的端口在其组件(包括存储系统和VMware vCenter Server)之间进行通信。如果启用了防火墙，则必须确保将防火墙设置为允许例外。
+
+对于 Windows 以外的防火墙，您应手动授予对 VSC 使用的特定端口的访问权限。如果不授予对这些端口的访问权限，则会显示如下错误消息。
+
+无法与服务器进行通信 _
+
+VSC 使用以下默认双向 TCP 端口：
+
+[cols="1a,1a"]
+|===
+| 默认端口号 | Description 
+
+
+ a| 
+9083.
+ a| 
+启用后， VASA Provider 和 Storage Replication Adapter （ SRA ）均使用此端口与 vCenter Server 进行通信。要获取 TCP/IP 设置，也需要此端口。
+
+
+
+ a| 
+443.
+ a| 
+根据凭据的配置方式， VMware vCenter Server 和存储系统会侦听此端口上的安全通信。
+
+
+
+ a| 
+8143
+ a| 
+VSC 会侦听此端口上的安全通信。
+
+
+
+ a| 
+7.
+ a| 
+VSC 会向 ONTAP 发送回显请求以验证可访问性，只有在添加存储系统时才需要此请求，并且可以稍后禁用。
+
+|===
+[NOTE]
+====
+在部署VSC、VASA Provider和SRA虚拟设备之前、您应已启用Internet控制消息协议(Internet Control Message Protocol、ICMP)。
+
+如果禁用ICMP、则VSC、VASA Provider和SRA虚拟设备的初始配置将失败、并且VSC在部署后无法启动VSC和VASA Provider服务。您必须在部署后手动启用 VSC 和 VASA Provider 服务。
+
+====

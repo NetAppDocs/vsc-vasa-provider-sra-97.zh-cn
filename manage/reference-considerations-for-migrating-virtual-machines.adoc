@@ -1,0 +1,59 @@
+---
+permalink: manage/reference-considerations-for-migrating-virtual-machines.html 
+sidebar: sidebar 
+keywords: considerations, for, migrating, or, cloning, virtual, machines, 
+summary: 在数据中心中迁移现有虚拟机时，您应了解一些注意事项。 
+---
+= 迁移或克隆虚拟机的注意事项
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在数据中心中迁移现有虚拟机时，您应了解一些注意事项。
+
+
+
+== 迁移受保护的虚拟机
+
+您可以将受保护虚拟机迁移到：
+
+* 同一个 VVol 数据存储库位于不同的 ESXi 主机中
+* 同一 ESXi 主机中的不同兼容 VVol 数据存储库
+* 不同 ESXi 主机中的不同兼容 VVol 数据存储库
+
+
+如果虚拟机迁移到不同的 FlexVol 卷，则相应的元数据文件也会使用虚拟机信息进行更新。如果将虚拟机迁移到不同的ESXi主机、但存储相同、则不会修改底层FlexVol 卷元文件。
+
+
+
+== 克隆受保护的虚拟机
+
+您可以将受保护虚拟机克隆到以下位置：
+
+* 同一个 FlexVol 卷的同一个容器使用复制组
++
+同一个 FlexVol 卷的元数据文件将使用克隆的虚拟机详细信息进行更新。
+
+* 使用复制组的不同 FlexVol 卷的同一容器
++
+放置克隆虚拟机的 FlexVol 卷，元数据文件将使用克隆的虚拟机详细信息进行更新。
+
+* 不同的容器或 VVOL 数据存储库
++
+放置克隆虚拟机的 FlexVol 卷，元数据文件将获取更新后的虚拟机详细信息。
+
+
+
+VMware 目前不支持将虚拟机克隆到 VM 模板。
+
+支持受保护虚拟机的克隆。
+
+
+
+== 虚拟机快照
+
+目前仅支持不含内存的虚拟机 Snapshot 。如果虚拟机具有带有内存的 Snapshot ，则不会考虑对该虚拟机进行保护。
+
+此外，您也无法保护具有内存 Snapshot 的未受保护虚拟机。对于此版本，您应先删除内存快照，然后再为虚拟机启用保护。

@@ -1,0 +1,40 @@
+---
+permalink: deploy/concept-guidelines-for-using-vsc-standard-roles.html 
+sidebar: sidebar 
+keywords: guidelines, using, VSC standard roles 
+summary: 使用适用于VMware vSphere的标准Virtual Storage Console角色时、应遵循特定准则。 
+---
+= 使用 VSC 标准角色的准则
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用适用于VMware vSphere的标准Virtual Storage Console角色时、应遵循特定准则。
+
+您不应直接修改标准角色。否则，每次升级 VSC 时， VSC 都会覆盖您所做的更改。每次升级 VSC 时，安装程序都会更新标准角色定义。这样可以确保角色对于您的 VSC 版本以及所有受支持的 vCenter Server 版本均为最新角色。
+
+但是，您可以使用标准角色创建根据您的环境量身定制的角色。为此，您应复制 VSC 标准角色，然后编辑复制的角色。通过创建新角色，即使重新启动或升级 VSC Windows 服务，您也可以保持此角色。
+
+使用 VSC 标准角色的一些方法包括：
+
+* 对所有 VSC 任务使用标准 VSC 角色。
++
+在这种情况下，标准角色可提供用户执行 VSC 任务所需的所有特权。
+
+* 合并角色以扩展用户可以执行的任务。
++
+如果标准 VSC 角色为您的环境提供的粒度过高，您可以通过创建包含多个角色的更高级别组来扩展角色。
+
++
+如果用户需要执行其他需要额外原生 vCenter Server 特权的非 VSC 任务，您可以创建一个提供这些特权的角色，并将其添加到组中。
+
+* 创建更细化的角色。
++
+如果您的公司要求您实施比标准 VSC 角色限制性更强的角色，则可以使用 VSC 角色创建新角色。
+
++
+在这种情况下，您需要克隆所需的 VSC 角色，然后编辑克隆的角色，使其仅具有用户所需的权限。
+
+

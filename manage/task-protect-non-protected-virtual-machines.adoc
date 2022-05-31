@@ -1,0 +1,33 @@
+---
+permalink: manage/task-protect-non-protected-virtual-machines.html 
+sidebar: sidebar 
+keywords: virtual, machines, configuring, protection, protecting, unprotected, virtual, machines, 
+summary: 您可以为使用 VM 存储策略创建且已禁用复制的现有未受保护虚拟机配置保护。要提供保护，您应更改虚拟机存储策略并分配复制组。 
+---
+= 保护未受保护的虚拟机
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以为使用 VM 存储策略创建且已禁用复制的现有未受保护虚拟机配置保护。要提供保护，您应更改虚拟机存储策略并分配复制组。
+
+如果 SVM 同时具有 IPv4 和 IPv6 LIF ，则应禁用 IPv6 LIF ，稍后再执行灾难恢复工作流。
+
+.步骤
+. 单击所需的虚拟机并验证其是否已配置默认虚拟机存储策略。
+. 右键单击选定虚拟机、然后单击菜单：VM策略[编辑VM存储策略]。
+. 从 * 虚拟机存储策略 * 下拉列表中选择已启用复制的虚拟机存储策略。
+. 从 * 复制组 * 下拉列表中选择一个复制组，然后单击 * 确定 * 。
++
+验证虚拟机的摘要以确认虚拟机是否受保护。
+
++
+[NOTE]
+====
+此版本的VSC、VASA Provider和SRA虚拟设备不支持热克隆受保护虚拟机。您应关闭虚拟机，然后执行克隆操作。
+
+====
+

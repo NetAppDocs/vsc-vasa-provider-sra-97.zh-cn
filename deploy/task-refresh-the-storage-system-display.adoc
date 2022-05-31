@@ -1,0 +1,48 @@
+---
+permalink: deploy/task-refresh-the-storage-system-display.html 
+sidebar: sidebar 
+keywords: refreshing, the, storage, system, display, 
+summary: '您可以使用适用于VMware vSphere的Virtual Storage Console提供的更新功能刷新有关存储系统的信息、并强制Virtual Storage Console (VSC)发现存储系统。' 
+---
+= 刷新存储系统显示内容
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用适用于VMware vSphere的Virtual Storage Console提供的更新功能刷新有关存储系统的信息、并强制Virtual Storage Console (VSC)发现存储系统。
+
+如果您在收到身份验证错误后更改了存储系统的默认凭据，则 `refresh` 选项非常有用。如果在存储系统报告 "`Authentication Failure Status` " 后更改了存储系统凭据，则应始终执行更新操作。在更新操作期间， VSC 会尝试使用新凭据连接到存储系统。
+
+根据您的系统设置，此任务可能需要很长时间才能完成。
+
+.步骤
+. 在VMware vSphere Client *主页*页面上、单击*存储系统*。
+. 开始更新：
++
+[cols="1a,1a"]
+|===
+| 如果此位置... | 单击 
+
+
+ a| 
+Virtual Storage Console
+ a| 
+"* 重新发现全部 * " 图标。
+
+
+
+ a| 
+数据中心
+ a| 
+右键单击该数据中心、然后单击菜单：NetApp VSC[更新主机和存储数据]。
+
+|===
+. 在*更新主机和存储数据*对话框中、单击*确定*。
++
+根据数据中心中的主机和存储系统数量，此发现可能需要几分钟的时间。此发现操作可在后台运行。
+
+. 单击*成功*对话框中的*确定*。
+

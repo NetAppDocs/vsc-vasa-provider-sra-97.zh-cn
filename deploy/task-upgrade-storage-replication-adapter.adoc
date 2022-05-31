@@ -1,0 +1,51 @@
+---
+permalink: deploy/task-upgrade-storage-replication-adapter.html 
+sidebar: sidebar 
+keywords: sra, upgrade, upgrading, storage, replication, adapter, 
+summary: '在升级VSC、VASA Provider和SRA虚拟设备或部署最新版本的虚拟设备后、您必须升级Storage Replication Adapter (SRA)。' 
+---
+= 升级 Storage Replication Adapter
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在升级VSC、VASA Provider和SRA虚拟设备或部署最新版本的虚拟设备后、您必须升级Storage Replication Adapter (SRA)。
+
+.步骤
+. 您必须根据适配器使用以下过程之一升级到最新的适配器：
++
+[cols="1a,1a"]
+|===
+| * 用于 ...* | 执行以下操作... 
+
+
+ a| 
+* Windows *
+ a| 
+.. 登录到 SRM Windows Server 。
+.. 从 SRM Server 卸载现有的 SRA _.msi 安装程序。
+.. 将系统路径更改为 `C ： \Program Files\VMware\VMware vCenter Site Recovery Manager\external\perl\c\bin`
+.. 双击从 NetApp 支持站点下载的 _.msi 安装程序，然后按照屏幕上的说明进行操作。
+.. 输入已部署的VSC、VASA Provider和SRA虚拟设备的IP地址和密码。
+
+
+
+
+ a| 
+*基于设备的适配器*
+ a| 
+.. 登录到"SRM设备管理"页面。
+.. 单击 * 存储复制适配器 * ，然后单击 * 删除 * 以删除现有 SRA 。
+.. 单击菜单：New Adapter[浏览]。
+.. 单击选择从 NetApp 支持站点下载的最新 SRA tarball 文件，然后单击 * 安装 * 。
+.. 在 SRM 设备上配置 SRA 。
++
+xref:task-configure-sra-on-srm-appliance.adoc[在 SRM 设备上配置 SRA]
+
+
+
+|===
+

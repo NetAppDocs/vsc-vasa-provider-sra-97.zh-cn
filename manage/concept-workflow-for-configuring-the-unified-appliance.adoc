@@ -1,0 +1,16 @@
+---
+permalink: manage/concept-workflow-for-configuring-the-unified-appliance.html 
+sidebar: sidebar 
+keywords: workflow, for, configuring, the, virtual, appliance, for, vsc, vasa, provider, and, sra, 
+summary: 为VSC、VASA Provider和SRA配置虚拟机涉及配置存储系统、创建存储功能配置文件、配置数据存储库以及选择配置SRA以实现灾难恢复。 
+---
+= 用于配置VSC、VASA Provider和SRA虚拟设备的工作流
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+为VSC、VASA Provider和SRA配置虚拟机涉及配置存储系统、创建存储功能配置文件、配置数据存储库以及选择配置SRA以实现灾难恢复。
+
+image::../media/use-case-vsc-users.gif[VSC用户用例]

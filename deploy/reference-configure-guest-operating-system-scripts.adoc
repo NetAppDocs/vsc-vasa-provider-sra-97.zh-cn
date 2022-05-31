@@ -1,0 +1,49 @@
+---
+permalink: deploy/reference-configure-guest-operating-system-scripts.html 
+sidebar: sidebar 
+keywords: guest, operating, system, configuring, scripts, 
+summary: '子操作系统(OS)脚本的ISO映像挂载在适用于VMware vSphere的Virtual Storage Console服务器上。要使用子操作系统脚本为虚拟机设置存储超时，必须从 vSphere Client 挂载这些脚本。' 
+---
+= 配置子操作系统脚本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+子操作系统(OS)脚本的ISO映像挂载在适用于VMware vSphere的Virtual Storage Console服务器上。要使用子操作系统脚本为虚拟机设置存储超时，必须从 vSphere Client 挂载这些脚本。
+
+[cols="1a,1a,1a"]
+|===
+| 操作系统类型 | 60秒超时设置 | 190秒超时设置 
+
+
+ a| 
+Linux
+ a| 
+` https：//<appliance_ip>：8143/VSC/public/writing/Linux_GoS_timeout-install.iso`
+ a| 
+` https：//<appliance_ip>：8143/VSC/public/writable /Linux_GoS_timeout_190-install.iso`
+
+
+
+ a| 
+Windows
+ a| 
+` https：//<appliance_ip>：8143/VSC/public/writable /windows_gos_timeout.iso`
+ a| 
+` https：//<appliance_ip>：8143/VSC/public/writable /windows_gos_timeout_190.iso`
+
+
+
+ a| 
+Solaris
+ a| 
+` https：//<appliance_ip>：8143/VSC/public/writing/solaris GoS_timeout-install.iso`
+ a| 
+` https：//<appliance_ip>：8143/VSC/public/writable /solaris GoS_timeout_190-install.iso`
+
+|===
+您应从已注册到管理虚拟机的 vCenter Server 的 VSC 实例副本安装此脚本。如果您的环境包含多个 vCenter Server ，则应选择包含要设置存储超时值的虚拟机的服务器。
+
+您应登录到虚拟机，然后运行脚本以设置存储超时值。

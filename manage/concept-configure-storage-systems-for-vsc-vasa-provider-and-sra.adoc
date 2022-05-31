@@ -1,0 +1,14 @@
+---
+permalink: manage/concept-configure-storage-systems-for-vsc-vasa-provider-and-sra.html 
+sidebar: sidebar 
+keywords: configuring, storage, systems, for, vsc, vasa, provider, sra, 
+summary: 如果需要、您应使用VSC界面向虚拟设备添加存储系统并设置默认凭据。 
+---
+= 为VSC、VASA Provider和SRA配置存储系统
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果需要、您应使用VSC界面向虚拟设备添加存储系统并设置默认凭据。

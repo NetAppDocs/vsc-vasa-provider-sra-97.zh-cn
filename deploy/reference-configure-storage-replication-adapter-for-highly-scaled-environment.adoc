@@ -1,0 +1,43 @@
+---
+permalink: deploy/reference-configure-storage-replication-adapter-for-highly-scaled-environment.html 
+sidebar: sidebar 
+keywords: configuration, storage, replication, adapter, highly, scaled, environment, 
+summary: 您必须根据建议的设置配置存储超时间隔，以使 Storage Replication Adapter （ SRA ）能够在高度扩展的环境中以最佳性能运行。 
+---
+= 为高度扩展的环境配置Storage Replication Adapter
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必须根据建议的设置配置存储超时间隔，以使 Storage Replication Adapter （ SRA ）能够在高度扩展的环境中以最佳性能运行。
+
+
+
+== 存储提供程序设置
+
+* 您必须将`StorageProvider.resignatureTimeout`设置的值从900秒增加到12000秒。
+* 您必须启用`StorageProvider.autoResignatureMode`选项。
+
+
+有关修改存储提供程序设置的详细信息，请参见 VMware 文档。
+
+https://docs.vmware.com/en/Site-Recovery-Manager/6.5/com.vmware.srm.admin.doc/GUID-E4060824-E3C2-4869-BC39-76E88E2FF9A0.html["VMware vSphere 文档：更改存储提供程序设置"^]
+
+
+
+== 存储设置
+
+对于高度扩展的环境、必须将`storage.commandTimeout`超时间隔值设置为12、000秒。
+
+[NOTE]
+====
+指定的超时间隔为最大值。您无需等待达到最大超时值。大多数命令都会在设置的最大超时间隔内完成。
+
+====
+https://kb.netapp.com/app/answers/answer_view/a_id/1001111["NetApp 知识库问题解答 1001111 ：《适用于 ONTAP 的 NetApp 存储复制适配器 4.0/7.X 规模估算指南》"^]
+
+有关修改 SAN Provider 设置的 VMware 文档提供了更多信息。
+
+https://docs.vmware.com/en/Site-Recovery-Manager/6.5/com.vmware.srm.admin.doc/GUID-711FD223-50DB-414C-A2A7-3BEB8FAFDBD9.html["VMware Site Recovery Manager文档：更改存储设置"^]

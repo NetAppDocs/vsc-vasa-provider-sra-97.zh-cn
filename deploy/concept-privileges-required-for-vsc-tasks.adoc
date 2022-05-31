@@ -1,0 +1,18 @@
+---
+permalink: deploy/concept-privileges-required-for-vsc-tasks.html 
+sidebar: sidebar 
+keywords: privileges, required, vsc, tasks, 
+summary: '不同的适用于VMware vSphere的Virtual Storage Console任务需要不同的(VSC)特权和原生 vCenter Server特权组合。' 
+---
+= VSC 任务所需的特权
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+不同的适用于VMware vSphere的Virtual Storage Console任务需要不同的(VSC)特权和原生 vCenter Server特权组合。
+
+有关 VSC 任务所需特权的信息，请参见 NetApp 知识库文章 1032542 。
+
+https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Virtual_Storage_Console_for_VMware_vSphere/How_to_configure_RBAC_for_Virtual_Storage_Console["如何为 Virtual Storage Console 配置 RBAC"^]

@@ -1,0 +1,61 @@
+---
+permalink: deploy/task-enable-datastore-mounting-across-different-subnets.html 
+sidebar: sidebar 
+keywords: enabling, datastore, mounting, across, different, subnets, 
+summary: '如果您使用iSCSI或NFS、并且ESXi主机和存储系统的子网不同、则必须修改适用于VMware vSphere的Virtual Storage Console首选项文件。如果不修改首选项文件、则数据存储库配置将失败、因为(VSC)无法挂载数据存储库。' 
+---
+= 在不同子网之间启用数据存储库挂载
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您使用iSCSI或NFS、并且ESXi主机和存储系统的子网不同、则必须修改适用于VMware vSphere的Virtual Storage Console首选项文件。如果不修改首选项文件、则数据存储库配置将失败、因为(VSC)无法挂载数据存储库。
+
+如果数据存储库配置失败， VSC 将记录以下错误消息：
+
+`无法继续。交叉引用控制器上的内核IP地址和地址时未找到IP地址。`
+
+`找不到与这些主机的NFS挂载卷匹配的网络。` ``
+
+.步骤
+. 登录到 vCenter Server 实例。
+. 使用统一设备虚拟机启动维护控制台。
++
+link:task-access-virtual-appliance-maiintenance-console-options.html["访问VSC、VASA Provider和SRA虚拟设备的维护控制台选项"]
+
+. 输入`4`以访问*支持和诊断*选项。
+. 输入`2`以访问*访问诊断Shell *选项。
+. 输入 `vi /opt/netapp/vscserver/etc/kamino/kaminoprefs.xml` 以更新 `kaminoprefs.xml` 文件。
+. 更新 `kaminoprefs.xml` 文件。
++
+[cols="1a,1a"]
+|===
+| 如果您使用 | 执行此操作 ... 
+
+
+ a| 
+iSCSI
+ a| 
+将输入项 `default.allow.iscsi.mount.networks` 的值从 ALL 更改为 ESXi 主机网络的值。
+
+
+
+ a| 
+NFS
+ a| 
+将输入项 `default.allow.nfs.mount.networks` 的值从 ALL 更改为 ESXi 主机网络的值。
+
+|===
++
+首选项文件包含这些输入项的示例值。
+
++
+[NOTE]
+====
+值 "`所有` " 并不表示所有网络。通过`all`值、可以使用主机和存储系统之间的所有匹配网络来挂载数据存储库。指定主机网络时，只能在指定子网之间挂载。
+
+====
+. 保存并关闭 `kaminoprefs.xml` 文件。
+

@@ -1,0 +1,258 @@
+---
+sidebar: sidebar 
+permalink: qsg.html 
+keywords: qsg, ontap tools for vmware vsphere, quick start guide, installing 
+summary: 简要介绍部署适用于VMware vSphere的Virtual Storage Console、VASA Provider和Storage Replication Adapter虚拟设备的部署要求和分步说明。 
+---
+= 快速入门
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:experimental: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+适用于VMware vSphere的Virtual Storage Console (VSC)是一个vCenter Server插件、与VASA Provider和Storage Replication Adapter (SRA)扩展捆绑在一起。建议在所有 ONTAP vSphere 环境中使用 VSC ，因为 VSC 会根据最佳实践配置 ESXi 主机设置并配置 ONTAP 存储。要支持虚拟卷（ VVOL ），需要使用 VASA Provider ，而 SRA 可与 VMware Site Recovery Manager 配合使用。
+
+
+
+== 准备安装
+
+您可以将此插件部署为虚拟设备，这样可以减少在 vCenter Server 中单独安装和注册每个产品的工作量。
+
+
+
+=== 部署要求
+
+VSC、VASA Provider和SRA虚拟设备可与Windows vCenter Server或VMware vCenter Server虚拟设备(vCSA)结合使用。您必须在受支持的ESXi和vSphere系统上部署VSC、VASA Provider和SRA虚拟设备。
+
+
+
+=== 空间和主机规模估算要求
+
+[cols="2*"]
+|===
+| 系统 | 最低要求 
+
+
+ a| 
+空间
+ a| 
+* 2.1 GB 用于精简配置安装
+* 54.0 GB 用于厚配置安装
+
+
+
+
+ a| 
+主机规模估算
+ a| 
+* 建议内存：12 GB
+* 建议的 CPU ： 2
+
+
+|===
+
+
+=== 许可证要求
+
+[cols="2*"]
+|===
+| 许可证 | Description 
+
+
+ a| 
+SnapMirror
+ a| 
+(可选)为SRA执行故障转移操作所必需。
+
+
+
+| FlexClone  a| 
+（可选）对于对 SRA 执行测试故障转移操作以及对 VASA Provider 执行 VVOL 操作都是必需的。
+
+|===
+
+
+=== 其他要求
+
+[cols="2*"]
+|===
+| 其他要求 | 问题描述 列 
+
+
+ a| 
+9083.
+ a| 
+启用后， VASA Provider 和 SRA 均使用此端口与 vCenter Server 进行通信。要获取 TCP/IP 设置，也需要此端口。
+
+
+
+ a| 
+443.
+ a| 
+根据凭据的配置方式， VMware vCenter Server 和存储系统会侦听此端口上的安全通信。
+
+
+
+ a| 
+8143
+ a| 
+VSC 会侦听此端口上的安全通信。
+
+
+
+ a| 
+7.
+ a| 
+VSC 会向 ONTAP 发送回显请求以验证可访问性，只有在添加存储系统时才需要此请求，并且可以稍后禁用。
+
+|===
+[cols="2*"]
+|===
+| 存储、主机和应用程序 | 版本要求 
+
+
+ a| 
+ONTAP
+ a| 
+ONTAP 9.1、9.3、9.5、9.6、9.7。
+
+
+
+ a| 
+VMware vSphere、vCenter Server、ESXi主机、Site Recovery Manager (SRM)、插件应用程序和数据库
+ a| 
+请参见互操作性表工具
+
+* https://imt.netapp.com/matrix/imt.jsp?components=97563;&solution=56&isHWU&src=IMT["互操作性表工具：VSC 9.7.1"^]
+* https://imt.netapp.com/matrix/imt.jsp?components=97564;&solution=376&isHWU&src=IMT["互操作性表工具：VASA Provider 9.7.1"^]
+* https://imt.netapp.com/matrix/imt.jsp?components=97565;&solution=576&isHWU&src=IMT["互操作性表工具：SRA 9.7.1"^]
+
+
+|===
+
+
+=== VSC、VASA Provider和SRA虚拟设备要求
+
+您必须：
+
+* 已配置并设置vCenter Server环境。
+* 已下载`.ova`文件。
+* vCenter Server 实例的登录凭据。
+* 已注销并关闭vSphere Web Client的所有浏览器会话、并删除了浏览器缓存、以避免在部署VSC、VASA Provider和SRA虚拟设备期间出现任何浏览器缓存问题描述。
+* 已配置虚拟设备响应ICMP ping所使用的默认网关。
+* 虚拟设备的有效 DNS 主机名。
+* 如果要查看VVOL信息板、请下载并安装适用于ONTAP 9.6或更早版本的OnCommand API服务。如果您使用的是OnCommand 9.7、则无需向VASA Provider注册ONTAP API服务。
+
+
+
+
+=== SRA 的可选要求
+
+如果要部署虚拟设备以与VMware Site Recovery Manager结合使用、则必须具备以下条件：
+
+* 仅当您要配置Site Recovery Manager (SRM)灾难恢复解决方案 时、才下载SRA插件的`.msi`文件。
+* 已下载适用于SRA的`.tar.gz`文件(如果正在使用SRM设备)。
+
+
+
+
+== 部署VSC、VASA Provider和SRA虚拟设备
+
+. 从下载 ` .ova` 文件 https://mysupport.netapp.com/site/products/all/details/otv/downloads-tab["NetApp 支持站点"^] 连接到 vSphere Client 系统以部署 ONTAP 工具。
++
+如果要部署 SRA ，则必须在源站点和目标站点上部署 ` 。 ova` 文件。
+
+. 登录到vSphere Web Client、选择菜单：主页[主机和集群]。
+. 右键单击所需数据中心，然后单击 * 部署 OVF 模板 * 。
+. 您可以输入`.ova`文件的URL、也可以浏览到保存`.ova`文件的文件夹、然后单击*下一步*。
+. 输入所需详细信息以完成部署。
++
+您可以从 * 任务 * 选项卡查看部署进度，并等待部署完成。
+
+. 在部署完成后、验证VSC、VASA Provider和SRA服务是否正在运行。
+
+
+
+
+=== 在SRM上部署SRA
+
+您可以在 Windows SRM 服务器或 8.2 SRM 设备上部署 SRA 。
+
+
+
+==== 在Windows SRM服务器上安装SRA
+
+. 从 NetApp 支持站点下载适用于 SRA 插件的 ` .msi` 安装程序。
+. 双击为 SRA 插件下载的 ` .msi` 安装程序，然后按照屏幕上的说明进行操作。
+. 输入已部署虚拟设备的 IP 地址和密码，以便在 SRM 服务器上完成 SRA 插件的安装。
+
+
+
+
+==== 在SRM设备上上传并配置SRA
+
+. 从下载 ` .tar.gz` 文件 https://mysupport.netapp.com/site/products/all/details/otv/downloads-tab["NetApp 支持站点"^]。
+. 在SRM设备屏幕上、单击菜单：Storage Replication Adapter[新适配器]。
+. 将 ` .tar.gz` 文件上传到 SRM 。
+. 重新扫描适配器以验证是否已在 "SRM Storage Replication Adapter" 页面中更新详细信息。
+. 使用管理员帐户使用 putty 登录到 SRM 设备。
+. 切换到 root 用户： `su root`
+. 在日志位置输入命令以获取 SRA Docker 使用的 Docker ID ： `docker ps -l`
+. 登录到容器 ID ： `docker exec -it -u SRM <container id> sh`
+. 使用 ONTAP 工具 IP 地址和密码配置 SRM ： `perl command.pl -i <va-ip> administrator <va-password>` 此时将显示一条成功消息，确认存储凭据已存储。
+
+
+
+
+==== 更新 SRA 凭据
+
+. 使用以下命令删除 /SRM/SRA 目录的内容：
++
+.. `cd /SRM/SRA / conf`
+.. `rm -rf *`
+
+
+. 执行 perl 命令以使用新凭据配置 SRA ：
++
+.. `cd /SRM/SRA /`
+.. `perl command.pl -i <va-ip> administrator <va-password>`
+
+
+
+
+
+
+==== 启用VASA Provider和SRA
+
+. 使用您在部署期间指定的 IP 地址登录到 vSphere Web Client 。
+. 单击*虚拟存储控制台*图标、输入部署期间指定的用户名和密码、然后单击*登录*。
+. 在OTV的左窗格中、菜单：设置(Administrative Settings)>管理功能(Manage Capabilities)、然后启用所需功能。
++
+
+NOTE: 默认情况下， VASA Provider 处于启用状态。如果要对 VVOL 数据存储库使用复制功能，请使用 * 启用 VVOL 复制 * 切换按钮。
+
+. 输入VSC、VASA Provider和SRA虚拟设备的IP地址和管理员密码、然后单击*应用*。
++
+有关其他配置、添加存储系统以及为vSphere对象设置基于角色的访问控制的详细信息、请参见适用于VMware vSphere的Virtual Storage Console、VASA Provider和Storage Replication Adapter部署和设置指南。
+
+
+
+
+
+== 从何处查找追加信息
+
+* https://www.netapp.com/support-and-training/documentation/ontap-tools-for-vmware-vsphere-documentation/?&access=a["适用于VMware vSphere的Virtual Storage Console、VASA Provider和Storage Replication Adapter资源页面"^]
+* https://docs.netapp.com/vapp-97/index.jsp["适用于VMware vSphere的Virtual Storage Console、VASA Provider和Storage Replication Adapter文档"^]
+* https://docs.vmware.com/en/Site-Recovery-Manager/8.2/com.vmware.srm.install_config.doc/GUID-B3A49FFF-E3B9-45E3-AD35-093D896596A0.html["VMware Site Recovery Manager 8.2"^]
+* https://docs.netapp.com/us-en/ontap/["ONTAP 9 文档"^]
+

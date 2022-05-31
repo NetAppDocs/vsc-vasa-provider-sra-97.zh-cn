@@ -1,0 +1,62 @@
+---
+permalink: manage/task-edit-esxi-host-settings.html 
+sidebar: sidebar 
+keywords: editing, esxi, host, settings, for, vsc, vasa, provider, and, sra, 
+summary: '您可以使用Virtual Storage Console (VSC)、VASA Provider和Storage Replication Adapter (SRA)虚拟设备的信息板编辑ESXi主机设置。' 
+---
+= 编辑VSC、VASA Provider和SRA的ESXi主机设置
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用Virtual Storage Console (VSC)、VASA Provider和Storage Replication Adapter (SRA)虚拟设备的信息板编辑ESXi主机设置。
+
+您必须已为 vCenter Server 实例配置 ESXi 主机系统。
+
+如果问题描述具有 ESXi 主机设置，则问题描述将显示在信息板的 "ESXi 主机系统 " portlet 中。您可以单击问题描述以查看具有问题描述的 ESXi 主机的主机名或 IP 地址。
+
+.步骤
+. 在vSphere Client *主页*页面中、单击*虚拟存储控制台*。
+. 编辑 ESXi 主机设置。
++
+[cols="1a,1a"]
+|===
+| 编辑ESXi主机设置的位置 | 执行此操作 ... 
+
+
+ a| 
+显示的问题
+ a| 
+.. 单击 ESXi 主机系统 portlet 中的问题描述。
+.. 单击要修改其设置的 ESXi 主机名。
+.. 右键单击ESXi主机名称、然后单击菜单：NetApp VSC[设置建议值]。
+.. 修改所需设置，然后单击 * 确定 * 。
+
+
+
+
+ a| 
+vSphere Client 主页
+ a| 
+.. 单击菜单：菜单[主机和集群]。
+.. 右键单击所需的ESXi主机、然后选择菜单：NetApp VSC[设置建议值]。
+.. 单击 * 确定 * 。
+
+
+
+
+ a| 
+ESXi 主机系统 portlet
+ a| 
+.. 单击 VSC 概述部分中的 * 传统信息板 * 选项卡。
+.. 单击 * 编辑 ESXi 主机设置 * 。
+.. 在主机设置和状态选项卡中选择要修改其设置的 ESXi 主机名，然后单击 * 下一步 * 。
+.. 在建议的主机设置选项卡中选择所需设置，然后单击 * 下一步 * 。
+.. 在 " 摘要 " 选项卡中查看您选择的内容，然后单击 * 完成 * 。
+
+
+|===
+

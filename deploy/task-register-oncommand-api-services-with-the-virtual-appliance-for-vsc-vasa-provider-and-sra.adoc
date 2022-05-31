@@ -1,0 +1,47 @@
+---
+permalink: deploy/task-register-oncommand-api-services-with-the-virtual-appliance-for-vsc-vasa-provider-and-sra.html 
+sidebar: sidebar 
+keywords: virtual, volume, datastores, registering, virtual, appliance, vsc, vasa, provider, sra, 
+summary: '如果您使用的是ONTAP 9.6或更早版本、则只有在注册了VASA Provider以获取VVOL VM和数据存储库报告的数据时、VVOL信息板才能显示VMware虚拟卷(VVOL)数据存储库和虚拟机的详细信息。' 
+---
+= 向VSC、VASA Provider和SRA虚拟设备注册
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您使用的是ONTAP 9.6或更早版本、则只有在注册了VASA Provider以获取VVOL VM和数据存储库报告的数据时、VVOL信息板才能显示VMware虚拟卷(VVOL)数据存储库和虚拟机的详细信息。
+
+您必须已从下载2.1或更高版本。
+
+[NOTE]
+====
+只有在使用ONTAP 9.3或更高版本配置SAN VVol数据存储库和虚拟机时、VVol信息板才会显示性能指标。
+
+====
+.步骤
+. 在Virtual Storage Console (VSC)*主页*页面中、单击*设置*。
+. 单击*管理设置*选项卡中的*管理扩展*。
+. 使用*注册OnCommand API服务*滑块启用。
+. 输入的IP地址、服务端口和凭据。
++
+您还可以使用*管理VASA Provider扩展*对话框进行以下修改：
+
++
+** 在凭据发生任何更改时更新注册。
+** 不再需要VVol信息板时取消注册。
++
+要删除VASA Provider的注册、必须清除*注册OnCommand API服务*复选框。
+
+
+
+. 单击 * 应用 * 。
++
+只有在注册完成后、VVol信息板才会显示ONTAP 9.6或更早版本的SAN VVol数据存储库的指标。
+
+
+
+* 相关信息 *
+
+https://mysupport.netapp.com/site/["NetApp 支持"^]

@@ -1,0 +1,25 @@
+---
+permalink: deploy/reference-vsc-and-vasa-provider-services-restart-in-scaled-environments.html 
+sidebar: sidebar 
+keywords: vsc, and vasa, provider, services, restart, highly, scaled, environments, 
+summary: VSC和VASA Provider服务会在高度扩展的环境中重新启动 
+---
+= VSC和VASA Provider服务会在高度扩展的环境中重新启动
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+
+
+== 问题描述
+
+VSC、VASA Provider和SRA虚拟设备可能无法在高度扩展的环境中以最佳性能运行、您可能会注意到VSC和VASA Provider服务频繁重新启动等问题。
+
+
+
+== 更正操作
+
+修改VSC、VASA Provider和SRA虚拟设备的RAM和堆内存要求。
+
+https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Virtual_Storage_Console_for_VMware_vSphere/tune_memory_settings_of_VM_VSC%2C_VASA_Provider%2C_and_SRA_for_scale_and_performance[]

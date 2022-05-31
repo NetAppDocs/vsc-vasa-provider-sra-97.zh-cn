@@ -1,0 +1,16 @@
+---
+permalink: deploy/concept-installation-workflow-for-new-users.html 
+sidebar: sidebar 
+keywords: deployment, workflow, new, users, vsc, vasa, provider, sra, virtual, appliance, 
+summary: 如果您是VMware的新用户且从未使用过NetApp VSC产品、则在部署和配置VSC、VASA Provider和SRA虚拟设备之前、您需要配置vCenter Server并设置ESXi主机。 
+---
+= 适用于VSC、VASA Provider和SRA虚拟设备新用户的部署工作流
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您是VMware的新用户且从未使用过NetApp VSC产品、则在部署和配置VSC、VASA Provider和SRA虚拟设备之前、您需要配置vCenter Server并设置ESXi主机。
+
+image::../media/new-user-deployment-workflow-vsc-vp-and-sra-7-0.gif[新的用户部署工作流 VSC VP 和 SRA 7 0]

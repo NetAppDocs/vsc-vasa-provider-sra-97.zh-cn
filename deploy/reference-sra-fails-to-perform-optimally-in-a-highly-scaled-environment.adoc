@@ -1,0 +1,33 @@
+---
+permalink: deploy/reference-sra-fails-to-perform-optimally-in-a-highly-scaled-environment.html 
+sidebar: sidebar 
+keywords: sra, fails, to, perform, optimally, highly, scaled, environment, 
+summary: SRA无法在高度扩展的环境中以最佳性能运行 
+---
+= SRA无法在高度扩展的环境中以最佳性能运行
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+
+
+== 问题描述
+
+SRA在高度扩展的环境中无法以最佳性能运行(如果运行VMware指定的最大限制、例如250个PG、250个RP、5000个VM)、您可能会发现超时错误或ONTAP 超时等问题。
+
+
+
+== 更正操作
+
+您必须修改超时间间隔。
+
+link:reference-configure-storage-replication-adapter-for-highly-scaled-environment.html["为高度扩展的环境配置Storage Replication Adapter"]
+
+[NOTE]
+====
+您还可以在高度扩展的设置中修改VSC、VASA Provider和SRA虚拟设备的可扩展性和性能内存设置。
+
+https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Virtual_Storage_Console_for_VMware_vSphere/tune_memory_settings_of_VM_VSC%2C_VASA_Provider%2C_and_SRA_for_scale_and_performance[]
+
+====

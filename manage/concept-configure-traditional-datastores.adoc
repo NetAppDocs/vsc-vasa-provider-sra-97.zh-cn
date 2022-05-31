@@ -1,0 +1,14 @@
+---
+permalink: manage/concept-configure-traditional-datastores.html 
+sidebar: sidebar 
+keywords: configuring, traditional, datastores, and, virtual, machines, 
+summary: 您可以使用 Virtual Storage Console （ VSC ）在 vCenter Server 中配置数据存储库和虚拟机。由 VSC 配置的数据存储库和虚拟机将显示在 VSC 的信息板上。这样，您就可以轻松地监控和管理这些数据存储库和虚拟机。 
+---
+= 配置传统数据存储库和虚拟机
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 Virtual Storage Console （ VSC ）在 vCenter Server 中配置数据存储库和虚拟机。由 VSC 配置的数据存储库和虚拟机将显示在 VSC 的信息板上。这样，您就可以轻松地监控和管理这些数据存储库和虚拟机。

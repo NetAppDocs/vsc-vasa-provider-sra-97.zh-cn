@@ -1,0 +1,38 @@
+---
+permalink: manage/reference-authentication-failure-status-is-displayed-with-ipv6-as-the-cluster-ip-even-if-cluster-is-added-with-ipv4.html 
+sidebar: sidebar 
+keywords: authentication, failure, for,, storage system, troubleshooting, error, 
+summary: 添加使用IPv4的存储系统会导致存储系统网格中出现IPv6状态身份验证错误 
+---
+= 添加使用IPv4的存储系统会导致存储系统网格中的IPv6状态出现身份验证错误
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+
+
+== 问题描述
+
+即使使用IPv4地址添加存储系统、存储系统网格仍会显示存储系统的IPv6地址身份验证失败状态。
+
+
+
+== 发生原因
+
+如果您的双堆栈存储系统具有IPv4和IPv6 LIF、并且您添加了使用IPv4 LIF的存储系统、则在定期发现过程中、VSC也可以发现IPv6 LIF。由于未明确添加IPv6 LIF、此IPv6发现失败并显示身份验证错误。此错误不会对为存储系统执行的任何操作产生任何影响。
+
+
+
+== 更正操作
+
+您必须执行以下操作：
+
+. 在VSC主页中、单击*存储系统*。
+. 单击IPv6地址状态未知的存储系统。
+. 使用设置的默认凭据将IP地址更改为IPv4。
+. 单击*返回列表*、然后单击*重新发现全部*。
++
+存储系统列表中陈旧的IPv6条目将被删除、并且在发现存储系统时不会出现身份验证错误。
+
+

@@ -1,0 +1,14 @@
+---
+permalink: deploy/concept-requirements-for-deploying-the-virtual-appliance-for-vsc-vasa-provider-and-sra.html 
+sidebar: sidebar 
+keywords: requirements, deploying, virtual, appliance, vsc, vasa, provider, sra, 
+summary: '在部署Virtual Storage Console (VSC)、VASA Provider和Storage Replication Adapter (SRA)虚拟设备之前、您应了解部署要求、并应确定要执行的任务。您可以根据任务选择部署VSC、VASA Provider和SRA虚拟设备的部署模式。' 
+---
+= 部署VSC、VASA Provider和SRA虚拟设备的要求
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在部署Virtual Storage Console (VSC)、VASA Provider和Storage Replication Adapter (SRA)虚拟设备之前、您应了解部署要求、并应确定要执行的任务。您可以根据任务选择部署VSC、VASA Provider和SRA虚拟设备的部署模式。

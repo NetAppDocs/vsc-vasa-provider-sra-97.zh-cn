@@ -1,0 +1,25 @@
+---
+permalink: manage/reference-vasa-provider-storage-provider-status-show-offline-in-vcenter-gui.html 
+sidebar: sidebar 
+keywords: vasa, provider, status, shows, as, Offline, in, vcenter, server, gui, 
+summary: '重新启动VASA Provider服务后、适用于ONTAP 的VASA Provider的状态可能会在vCenter Server图形用户界面中显示为"脱机"。' 
+---
+= 在vCenter Server图形用户界面中、VASA Provider状态显示为"脱机"
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+重新启动VASA Provider服务后、适用于ONTAP 的VASA Provider的状态可能会在vCenter Server图形用户界面中显示为"`脱机`"。
+
+
+
+== 临时解决策
+
+. 从Virtual Storage Console (VSC)、VASA Provider和Storage Replication Adapter (SRA)虚拟设备中检查VASA Provider的状态、并确保VASA Provider处于活动状态。
+. 在vCenter Server的VSC页面中、导航到菜单：配置[管理扩展]以验证是否已启用VASA Provider。
+. 在vCenter Server上、检查`/var/log/vmware/vmware-sps/sps.log`文件中是否存在与VASA Provider的任何连接错误。
+. 如果存在任何错误、请重新启动"`vmware-sps`"服务。
+

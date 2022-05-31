@@ -1,0 +1,100 @@
+---
+permalink: deploy/task-deploy-ontap-tools.html 
+sidebar: sidebar 
+keywords: deploying, the, virtual, appliance, for vsc, vasa, provider, and sra, 
+summary: '您应在环境中部署Virtual Storage Console (VSC)、VASA Provider和Storage Replication Adapter (SRA)虚拟设备、并指定所需的参数、以便能够使用此设备。' 
+---
+= 部署VSC、VASA Provider和SRA虚拟设备
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您应在环境中部署Virtual Storage Console (VSC)、VASA Provider和Storage Replication Adapter (SRA)虚拟设备、并指定所需的参数、以便能够使用此设备。
+
+.开始之前
+* 您必须运行受支持的 vCenter Server 版本。
++
+[NOTE]
+====
+VSC、VASA Provider和SRA虚拟设备可以注册到vCenter Server的Windows部署或VMware vCenter Server虚拟设备(vCSA)部署中。
+
+====
++
+https://mysupport.netapp.com/matrix/imt.jsp?components=97563;&solution=56&isHWU&src=IMT["互操作性表工具： VSC 9.7"^]
+
+* 您必须已配置和设置 vCenter Server 环境。
+* 您必须已为虚拟机设置 ESXi 主机。
+* 您必须已下载`.ova`文件。
+* 您必须具有 vCenter Server 实例的管理员登录凭据。
+* 您必须已注销并关闭vSphere Client的所有浏览器会话、并删除浏览器缓存、以避免在部署VSC、VASA Provider和SRA虚拟设备期间出现任何浏览器缓存问题描述。
++
+xref:task-clean-the-vsphere-cached-downloaded-plug-in-packages.adoc[清理vSphere缓存的已下载插件软件包]
+
+* 您必须已启用 Internet 控制消息协议（ Internet Control Message Protocol ， ICMP ）。
++
+如果禁用ICMP、则VSC、VASA Provider和SRA虚拟设备的初始配置将失败、并且VSC在部署后无法启动VSC和VASA Provider服务。您必须在部署后手动启用 VSC 和 VASA Provider 服务。
+
+
+
+如果要为VSC、VASA Provider和SRA部署全新安装的虚拟设备、则默认情况下会启用VASA Provider。但是、如果从早期版本的虚拟设备升级、则VASA Provider的状态会保留下来、您可能需要手动启用VASA Provider。
+
+link:task-enable-vasa-provider-for-configuring-virtual-datastores.html["启用 VASA Provider 以配置虚拟数据存储库"]
+
+.步骤
+. 登录到 vSphere Client 。
+. 选择菜单：主页[主机和集群]。
+. 右键单击所需的数据中心，然后单击 * 部署 OVA 模板 * 。
+. 选择适当的方法以提供VSC、VASA Provider和SRA的部署文件、然后单击*下一步*。
++
+[cols="1a,1a"]
+|===
+| 位置 | Action 
+
+
+ a| 
+URL
+ a| 
+提供VSC、VASA Provider和SRA虚拟设备的`……ova`文件的URL。
+
+
+
+ a| 
+文件夹
+ a| 
+从已保存位置为VSC、VASA Provider和SRA的虚拟设备选择`……ova`文件。
+
+|===
+. 输入详细信息以自定义部署向导。
++
+请参见 link:reference-deploment-customization-requirements.html["部署自定义注意事项"] 了解完整的详细信息。
+
+. 查看配置数据，然后单击 * 下一步 * 完成部署。
++
+在等待部署完成时、您可以从*任务*选项卡查看部署进度。
+
+. 启动虚拟设备虚拟机、然后打开运行此虚拟设备的虚拟机的控制台。
+. 在部署完成后、验证VSC、VASA Provider和SRA服务是否正在运行。
+. 如果VSC、VASA Provider和SRA虚拟设备未注册到任何vCenter Server、请使用`+ https://appliance_ip:8143/Register.html+`注册VSC实例。
+. 注销并重新登录到vSphere Client以查看为VSC、VASA Provider和SRA部署的虚拟设备。
++
+在 vSphere Client 中更新此插件可能需要几分钟的时间。
+
++
+[NOTE]
+====
+如果即使在登录后仍无法查看此插件、则必须清理vSphere Client缓存。 xref:task-clean-the-vsphere-cached-downloaded-plug-in-packages.adoc[清理vSphere缓存的已下载插件软件包]
+
+====
+
+
+++++
+
+[NOTE]
+====
+如果您使用的是ONTAP 9.6或更早版本、则要查看VVOL信息板、必须下载并安装。但是、对于ONTAP 9.7、您不需要向VASA Provider注册。
+
+====
+xref:task-register-oncommand-api-services-with-the-virtual-appliance-for-vsc-vasa-provider-and-sra.adoc[向VSC、VASA Provider和SRA虚拟设备注册]
