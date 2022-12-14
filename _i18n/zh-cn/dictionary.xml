@@ -270,13 +270,6 @@
   <block id="b7f418bed0ff64314736c2b82cd31de1" category="summary">为VSC、VASA Provider和SRA配置虚拟机涉及配置存储系统、创建存储功能配置文件、配置数据存储库以及选择配置SRA以实现灾难恢复。</block>
   <block id="da6a60b04c416d0ddb2b7a0964fb618f" category="doc">用于配置VSC、VASA Provider和SRA虚拟设备的工作流</block>
   <block id="c0a4c824306cfda9618646e00bc84fcc" category="image-alt">VSC用户用例</block>
-  <block id="456a31391b752801562536d0f9695aad" category="paragraph">版权所有 © 2020 NetApp ， Inc. 。保留所有权利。Printed in the U.S.</block>
-  <block id="2275e007ee598cef266c877f9c52ee25" category="paragraph">版权所涵盖的本文档的任何部分不得以任何形式或任何方式复制，包括图像，电子或机械，包括影印，录制， 在未经版权所有者事先书面许可的情况下，在电子检索系统中粘贴或存储。</block>
-  <block id="ce4ad2236c56cc11a838f29c8c261bf7" category="paragraph">Software derived from copyrighted NetApp material is subject to the following license and disclaimer:</block>
-  <block id="b110bc9db113b3149cb9e2ed905d4c6c" category="paragraph">THIS SOFTWARE IS PROVIDED BY NETAPP "AS IS" AND WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE, WHICH ARE HEREBY DISCLAIMED.IN NO EVENT SHALL NETAPP BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</block>
-  <block id="4fc9b260d15698bbd988f76ca839c5b6" category="paragraph">NetApp reserves the right to change any products described herein at any time, and without notice.NetApp assumes no responsibility or liability arising from the use of products described herein, except as expressly agreed to in writing by NetApp.The use or purchase of this product does not convey a license under any patent rights, trademark rights, or any other intellectual property rights of NetApp.</block>
-  <block id="87bfcb691f34a9e3fdda83480f0acf78" category="paragraph">The product described in this manual may be protected by one or more U.S.patents, foreign patents, or pending applications.</block>
-  <block id="464821ce353b86f770de0d09b5f5aabe" category="paragraph">本文所含数据与商用项目（定义见 FAR 2.101 ）相关，属于 NetApp ， Inc. 的专有信息政府拥有非独占，不可转让，不可再许可，全球有限且不可撤销的许可，仅可在与美国相关并为美国提供支持时使用此数据交付数据所依据的政府合同。除非本协议另有规定，否则不得使用，披露，复制，修改，执行， 或在未经 NetApp ， Inc. 事先书面批准的情况下显示。美国国防部的政府许可权利仅限于 DFARS 第 252.227-7015 （ b ）条中确定的权利。</block>
   <block id="d52f9f42182f285613bc320b561ee1bc" category="summary">您可以使用适用于VMware vSphere的Virtual Storage Console为vCenter Server中的存储系统设置默认凭据。</block>
   <block id="3cabeb9f2dfaeed94f3553f24bb6697f" category="doc">设置存储系统的默认凭据</block>
   <block id="79709e46ab199855d00cbacbb6cc6473" category="paragraph">您必须已选择要用于创建默认凭据的 vCenter Server 。</block>
@@ -587,9 +580,6 @@
   <block id="b55c53d33f614ac9e6dbd3a7cbf0f01a" category="doc">使用Site Recovery Manager管理灾难恢复设置</block>
   <block id="17163e93f2b0d1056dcda630949bc031" category="paragraph">您可以使用Site Recovery Manager (SRM)以及VMware的Site Recovery Manager (SRM)在vCenter Server中创建和管理灾难恢复设置。</block>
   <block id="bf4181724f8c5fc5f2115f5429d68d61" category="paragraph">此版本的VASA Provider现在内置了Storage Replicaction Adapter (SRA)的功能。如果您已在数据中心中配置 VVOL 数据存储库，则要恢复 VVOL 数据存储库，您无需单独安装 SRA 即可进行灾难恢复。在Site Recovery Manager (SRM)中、您必须对受保护站点和恢复站点进行配对。发生站点配对后， SRM 配置的下一部分涉及设置一个阵列对，使 SRM 能够与存储系统进行通信，以发现设备和设备复制。在配置阵列对之前，您必须先在 SRM 中创建一个站点对。</block>
-  <block id="b1ff5704b48e42d700d43961dd415064" category="summary">商标</block>
-  <block id="4ab288371dd14cece38e8f9340ade316" category="inline-link">NetApp商标</block>
-  <block id="437762eaaab99247d8d5c83cef602eae" category="paragraph"><block ref="437762eaaab99247d8d5c83cef602eae" category="inline-link-rx"></block></block>
   <block id="194dc7d35caa1e246b54270c343448ee" category="summary">配置 Storage Replication Adapter （ SRA ）后，您必须验证受保护站点和恢复站点是否已成功配对。受保护站点和恢复站点都必须能够发现复制的存储系统。</block>
   <block id="79d8a92408e3c5cb0a892432af2c8045" category="doc">验证复制的存储系统</block>
   <block id="2b1273fdbdece1c6daffff8f43659d36" category="list-text">您必须已配置存储系统。</block>
@@ -1309,7 +1299,6 @@
   <block id="e704730b9615f5aac277195b83434fd7" category="list-text">输入 `3` 以选择 * 系统配置 * 。</block>
   <block id="145d7ffcbcc4e33328fd9d5fd4fe51c4" category="list-text">输入 `6` 以选择 * 启用 SSH 访问 * 。</block>
   <block id="f055cf863289d0d7eb6da567696d8191" category="list-text">在确认对话框中输入 `y` 。</block>
-  <block id="f434e67fe7c948db94749474e31b44c4" category="summary">版权和商标</block>
   <block id="8ee3c551def9605191601bd42f707060" category="summary">您必须在VMware vSphere环境中下载并部署VSC、VASA Provider和SRA虚拟设备、然后根据要使用VSC、VASA Provider和SRAVSC、VASA Provider和SRA执行的任务配置所需的应用程序。</block>
   <block id="2271baa7829b1c018068423da0b8a758" category="doc">部署或升级VSC、VASA Provider和SRA</block>
   <block id="a74e9310b5543e4babe74be14ba35d13" category="paragraph"><block ref="a74e9310b5543e4babe74be14ba35d13" category="inline-xref-macro-rx"></block></block>
@@ -1405,9 +1394,6 @@
   <block id="b74bb3e7dfc6e02d8ff50587ced2b158" category="list-text">VSC 服务启动后， VSC 将开始自动后台发现过程。</block>
   <block id="ca6e9b3c667504b22809b042ee4b01f4" category="list-text">您可以单击"存储系统"页面中的*重新发现全部*按钮、也可以在主机或数据中心上单击此按钮、以从*操作*菜单中选择此按钮(菜单：操作[NetApp VSC &gt;更新主机和存储数据])。您也可以单击概述部分的入门选项卡上的 * 发现 * 。</block>
   <block id="c62bb22aec88a0c9ce10597b8a469f0b" category="paragraph">所有 VSC 功能都需要特定的权限才能执行任务。您可以根据与 ONTAP 角色关联的凭据限制用户可以执行的操作。具有相同存储系统用户名和密码对的所有用户都共享一组相同的存储系统凭据，并可执行相同的操作。</block>
-  <block id="8d65b5ac8abb867ba3202bc84caf1d3a" category="paragraph">NetApp、NetApp标识和* NetApp商标*页面上列出的标记是NetApp、Inc.的商标。其他公司和产品名称可能是其各自所有者的商标。</block>
-  <block id="714341d9339756588d1dc724991c2b9a" category="inline-link">单击此处</block>
-  <block id="59b5615ba3ed863a014133a54f68f4ab" category="paragraph"><block ref="59b5615ba3ed863a014133a54f68f4ab" category="inline-link-rx"></block></block>
   <block id="4d986d61933a9708b0a89553850354b6" category="summary">如果在部署或升级VSC、VASA Provider和SRA虚拟设备后未自动更新插件、则应清理浏览器和vCenter Server上缓存的下载插件包以解决vCenter Server插件问题。</block>
   <block id="feb4037176a43ecc564646b0e449704a" category="doc">清理vSphere缓存的已下载插件软件包</block>
   <block id="e00e497c6868adff4d7ea4df0a846ad4" category="paragraph">如果在部署或升级VSC、VASA Provider和SRA虚拟设备后未自动更新插件、则应清理浏览器和vCenter Server上缓存的下载插件包以解决vCenter Server插件问题。</block>
@@ -1868,7 +1854,8 @@
   <block id="252487cd0b2a2e5781422a4764d47e57" category="sidebar">从VVol数据存储库中删除存储</block>
   <block id="ddf0ffd29c8b5fdb28671568df171be4" category="sidebar">对于大量卷、VVol数据存储库配置失败</block>
   <block id="dec3e9da01f86a71bed912a019fad778" category="sidebar">在vCenter Server图形用户界面中、VASA Provider状态显示为"脱机"</block>
-  <block id="b74ab2582dce89d478a834957aa9a0e4" category="sidebar"><strong>启用 VASA Provider 以配置虚拟数据存储库</strong></block>
   <block id="07a4e02530218bb020bf2b5915f43cde" category="sidebar">配置子操作系统脚本</block>
   <block id="d036f2c382984088af9c7b41532db232" category="sidebar">在多个vCenter Server环境中注册VSC的要求</block>
+  <block id="bd965e38a0c9cf27aa1bde099308e23f" category="paragraph-title">完成后</block>
+  <block id="fd69c5cf902969e6fb71d043085ddee6" category="paragraph-title">结果</block>
 </blocks>

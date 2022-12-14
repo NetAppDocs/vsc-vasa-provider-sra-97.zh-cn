@@ -14,6 +14,7 @@ summary: '您可以使用VSC图形用户界面(GUI)中提供的选项收集适�
 [role="lead"]
 您可以使用VSC图形用户界面(GUI)中提供的选项收集适用于VMware vSphere的Virtual Storage Console的日志文件。技术支持可能会要求您收集日志文件以帮助解决问题。
 
+.关于此任务
 如果需要VASA Provider日志文件、您可以从*供应商提供程序控制面板*屏幕生成支持包。此页面是 VASA Provider 维护菜单的一部分，可从虚拟设备的控制台访问这些菜单。
 
 https://vm_ip:9083[]

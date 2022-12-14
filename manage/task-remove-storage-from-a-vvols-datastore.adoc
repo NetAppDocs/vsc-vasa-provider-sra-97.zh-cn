@@ -14,6 +14,7 @@ summary: 如果 VMware 虚拟卷（ VVOL ）数据存储库包含多个 FlexVol 
 [role="lead"]
 如果 VMware 虚拟卷（ VVOL ）数据存储库包含多个 FlexVol 卷，则可以从 VVOL 数据存储库中删除一个或多个 FlexVol 卷，而无需删除此数据存储库。
 
+.关于此任务
 VVOL数据存储库一直存在、直到该数据存储库上至少有一个FlexVol 卷为止。
 
 .步骤

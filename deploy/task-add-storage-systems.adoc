@@ -14,6 +14,7 @@ summary: 您可以手动将存储系统添加到 Virtual Storage Console （ VSC
 [role="lead"]
 您可以手动将存储系统添加到 Virtual Storage Console （ VSC ）。
 
+.关于此任务
 每次启动(VSC)或选择*重新发现全部*选项时、VSC都会自动发现可用的存储系统。
 
 .步骤

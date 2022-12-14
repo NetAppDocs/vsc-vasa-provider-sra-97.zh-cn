@@ -13,6 +13,7 @@ summary: '如果您使用的是ONTAP 9.6或更早版本、则只有在注册了V
 [role="lead"]
 如果您使用的是ONTAP 9.6或更早版本、则只有在注册了VASA Provider以获取VVOL VM和数据存储库报告的数据时、VVOL信息板才能显示VMware虚拟卷(VVOL)数据存储库和虚拟机的详细信息。
 
+.开始之前
 您必须已从下载2.1或更高版本。
 
 [NOTE]

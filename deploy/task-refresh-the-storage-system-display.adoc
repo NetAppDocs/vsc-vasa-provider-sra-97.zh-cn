@@ -14,6 +14,7 @@ summary: '您可以使用适用于VMware vSphere的Virtual Storage Console提供
 [role="lead"]
 您可以使用适用于VMware vSphere的Virtual Storage Console提供的更新功能刷新有关存储系统的信息、并强制Virtual Storage Console (VSC)发现存储系统。
 
+.关于此任务
 如果您在收到身份验证错误后更改了存储系统的默认凭据，则 `refresh` 选项非常有用。如果在存储系统报告 "`Authentication Failure Status` " 后更改了存储系统凭据，则应始终执行更新操作。在更新操作期间， VSC 会尝试使用新凭据连接到存储系统。
 
 根据您的系统设置，此任务可能需要很长时间才能完成。

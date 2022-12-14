@@ -31,6 +31,7 @@ summary: 配置数据存储库会为虚拟机及其虚拟机磁盘（ VMDK ）�
 * 要创建 NFSv4.1 数据存储库，必须已在 SVM 级别启用 NFSv4.1 。
 
 
+.关于此任务
 使用 * 配置数据存储库 * 选项可以为数据存储库指定存储功能配置文件。存储功能配置文件有助于指定一致的服务级别目标（ Service Level Objective ， SLO ）并简化配置过程。只有在启用了 VASA Provider 的情况下，才能指定存储功能配置文件。VSC、VASA Provider和SRA虚拟设备支持以下协议：
 
 * NFSv3 和 NFSv4.1

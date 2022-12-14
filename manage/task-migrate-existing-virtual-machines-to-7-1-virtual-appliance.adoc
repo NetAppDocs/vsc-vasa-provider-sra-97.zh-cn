@@ -13,6 +13,7 @@ summary: '如果您使用的是最新版本的Virtual Storage Console (VSC)、VA
 [role="lead"]
 如果您使用的是最新版本的Virtual Storage Console (VSC)、VASA Provider和Storage Replication Adapter (SRA)虚拟设备、 然后、您应将使用`MaxThroughput MBps`或`MaxThroughput IOPS` QoS指标配置的虚拟机迁移到使用最新版本的VSC、VASA Provider和SRA虚拟设备的"`Max IOPS`"QoS指标配置的新VVol数据存储库。
 
+.关于此任务
 使用最新版本的VSC、VASA Provider和SRA虚拟设备、您可以为每个虚拟机或虚拟机磁盘(VMDK)配置QoS指标。QoS 指标先前应用于 ONTAP FlexVol 卷级别，并由该 FlexVol 卷上配置的所有虚拟机或 VMDK 共享。
 
 从VSC、VASA Provider和SRA虚拟设备7.2版开始、一个虚拟机的QoS指标不会与其他虚拟机共享。

@@ -13,6 +13,7 @@ summary: 在运行适用于 VMware vCenter Site Recovery Manager （ SRM ）的 
 [role="lead"]
 在运行适用于 VMware vCenter Site Recovery Manager （ SRM ）的 Storage Replication Adapter （ SRA ）之前，必须配置存储系统。
 
+.开始之前
 您必须已在受保护站点和恢复站点上安装以下程序：
 
 * SRM

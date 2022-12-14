@@ -19,6 +19,7 @@ summary: '默认情况下、Virtual Storage Console (VSC)、VASA Provider和Stor
 * 您必须已部署VSC、VASA Provider和SRA虚拟设备。
 
 
+.关于此任务
 如果在升级到Virtual Storage Console (VSC)、VASA Provider和Storage Replication Adapter (SRA)虚拟设备9.7.1版之前禁用了VASA Provider功能、则在升级后、VASA Provider功能仍会处于禁用状态。此版本允许您为 VVol 数据存储库启用 VVol 复制功能。
 
 .步骤
@@ -31,4 +32,5 @@ summary: '默认情况下、Virtual Storage Console (VSC)、VASA Provider和Stor
 . 输入VSC、VASA Provider和SRA虚拟设备的IP地址以及管理员密码、然后单击*应用*。
 
 
+.完成后
 如果您使用的是ONTAP 9.6或更早版本的集群、则必须向VASA Provider注册、以获取SAN VVOL虚拟机和SAN VVOL数据存储库报告中使用的VVOL数据存储库和虚拟机的详细信息。但是、如果您使用的是ONTAP 9.7或更高版本、则无需向VASA Provider注册。

@@ -13,6 +13,7 @@ summary: '如果您使用iSCSI或NFS、并且ESXi主机和存储系统的子网�
 [role="lead"]
 如果您使用iSCSI或NFS、并且ESXi主机和存储系统的子网不同、则必须修改适用于VMware vSphere的Virtual Storage Console首选项文件。如果不修改首选项文件、则数据存储库配置将失败、因为(VSC)无法挂载数据存储库。
 
+.关于此任务
 如果数据存储库配置失败， VSC 将记录以下错误消息：
 
 `无法继续。交叉引用控制器上的内核IP地址和地址时未找到IP地址。`

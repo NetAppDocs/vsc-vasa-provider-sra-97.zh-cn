@@ -13,6 +13,7 @@ summary: 子操作系统（ OS ）超时脚本用于为 Solaris 10 设置 SCSI I
 [role="lead"]
 子操作系统（ OS ）超时脚本用于为 Solaris 10 设置 SCSI I/O 超时设置。您可以指定 60 秒超时或 190 秒超时。
 
+.开始之前
 您必须已挂载包含 Solaris 脚本的 ISO 映像。
 
 .步骤

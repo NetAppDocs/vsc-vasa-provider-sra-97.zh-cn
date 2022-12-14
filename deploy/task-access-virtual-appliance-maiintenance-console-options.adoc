@@ -13,6 +13,7 @@ summary: '您可以使用Virtual Storage Console (VSC)、VASA Provider和Storage
 [role="lead"]
 您可以使用Virtual Storage Console (VSC)、VASA Provider和Storage Replication Adapter (SRA)虚拟设备的维护控制台来管理应用程序、系统和网络配置。您可以更改管理员密码和维护密码。您还可以生成支持包，设置不同的日志级别，查看和管理 TLS 配置以及启动远程诊断。
 
+.开始之前
 在部署VSC、VASA Provider和SRA虚拟设备后、您必须已安装VMware工具。
 
 .关于此任务

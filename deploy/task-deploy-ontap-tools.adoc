@@ -39,6 +39,7 @@ xref:task-clean-the-vsphere-cached-downloaded-plug-in-packages.adoc[清理vSpher
 
 
 
+.关于此任务
 如果要为VSC、VASA Provider和SRA部署全新安装的虚拟设备、则默认情况下会启用VASA Provider。但是、如果从早期版本的虚拟设备升级、则VASA Provider的状态会保留下来、您可能需要手动启用VASA Provider。
 
 link:task-enable-vasa-provider-for-configuring-virtual-datastores.html["启用 VASA Provider 以配置虚拟数据存储库"]
@@ -90,6 +91,7 @@ URL
 ====
 
 
+.完成后
 ++++
 
 [NOTE]

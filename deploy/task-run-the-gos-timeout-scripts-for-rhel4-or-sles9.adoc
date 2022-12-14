@@ -13,6 +13,7 @@ summary: 子操作系统（ OS ）超时脚本可为 Red Hat Enterprise Linux �
 [role="lead"]
 子操作系统（ OS ）超时脚本可为 Red Hat Enterprise Linux 版本 4 ， 5 ， 6 和 7 以及 SUSE Linux Enterprise Server 版本 9 ， 10 和 11 设置 SCSI I/O 超时设置。您可以指定 60 秒超时或 190 秒超时。每次升级到新版本的 Linux 时，都必须运行此脚本。
 
+.开始之前
 您必须已挂载包含 Linux 脚本的 ISO 映像。
 
 .步骤

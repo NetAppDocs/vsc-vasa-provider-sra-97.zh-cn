@@ -13,8 +13,10 @@ summary: '部署 SRM 设备后，您应在 SRM 设备上配置 SRA 。成功配�
 [role="lead"]
 部署 SRM 设备后，您应在 SRM 设备上配置 SRA 。成功配置 SRA 后， SRM 设备便可与 SRA 进行通信以进行灾难恢复管理。您应将VSC、VASA Provider和SRA凭据(IP地址和管理员密码)的虚拟设备存储在SRM设备中、以启用SRM设备与SRA之间的通信。
 
+.开始之前
 您应将`tar.gz`文件上传到SRM设备。
 
+.关于此任务
 在 SRM 设备上配置 SRA 会将 SRA 凭据存储在 SRM 设备中。
 
 .步骤

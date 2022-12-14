@@ -13,8 +13,10 @@ summary: 您可以使用 VSC 手动创建存储功能配置文件，根据数据
 [role="lead"]
 您可以使用 VSC 手动创建存储功能配置文件，根据数据存储库的功能自动生成配置文件或根据您的要求修改配置文件。
 
+.开始之前
 您必须已向适用于VMware vSphere的Virtual Storage Console注册VASA Provider实例。
 
+.关于此任务
 设置配置文件后，您可以根据需要编辑此配置文件。
 
 .步骤

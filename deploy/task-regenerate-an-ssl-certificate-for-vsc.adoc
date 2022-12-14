@@ -13,6 +13,7 @@ summary: '安装(VSC)时会生成SSL证书。为 SSL 证书生成的可分辨名
 [role="lead"]
 安装(VSC)时会生成SSL证书。为 SSL 证书生成的可分辨名称（ Distinguished Name ， DN ）可能不是客户端计算机可以识别的公用名（ Common Name ， CN ）。通过更改密钥库和私钥密码，您可以重新生成证书并创建站点专用的证书。
 
+.关于此任务
 您可以使用维护控制台启用远程诊断并生成站点专用证书。
 
 https://kb.netapp.com/app/answers/answer_view/a_id/1075654["NetApp知识库问题解答 1075654：Virtual Storage Console 7.x：实施CA签名的证书"^]

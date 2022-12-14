@@ -13,8 +13,10 @@ summary: 您可以将虚拟机从传统数据存储库迁移到虚拟卷（ VVol
 [role="lead"]
 您可以将虚拟机从传统数据存储库迁移到虚拟卷（ VVol ）数据存储库，以利用基于策略的虚拟机管理和其他 VVol 功能。通过 VVOL 数据存储库，您可以满足日益增长的工作负载需求。
 
+.开始之前
 您必须确保 VASA Provider 未在计划迁移的任何虚拟机上运行。如果将运行 VASA Provider 的虚拟机迁移到 VVOL 数据存储库，则无法执行任何管理操作，包括启动 VVOL 数据存储库上的虚拟机。
 
+.关于此任务
 从传统数据存储库迁移到VVol数据存储库时、vCenter Server会在从VMFS数据存储库移动数据时使用vStorage APIs for Array Integration (VAAI)卸载、但不会从NFS VMDK文件移动数据。VAAI 卸载通常会降低主机上的负载。
 
 .步骤

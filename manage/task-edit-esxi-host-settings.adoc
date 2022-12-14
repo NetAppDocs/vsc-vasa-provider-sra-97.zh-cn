@@ -14,8 +14,10 @@ summary: '您可以使用Virtual Storage Console (VSC)、VASA Provider和Storage
 [role="lead"]
 您可以使用Virtual Storage Console (VSC)、VASA Provider和Storage Replication Adapter (SRA)虚拟设备的信息板编辑ESXi主机设置。
 
+.开始之前
 您必须已为 vCenter Server 实例配置 ESXi 主机系统。
 
+.关于此任务
 如果问题描述具有 ESXi 主机设置，则问题描述将显示在信息板的 "ESXi 主机系统 " portlet 中。您可以单击问题描述以查看具有问题描述的 ESXi 主机的主机名或 IP 地址。
 
 .步骤

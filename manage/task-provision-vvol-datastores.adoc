@@ -22,6 +22,7 @@ summary: 只有在虚拟设备中为VSC、VASA Provider和SRA启用了VASA Provi
 * 您应在源站点和目标站点的数据存储库上配置类似的复制策略和计划，以便成功执行反向复制。
 
 
+.关于此任务
 通过*配置数据存储库*菜单、您可以为数据存储库指定存储功能配置文件、这有助于指定一致的服务级别目标(Service Level Objective、SLO)并简化配置过程。只有在启用了 VASA Provider 的情况下，才能指定存储功能配置文件。
 
 只有在运行ONTAP 9.5或更高版本时、用作后备存储的FlexVol 卷才会显示在VVol信息板上。不应使用vCenter Server *新建数据存储库*向导配置VVOL数据存储库。

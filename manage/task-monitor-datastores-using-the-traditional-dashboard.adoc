@@ -13,10 +13,12 @@ summary: 您可以使用Virtual Storage Console、VASA Provider和Storage Replic
 [role="lead"]
 您可以使用Virtual Storage Console、VASA Provider和Storage Replication Adapter虚拟设备的传统信息板监控传统数据存储库和虚拟机。通过信息板数据，您可以分析数据存储库使用情况并采取更正操作，以防止虚拟机受到与空间相关的限制。
 
+.开始之前
 您应在配置存储 I/O 控制对话框中选择 * 启用存储 I/O 控制和统计信息收集 * 或 * 禁用存储 I/O 控制但启用统计信息收集 * 选项。只有在从 VMware 获得 Enterprise Plus 许可证后，才能启用存储 I/O 控制。
 
 https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.resmgmt.doc/GUID-BB5D9BAB-9E0E-4204-A76A-54634CD8AD51.html["VMware vSphere 文档：启用存储 I/O 控制"^]
 
+.关于此任务
 VSC信息板可显示从vCenter Server获取的IOPS、已利用空间、延迟和已提交容量指标。ONTAP 为VSC信息板提供了卷空间节省指标。通过这些性能参数，您可以确定虚拟环境中的性能瓶颈，并采取更正措施来解决这些问题。
 
 通过VSC、VASA Provider和SRA虚拟设备的传统信息板、您可以查看NFS数据存储库或VMFS数据存储库。您可以单击某个数据存储库以导航到 vCenter Server 实例提供的数据存储库详细信息视图，以查看和修复 vCenter Server 中数据存储库的任何问题。

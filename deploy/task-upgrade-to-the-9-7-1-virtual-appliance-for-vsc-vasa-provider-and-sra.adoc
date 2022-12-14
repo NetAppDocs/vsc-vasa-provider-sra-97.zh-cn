@@ -23,6 +23,7 @@ xref:task-clean-the-vsphere-cached-downloaded-plug-in-packages.adoc[清理vSpher
 
 
 
+.关于此任务
 升级后，现有部署中 VASA Provider 的状态将保留下来。升级后，您应根据需要手动启用或禁用 VASA Provider 。但是，即使未使用 VMware 虚拟卷（ VVOL ），最好启用 VASA Provider ，因为它可以为传统数据存储库配置启用存储功能配置文件并发出存储警报。
 
 [NOTE]

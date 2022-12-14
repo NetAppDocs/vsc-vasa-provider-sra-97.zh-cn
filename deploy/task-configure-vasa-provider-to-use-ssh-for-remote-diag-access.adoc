@@ -13,8 +13,10 @@ summary: '您可以为Virtual Storage Console (VSC)、VASA Provider和Storage Re
 [role="lead"]
 您可以为Virtual Storage Console (VSC)、VASA Provider和Storage Replication Adapter (SRA)配置虚拟设备、以便为diag用户启用SSH访问。
 
+.开始之前
 必须为 vCenter Server 实例启用 VASA Provider 扩展。
 
+.关于此任务
 使用SSH访问diag用户具有以下限制：
 
 * 每次激活SSH时、您只能登录一次。

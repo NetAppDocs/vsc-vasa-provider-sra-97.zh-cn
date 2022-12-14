@@ -13,6 +13,7 @@ summary: '您可以通过为Virtual Storage Console (VSC)、VASA Provider和Stor
 [role="lead"]
 您可以通过为Virtual Storage Console (VSC)、VASA Provider和Storage Replication Adapter (SRA)配置虚拟设备来将VASA Provider设置为使用SSH进行安全访问。
 
+.关于此任务
 配置 SSH 时，您必须以维护用户身份登录。这是因为已禁用对 VASA Provider 的 root 访问。如果您使用其他登录凭据，则无法使用 SSH 访问 VASA Provider 。
 
 .步骤
