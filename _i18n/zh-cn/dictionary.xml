@@ -1837,7 +1837,6 @@
   <block id="d7fe698118feaaf4479b561ca61c542f" category="summary">VSC和VASA Provider服务会在高度扩展的环境中重新启动</block>
   <block id="9768155541cb23e649f212bfee0e49d3" category="paragraph">VSC、VASA Provider和SRA虚拟设备可能无法在高度扩展的环境中以最佳性能运行、您可能会注意到VSC和VASA Provider服务频繁重新启动等问题。</block>
   <block id="4e31689efb2fcf2ab9c9a46274a5527f" category="paragraph">修改VSC、VASA Provider和SRA虚拟设备的RAM和堆内存要求。</block>
-  <block id="bc61d0b08d1fd7734eecaba3c782ee73" category="summary">适用于VMware vSphere的Virtual Storage Console文档、VSC文档、VSC文档</block>
   <block id="2a72439647125372a883f6f62a3b3b97" category="doc">VSC、VASA Provider和SRA文档</block>
   <block id="9ce16530dad5761d1de1ee236c145dcd" category="sidebar">VSC、VASA Provider和SRA文档</block>
   <block id="06ad314b340900d226b1196e1fe289e9" category="sidebar">快速入门</block>
@@ -1858,4 +1857,7 @@
   <block id="d036f2c382984088af9c7b41532db232" category="sidebar">在多个vCenter Server环境中注册VSC的要求</block>
   <block id="bd965e38a0c9cf27aa1bde099308e23f" category="paragraph-title">完成后</block>
   <block id="fd69c5cf902969e6fb71d043085ddee6" category="paragraph-title">结果</block>
+  <block id="59b25b58a320cb1bd7e03ff77563a7d1" category="sidebar">通过适用于VSC、VASA Provider和SRA的Virtual Storage Console、您可以配置、管理和保护vCenter Server环境中的虚拟数据存储库。</block>
+  <block id="457ec720234469b4fc2740e0d3e8b0bc" category="sidebar">适用于VMware vSphere的Virtual Storage Console文档、VSC文档、VSC文档。</block>
+  <block id="43fe6507a14726ae86f2c7d411f9b929" category="sidebar">适用于VMware vSphere的ONTAP工具文档</block>
 </blocks>

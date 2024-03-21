@@ -5,18 +5,15 @@ keywords: qsg, ontap tools for vmware vsphere, quick start guide, installing
 summary: 简要介绍部署适用于VMware vSphere的Virtual Storage Console、VASA Provider和Storage Replication Adapter虚拟设备的部署要求和分步说明。 
 ---
 = 快速入门
-:toc: macro
 :hardbreaks:
 :toclevels: 1
 :allow-uri-read: 
 :experimental: 
-:toc: 
 :toclevels: 1
 :nofooter: 
 :icons: font
 :linkattrs: 
 :imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

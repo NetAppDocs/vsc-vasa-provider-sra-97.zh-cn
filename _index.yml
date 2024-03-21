@@ -1,0 +1,30 @@
+---
+indexpage:
+  title: VSC、VASA Provider和SRA文档
+  summary: 适用于VMware vSphere的Virtual Storage Console文档、VSC文档、VSC文档。
+  keywords: vsc, vasa provider, sra, netapp, configuration, workflow, unified, appliance,
+    deploy, upgrade, vmware, vsphere
+  lead: 通过适用于VSC、VASA Provider和SRA的Virtual Storage Console、您可以配置、管理和保护vCenter Server环境中的虚拟数据存储库。
+  tiles:
+  - title: 入门
+    links:
+    - title: 发行说明
+      url: "/release-notes.html"
+    - title: 快速入门
+      url: "/qsg.html"
+    - title: 部署和升级
+      url: "/deploy/concept-virtual-storage-console-overview.html"
+    - title: 管理
+      url: "/manage/concept-workflow-for-configuring-the-unified-appliance.html"
+  - title: 更多资源
+    links:
+    - title: 早期版本的VSC、VASA Provider和SRA的文档
+      url: https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=30048
+    - title: 适用于VMware vSphere的ONTAP工具文档
+      url: https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere/index.html
+    - title: NetApp知识库—VSC、VASA Provider和SRA
+      url: https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/VSC_and_VASA_Provider
+    - title: NetApp 导入实用程序—视频
+      url: https://www.youtube.com/watch?v=CEQmIEzNVfA
+    - title: NetApp社区—VSC、VASA Provider和SRA
+      url: https://community.netapp.com/t5/VMware-Solutions-Discussions/bd-p/vmware-solutions-discussions
