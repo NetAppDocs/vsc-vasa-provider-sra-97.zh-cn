@@ -248,8 +248,7 @@ NOTE: 默认情况下， VASA Provider 处于启用状态。如果要对 VVOL �
 
 == 从何处查找追加信息
 
-* https://www.netapp.com/support-and-training/documentation/ontap-tools-for-vmware-vsphere-documentation/?&access=a["适用于VMware vSphere的Virtual Storage Console、VASA Provider和Storage Replication Adapter资源页面"^]
-* https://docs.netapp.com/vapp-97/index.jsp["适用于VMware vSphere的Virtual Storage Console、VASA Provider和Storage Replication Adapter文档"^]
+* https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere-10/index.html["适用于VMware vSphere的ONTAP工具文档"^]
 * https://docs.vmware.com/en/Site-Recovery-Manager/8.2/com.vmware.srm.install_config.doc/GUID-B3A49FFF-E3B9-45E3-AD35-093D896596A0.html["VMware Site Recovery Manager 8.2"^]
 * https://docs.netapp.com/us-en/ontap/["ONTAP 9 文档"^]
 
